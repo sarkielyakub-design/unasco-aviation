@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import { Menu, Phone } from 'lucide-react'
+import { Menu, Phone, X } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
 import { navLinks } from '@/lib/site'
@@ -26,7 +26,9 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 30)
+    const onScroll = () => {
+      setScrolled(window.scrollY > 30)
+    }
 
     onScroll()
 
@@ -34,9 +36,15 @@ export function SiteHeader() {
       passive: true,
     })
 
-    return () =>
+    return () => {
       window.removeEventListener('scroll', onScroll)
+    }
   }, [])
+
+  // Close mobile menu whenever route changes
+  useEffect(() => {
+    setOpen(false)
+  }, [pathname])
 
   const solid = scrolled || !isHome
   const inverted = !solid
@@ -44,23 +52,29 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        'fixed inset-x-0 top-0 z-50 transition-all duration-500',
+        'fixed inset-x-0 top-0 z-[100] w-full transition-all duration-500',
         solid
           ? 'border-b border-slate-200/70 bg-white/95 shadow-xl backdrop-blur-2xl'
           : 'bg-gradient-to-b from-black/70 via-black/30 to-transparent'
       )}
     >
-      <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-6 lg:h-24">
+      <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-5 sm:px-6 lg:h-24">
 
-        {/* Logo */}
+        {/* ========================================================= */}
+        {/* LOGO */}
+        {/* ========================================================= */}
 
-        <Logo inverted={inverted} />
+        <div className="relative z-[110] shrink-0">
+          <Logo inverted={inverted} />
+        </div>
 
-        {/* Desktop Navigation */}
+        {/* ========================================================= */}
+        {/* DESKTOP NAVIGATION */}
+        {/* ========================================================= */}
 
         <nav
           className="hidden items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 backdrop-blur-xl lg:flex"
-          aria-label="Primary"
+          aria-label="Primary navigation"
         >
           {navLinks.map((link) => {
             const active =
@@ -91,7 +105,9 @@ export function SiteHeader() {
           })}
         </nav>
 
-        {/* Right Side */}
+        {/* ========================================================= */}
+        {/* DESKTOP RIGHT SIDE */}
+        {/* ========================================================= */}
 
         <div className="hidden items-center gap-5 lg:flex">
 
@@ -105,10 +121,9 @@ export function SiteHeader() {
                 : 'text-slate-700'
             )}
           >
-            <Phone className="h-5 w-5 text-[#FF6B00]" />
+            <Phone className="h-5 w-5 shrink-0 text-[#FF6B00]" />
 
             <div className="leading-tight">
-
               <p className="text-xs opacity-70">
                 Sales Manager
               </p>
@@ -116,56 +131,87 @@ export function SiteHeader() {
               <p className="font-semibold">
                 +234 806 333 2227
               </p>
-
             </div>
-
           </a>
 
           <Link
             href="/contact"
             className={cn(
               buttonVariants(),
-
               'h-12 rounded-full bg-[#FF6B00] px-7 font-semibold shadow-xl transition-all duration-300 hover:scale-105 hover:bg-[#ff7d1f]'
             )}
           >
             Request a Quote
           </Link>
-
         </div>
 
-        {/* Mobile */}
+        {/* ========================================================= */}
+        {/* MOBILE MENU */}
+        {/* ========================================================= */}
 
-        <div className="lg:hidden">
+        <div className="relative z-[110] lg:hidden">
 
           <Sheet
             open={open}
             onOpenChange={setOpen}
           >
+
+            {/* ===================================================== */}
+            {/* MOBILE MENU BUTTON */}
+            {/* ===================================================== */}
+
             <SheetTrigger
               render={
                 <Button
+                  type="button"
                   variant={inverted ? 'ghost' : 'outline'}
                   size="icon"
-                  aria-label="Open Menu"
+                  aria-label={open ? 'Close menu' : 'Open menu'}
+                  aria-expanded={open}
                   className={cn(
-                    'h-11 w-11',
+                    'relative z-[120] flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-0 p-0 shadow-none',
+                    'touch-manipulation',
+                    'cursor-pointer',
+                    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2',
 
-                    inverted &&
-                      'text-white hover:bg-white/10'
+                    inverted
+                      ? 'text-white hover:bg-white/10'
+                      : 'text-slate-900 hover:bg-slate-100'
                   )}
                 />
               }
             >
-              <Menu className="h-6 w-6" />
+              {open ? (
+                <X
+                  className="pointer-events-none h-6 w-6"
+                  strokeWidth={2}
+                />
+              ) : (
+                <Menu
+                  className="pointer-events-none h-6 w-6"
+                  strokeWidth={2}
+                />
+              )}
             </SheetTrigger>
+
+            {/* ===================================================== */}
+            {/* MOBILE SHEET */}
+            {/* ===================================================== */}
 
             <SheetContent
               side="right"
-              className="w-[90%] max-w-sm p-0"
+              className={cn(
+                'z-[200] w-[88%] max-w-sm p-0',
+                'border-l border-slate-200 bg-white',
+                'shadow-2xl'
+              )}
             >
 
-              <SheetHeader className="border-b p-6">
+              {/* =================================================== */}
+              {/* SHEET HEADER */}
+              {/* =================================================== */}
+
+              <SheetHeader className="border-b border-slate-200 p-6">
 
                 <SheetTitle className="text-left">
                   <Logo />
@@ -173,7 +219,14 @@ export function SiteHeader() {
 
               </SheetHeader>
 
-              <nav className="flex flex-col gap-2 p-6">
+              {/* =================================================== */}
+              {/* NAVIGATION */}
+              {/* =================================================== */}
+
+              <nav
+                className="flex flex-col gap-2 overflow-y-auto p-6"
+                aria-label="Mobile navigation"
+              >
 
                 {navLinks.map((link) => {
                   const active =
@@ -187,11 +240,13 @@ export function SiteHeader() {
                       href={link.href}
                       onClick={() => setOpen(false)}
                       className={cn(
-                        'rounded-xl px-4 py-3 text-base font-semibold transition',
+                        'block w-full rounded-xl px-4 py-3 text-base font-semibold',
+                        'transition-colors duration-200',
+                        'touch-manipulation',
 
                         active
-                          ? 'bg-primary text-white'
-                          : 'hover:bg-slate-100'
+                          ? 'bg-primary text-white shadow-sm'
+                          : 'text-slate-700 hover:bg-slate-100 active:bg-slate-200'
                       )}
                     >
                       {link.label}
@@ -199,30 +254,35 @@ export function SiteHeader() {
                   )
                 })}
 
+                {/* ================================================= */}
+                {/* REQUEST QUOTE */}
+                {/* ================================================= */}
+
                 <Link
                   href="/contact"
                   onClick={() => setOpen(false)}
                   className={cn(
                     buttonVariants(),
-
-                    'mt-6 h-12 rounded-xl bg-[#FF6B00]'
+                    'mt-6 flex h-12 w-full items-center justify-center rounded-xl bg-[#FF6B00] font-semibold text-white shadow-lg hover:bg-[#ff7d1f]'
                   )}
                 >
                   Request a Quote
                 </Link>
 
+                {/* ================================================= */}
+                {/* PHONE CONTACT */}
+                {/* ================================================= */}
+
                 <a
                   href="tel:+2348063332227"
-                  className="mt-8 rounded-xl border p-4"
+                  className="mt-8 block rounded-xl border border-slate-200 p-4 transition-colors hover:bg-slate-50 active:bg-slate-100"
                 >
-
                   <div className="flex items-center gap-3">
 
-                    <Phone className="h-5 w-5 text-[#FF6B00]" />
+                    <Phone className="h-5 w-5 shrink-0 text-[#FF6B00]" />
 
                     <div>
-
-                      <p className="text-sm font-semibold">
+                      <p className="text-sm font-semibold text-slate-900">
                         Hafiz Umar Ballah
                       </p>
 
@@ -233,11 +293,9 @@ export function SiteHeader() {
                       <p className="mt-1 font-bold text-primary">
                         +234 806 333 2227
                       </p>
-
                     </div>
 
                   </div>
-
                 </a>
 
               </nav>
