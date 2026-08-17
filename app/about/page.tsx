@@ -101,7 +101,7 @@ const currentTeam = [
   },
   {
     name: "Mr. Usman K. Kudi",
-    role: "Head of Cargo Operations",
+    role: "Cargo Operations",
     image: "/team/usman-k-kudi.jpg",
     fallback: "/about-operations.png",
     description:
@@ -109,7 +109,7 @@ const currentTeam = [
   },
   {
     name: "Mr. Amir H. Ballah",
-    role: "Head of I.T & Communication",
+    role: "I.T & Communication",
     image: "/team/amir-h-ballah.jpg",
     fallback: "/about-operations.png",
     description:
@@ -296,14 +296,6 @@ export default function AboutPage() {
                 <PlaneTakeoff className="mt-1 h-6 w-6 shrink-0 text-primary" />
 
                 <div>
-
-                  <h4 className="font-semibold">
-                    Operational Presence
-                  </h4>
-
-                  <p className="mt-1 text-muted-foreground">
-                    Kano • Abuja • Minna • Lagos
-                  </p>
 
                 </div>
 
