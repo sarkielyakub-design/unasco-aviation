@@ -46,6 +46,16 @@ export function SiteHeader() {
     setOpen(false)
   }, [pathname])
 
+  /*
+   * Hajj & Umrah is temporarily hidden from the main navigation.
+   * The page/route can remain in the project and be added back later.
+   */
+  const visibleNavLinks = navLinks.filter(
+    (link) =>
+      !link.label.toLowerCase().includes('hajj') &&
+      !link.label.toLowerCase().includes('umrah')
+  )
+
   const solid = scrolled || !isHome
   const inverted = !solid
 
@@ -76,7 +86,7 @@ export function SiteHeader() {
           className="hidden items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 backdrop-blur-xl lg:flex"
           aria-label="Primary navigation"
         >
-          {navLinks.map((link) => {
+          {visibleNavLinks.map((link) => {
             const active =
               link.href === '/'
                 ? pathname === '/'
@@ -109,40 +119,70 @@ export function SiteHeader() {
         {/* DESKTOP RIGHT SIDE */}
         {/* ========================================================= */}
 
-        <div className="hidden items-center gap-5 lg:flex">
+        <div className="hidden items-center gap-3 lg:flex">
+
+          {/* CEO */}
 
           <a
-            href="tel:+2348063332227"
+            href="tel:+966556011122"
             className={cn(
-              'flex items-center gap-3 rounded-full px-4 py-2 transition',
-
+              'flex items-center gap-2 rounded-full px-3 py-2 transition-all',
+              'hover:bg-black/5',
               inverted
                 ? 'text-white'
                 : 'text-slate-700'
             )}
           >
-            <Phone className="h-5 w-5 shrink-0 text-[#FF6B00]" />
+            <Phone className="h-4 w-4 shrink-0 text-[#FF6B00]" />
 
             <div className="leading-tight">
-              <p className="text-xs opacity-70">
+              <p className="text-[10px] font-medium uppercase tracking-wide opacity-60">
+                CEO
+              </p>
+
+              <p className="text-sm font-semibold">
+                +966 556 011 122
+              </p>
+            </div>
+          </a>
+
+          {/* Sales Manager */}
+
+          <a
+            href="tel:+2348063332227"
+            className={cn(
+              'flex items-center gap-2 rounded-full px-3 py-2 transition-all',
+              'hover:bg-black/5',
+              inverted
+                ? 'text-white'
+                : 'text-slate-700'
+            )}
+          >
+            <Phone className="h-4 w-4 shrink-0 text-[#FF6B00]" />
+
+            <div className="leading-tight">
+              <p className="text-[10px] font-medium uppercase tracking-wide opacity-60">
                 Sales Manager
               </p>
 
-              <p className="font-semibold">
+              <p className="text-sm font-semibold">
                 +234 806 333 2227
               </p>
             </div>
           </a>
 
+          {/* Request Quote */}
+
           <Link
             href="/contact"
             className={cn(
               buttonVariants(),
-              'h-12 rounded-full bg-[#FF6B00] px-7 font-semibold shadow-xl transition-all duration-300 hover:scale-105 hover:bg-[#ff7d1f]'
+              'ml-2 h-12 rounded-full bg-[#FF6B00] px-7 font-semibold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:bg-[#ff7d1f]'
             )}
           >
             Request a Quote
           </Link>
+
         </div>
 
         {/* ========================================================= */}
@@ -201,7 +241,7 @@ export function SiteHeader() {
             <SheetContent
               side="right"
               className={cn(
-                'z-[200] w-[88%] max-w-sm p-0',
+                'z-[200] flex h-full w-[88%] max-w-sm flex-col p-0',
                 'border-l border-slate-200 bg-white',
                 'shadow-2xl'
               )}
@@ -220,15 +260,15 @@ export function SiteHeader() {
               </SheetHeader>
 
               {/* =================================================== */}
-              {/* NAVIGATION */}
+              {/* MOBILE NAVIGATION */}
               {/* =================================================== */}
 
               <nav
-                className="flex flex-col gap-2 overflow-y-auto p-6"
+                className="flex flex-1 flex-col gap-2 overflow-y-auto p-6"
                 aria-label="Mobile navigation"
               >
 
-                {navLinks.map((link) => {
+                {visibleNavLinks.map((link) => {
                   const active =
                     link.href === '/'
                       ? pathname === '/'
@@ -270,33 +310,70 @@ export function SiteHeader() {
                 </Link>
 
                 {/* ================================================= */}
-                {/* PHONE CONTACT */}
+                {/* CONTACT INFORMATION */}
                 {/* ================================================= */}
 
-                <a
-                  href="tel:+2348063332227"
-                  className="mt-8 block rounded-xl border border-slate-200 p-4 transition-colors hover:bg-slate-50 active:bg-slate-100"
-                >
-                  <div className="flex items-center gap-3">
+                <div className="mt-8 space-y-4">
 
-                    <Phone className="h-5 w-5 shrink-0 text-[#FF6B00]" />
+                  {/* CEO */}
 
-                    <div>
-                      <p className="text-sm font-semibold text-slate-900">
-                        Hafiz Umar Ballah
-                      </p>
+                  <a
+                    href="tel:+966556011122"
+                    className="block rounded-2xl border border-slate-200 bg-slate-50 p-4 transition-all hover:border-primary/30 hover:bg-white hover:shadow-md active:bg-slate-100"
+                  >
+                    <div className="flex items-center gap-3">
 
-                      <p className="text-sm text-slate-500">
-                        Sales Manager
-                      </p>
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                        <Phone className="h-5 w-5 text-[#FF6B00]" />
+                      </div>
 
-                      <p className="mt-1 font-bold text-primary">
-                        +234 806 333 2227
-                      </p>
+                      <div className="min-w-0">
+                        <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+                          Chief Executive Officer
+                        </p>
+
+                        <p className="mt-1 font-bold text-primary">
+                          +966 556 011 122
+                        </p>
+
+                        <p className="text-xs text-slate-500">
+                          Executive &amp; Corporate Enquiries
+                        </p>
+                      </div>
+
                     </div>
+                  </a>
 
-                  </div>
-                </a>
+                  {/* Sales Manager */}
+
+                  <a
+                    href="tel:+2348063332227"
+                    className="block rounded-2xl border border-slate-200 bg-slate-50 p-4 transition-all hover:border-primary/30 hover:bg-white hover:shadow-md active:bg-slate-100"
+                  >
+                    <div className="flex items-center gap-3">
+
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                        <Phone className="h-5 w-5 text-[#FF6B00]" />
+                      </div>
+
+                      <div className="min-w-0">
+                        <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+                          Sales Manager
+                        </p>
+
+                        <p className="mt-1 text-sm font-semibold text-slate-900">
+                          Hafiz Umar Ballah
+                        </p>
+
+                        <p className="font-bold text-primary">
+                          +234 806 333 2227
+                        </p>
+                      </div>
+
+                    </div>
+                  </a>
+
+                </div>
 
               </nav>
 

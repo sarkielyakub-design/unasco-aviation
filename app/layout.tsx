@@ -1,8 +1,11 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Inter, Manrope } from 'next/font/google'
+
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
+import { WhatsAppButton } from '@/components/whatsapp-button'
+
 import './globals.css'
 
 const inter = Inter({
@@ -19,7 +22,8 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   title: {
-    default: 'UNASCO Aviation Limited | Air Cargo, Logistics & Aviation Services',
+    default:
+      'UNASCO Aviation Limited | Air Cargo, Logistics & Aviation Services',
     template: '%s | UNASCO Aviation Limited',
   },
   description:
@@ -47,11 +51,21 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${manrope.variable} bg-background`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${manrope.variable} bg-background`}
+    >
       <body className="font-sans antialiased">
         <SiteHeader />
-        <main className="flex min-h-screen flex-col">{children}</main>
+
+        <main className="flex min-h-screen flex-col">
+          {children}
+        </main>
+
         <SiteFooter />
+
+        <WhatsAppButton />
+
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
