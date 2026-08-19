@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import { Menu, Phone, X } from 'lucide-react'
+import { Menu, Phone, X, ChevronRight } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
 import { navLinks } from '@/lib/site'
@@ -18,6 +18,32 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet'
 
+/* =========================================================
+   CONTACT INFORMATION
+========================================================= */
+
+const contacts = {
+  ceo: {
+    label: 'CEO',
+    mobileLabel: 'Chief Executive Officer',
+    phone: '+966 556 011 122',
+    tel: 'tel:+966556011122',
+    description: 'Executive & Corporate Enquiries',
+  },
+
+  sales: {
+    label: 'Sales Manager',
+    mobileLabel: 'Sales Manager',
+    name: 'Hafiz Umar Ballah',
+    phone: '+234 806 333 2227',
+    tel: 'tel:+2348063332227',
+  },
+}
+
+/* =========================================================
+   SITE HEADER
+========================================================= */
+
 export function SiteHeader() {
   const pathname = usePathname()
   const isHome = pathname === '/'
@@ -25,36 +51,50 @@ export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
 
+  /* =======================================================
+     SCROLL DETECTION
+  ======================================================= */
+
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 30)
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 24)
     }
 
-    onScroll()
+    handleScroll()
 
-    window.addEventListener('scroll', onScroll, {
+    window.addEventListener('scroll', handleScroll, {
       passive: true,
     })
 
     return () => {
-      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('scroll', handleScroll)
     }
   }, [])
 
-  // Close mobile menu whenever route changes
+  /* =======================================================
+     CLOSE MOBILE MENU WHEN ROUTE CHANGES
+  ======================================================= */
+
   useEffect(() => {
     setOpen(false)
   }, [pathname])
 
-  /*
-   * Hajj & Umrah is temporarily hidden from the main navigation.
-   * The page/route can remain in the project and be added back later.
-   */
-  const visibleNavLinks = navLinks.filter(
-    (link) =>
-      !link.label.toLowerCase().includes('hajj') &&
-      !link.label.toLowerCase().includes('umrah')
-  )
+  /* =======================================================
+     HIDE HAJJ & UMRAH FROM NAVIGATION
+  ======================================================= */
+
+  const visibleNavLinks = navLinks.filter((link) => {
+    const label = link.label.toLowerCase()
+
+    return (
+      !label.includes('hajj') &&
+      !label.includes('umrah')
+    )
+  })
+
+  /* =======================================================
+     HEADER STATE
+  ======================================================= */
 
   const solid = scrolled || !isHome
   const inverted = !solid
@@ -62,31 +102,84 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        'fixed inset-x-0 top-0 z-[100] w-full transition-all duration-500',
+        'fixed inset-x-0 top-0 z-[100] w-full',
+        'transition-all duration-500 ease-out',
+
         solid
-          ? 'border-b border-slate-200/70 bg-white/95 shadow-xl backdrop-blur-2xl'
-          : 'bg-gradient-to-b from-black/70 via-black/30 to-transparent'
+          ? [
+              'border-b border-slate-200/80',
+              'bg-white/95',
+              'shadow-[0_4px_30px_rgba(15,23,42,0.08)]',
+              'backdrop-blur-2xl',
+            ]
+          : [
+              'bg-gradient-to-b',
+              'from-black/75',
+              'via-black/35',
+              'to-transparent',
+            ]
       )}
     >
-      <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-5 sm:px-6 lg:h-24">
 
-        {/* ========================================================= */}
-        {/* LOGO */}
-        {/* ========================================================= */}
+      {/* =====================================================
+          HEADER CONTAINER
+      ====================================================== */}
+
+      <div
+        className={cn(
+          'mx-auto flex w-full max-w-7xl items-center',
+          'justify-between',
+          'px-5 sm:px-6 lg:px-8',
+          'transition-all duration-500',
+
+          solid
+            ? 'h-[84px] lg:h-[92px]'
+            : 'h-[88px] lg:h-[96px]'
+        )}
+      >
+
+        {/* ===================================================
+            LOGO
+        ==================================================== */}
 
         <div className="relative z-[110] shrink-0">
-          <Logo inverted={inverted} />
+
+          <Logo
+            inverted={inverted}
+            className="transition-transform duration-300 hover:scale-[1.015]"
+          />
+
         </div>
 
-        {/* ========================================================= */}
-        {/* DESKTOP NAVIGATION */}
-        {/* ========================================================= */}
+        {/* ===================================================
+            DESKTOP NAVIGATION
+        ==================================================== */}
 
         <nav
-          className="hidden items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 backdrop-blur-xl lg:flex"
+          className={cn(
+            'hidden lg:flex',
+            'items-center gap-1.5',
+            'rounded-full',
+            'px-2 py-2',
+            'transition-all duration-500',
+
+            solid
+              ? [
+                  'border border-slate-200/80',
+                  'bg-slate-50/80',
+                  'shadow-sm',
+                ]
+              : [
+                  'border border-white/10',
+                  'bg-white/5',
+                  'backdrop-blur-xl',
+                ]
+          )}
           aria-label="Primary navigation"
         >
+
           {visibleNavLinks.map((link) => {
+
             const active =
               link.href === '/'
                 ? pathname === '/'
@@ -96,88 +189,216 @@ export function SiteHeader() {
               <Link
                 key={link.href}
                 href={link.href}
+                aria-current={active ? 'page' : undefined}
                 className={cn(
-                  'rounded-full px-5 py-2 text-sm font-semibold transition-all duration-300',
+                  'relative rounded-full',
+                  'px-5 py-2.5',
+                  'text-sm font-semibold',
+                  'transition-all duration-300',
+                  'whitespace-nowrap',
 
                   inverted
-                    ? 'text-white/80 hover:bg-white/10 hover:text-white'
-                    : 'text-slate-700 hover:bg-primary/10 hover:text-primary',
+                    ? [
+                        'text-white/80',
+                        'hover:bg-white/10',
+                        'hover:text-white',
+                      ]
+                    : [
+                        'text-slate-700',
+                        'hover:bg-primary/10',
+                        'hover:text-primary',
+                      ],
 
                   active &&
                     (inverted
-                      ? 'bg-white/15 text-white'
-                      : 'bg-primary text-white shadow-lg')
+                      ? [
+                          'bg-white/15',
+                          'text-white',
+                          'shadow-sm',
+                        ]
+                      : [
+                          'bg-primary',
+                          'text-white',
+                          'shadow-md',
+                        ])
                 )}
               >
                 {link.label}
               </Link>
             )
           })}
+
         </nav>
 
-        {/* ========================================================= */}
-        {/* DESKTOP RIGHT SIDE */}
-        {/* ========================================================= */}
+        {/* ===================================================
+            DESKTOP CONTACT AREA
+        ==================================================== */}
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-2 lg:flex">
 
-          {/* CEO */}
-
-          <a
-            href="tel:+966556011122"
-            className={cn(
-              'flex items-center gap-2 rounded-full px-3 py-2 transition-all',
-              'hover:bg-black/5',
-              inverted
-                ? 'text-white'
-                : 'text-slate-700'
-            )}
-          >
-            <Phone className="h-4 w-4 shrink-0 text-[#FF6B00]" />
-
-            <div className="leading-tight">
-              <p className="text-[10px] font-medium uppercase tracking-wide opacity-60">
-                CEO
-              </p>
-
-              <p className="text-sm font-semibold">
-                +966 556 011 122
-              </p>
-            </div>
-          </a>
-
-          {/* Sales Manager */}
+          {/* -------------------------------------------------
+              CEO
+          -------------------------------------------------- */}
 
           <a
-            href="tel:+2348063332227"
+            href={contacts.ceo.tel}
+            aria-label={`Call ${contacts.ceo.mobileLabel}`}
             className={cn(
-              'flex items-center gap-2 rounded-full px-3 py-2 transition-all',
-              'hover:bg-black/5',
+              'group flex items-center gap-2.5',
+              'rounded-full px-3 py-2',
+              'transition-all duration-300',
+
               inverted
-                ? 'text-white'
-                : 'text-slate-700'
+                ? [
+                    'text-white',
+                    'hover:bg-white/10',
+                  ]
+                : [
+                    'text-slate-700',
+                    'hover:bg-slate-100',
+                  ]
             )}
           >
-            <Phone className="h-4 w-4 shrink-0 text-[#FF6B00]" />
+
+            <div
+              className={cn(
+                'flex h-9 w-9 shrink-0 items-center justify-center',
+                'rounded-full',
+                'transition-all duration-300',
+
+                inverted
+                  ? 'bg-white/10 group-hover:bg-white/15'
+                  : 'bg-primary/10 group-hover:bg-primary/15'
+              )}
+            >
+              <Phone
+                className="h-4 w-4 text-[#FF6B00]"
+                strokeWidth={2.2}
+              />
+            </div>
 
             <div className="leading-tight">
-              <p className="text-[10px] font-medium uppercase tracking-wide opacity-60">
-                Sales Manager
+
+              <p
+                className={cn(
+                  'text-[9px] font-semibold uppercase',
+                  'tracking-[0.16em]',
+                  inverted
+                    ? 'text-white/50'
+                    : 'text-slate-400'
+                )}
+              >
+                {contacts.ceo.label}
               </p>
 
-              <p className="text-sm font-semibold">
-                +234 806 333 2227
+              <p className="mt-0.5 text-xs font-bold">
+                {contacts.ceo.phone}
               </p>
+
             </div>
+
           </a>
 
-          {/* Request Quote */}
+          {/* -------------------------------------------------
+              DIVIDER
+          -------------------------------------------------- */}
+
+          <div
+            className={cn(
+              'h-8 w-px',
+              inverted
+                ? 'bg-white/15'
+                : 'bg-slate-200'
+            )}
+            aria-hidden="true"
+          />
+
+          {/* -------------------------------------------------
+              SALES MANAGER
+          -------------------------------------------------- */}
+
+          <a
+            href={contacts.sales.tel}
+            aria-label={`Call ${contacts.sales.mobileLabel}`}
+            className={cn(
+              'group flex items-center gap-2.5',
+              'rounded-full px-3 py-2',
+              'transition-all duration-300',
+
+              inverted
+                ? [
+                    'text-white',
+                    'hover:bg-white/10',
+                  ]
+                : [
+                    'text-slate-700',
+                    'hover:bg-slate-100',
+                  ]
+            )}
+          >
+
+            <div
+              className={cn(
+                'flex h-9 w-9 shrink-0 items-center justify-center',
+                'rounded-full',
+                'transition-all duration-300',
+
+                inverted
+                  ? 'bg-white/10 group-hover:bg-white/15'
+                  : 'bg-primary/10 group-hover:bg-primary/15'
+              )}
+            >
+              <Phone
+                className="h-4 w-4 text-[#FF6B00]"
+                strokeWidth={2.2}
+              />
+            </div>
+
+            <div className="leading-tight">
+
+              <p
+                className={cn(
+                  'text-[9px] font-semibold uppercase',
+                  'tracking-[0.16em]',
+                  inverted
+                    ? 'text-white/50'
+                    : 'text-slate-400'
+                )}
+              >
+                {contacts.sales.label}
+              </p>
+
+              <p className="mt-0.5 text-xs font-bold">
+                {contacts.sales.phone}
+              </p>
+
+            </div>
+
+          </a>
+
+          {/* -------------------------------------------------
+              REQUEST QUOTE
+          -------------------------------------------------- */}
 
           <Link
             href="/contact"
             className={cn(
               buttonVariants(),
-              'ml-2 h-12 rounded-full bg-[#FF6B00] px-7 font-semibold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:bg-[#ff7d1f]'
+
+              'ml-2',
+              'h-12',
+              'rounded-full',
+              'bg-[#FF6B00]',
+              'px-7',
+              'font-semibold',
+              'text-white',
+              'shadow-lg',
+              'shadow-orange-500/20',
+              'transition-all duration-300',
+              'hover:-translate-y-0.5',
+              'hover:bg-[#ff7d1f]',
+              'hover:shadow-xl',
+              'hover:shadow-orange-500/25'
             )}
           >
             Request a Quote
@@ -185,9 +406,9 @@ export function SiteHeader() {
 
         </div>
 
-        {/* ========================================================= */}
-        {/* MOBILE MENU */}
-        {/* ========================================================= */}
+        {/* ===================================================
+            MOBILE MENU
+        ==================================================== */}
 
         <div className="relative z-[110] lg:hidden">
 
@@ -196,31 +417,52 @@ export function SiteHeader() {
             onOpenChange={setOpen}
           >
 
-            {/* ===================================================== */}
-            {/* MOBILE MENU BUTTON */}
-            {/* ===================================================== */}
+            {/* =================================================
+                MOBILE MENU TRIGGER
+            ================================================== */}
 
             <SheetTrigger
               render={
                 <Button
                   type="button"
-                  variant={inverted ? 'ghost' : 'outline'}
+                  variant="ghost"
                   size="icon"
-                  aria-label={open ? 'Close menu' : 'Open menu'}
+                  aria-label={
+                    open
+                      ? 'Close navigation menu'
+                      : 'Open navigation menu'
+                  }
                   aria-expanded={open}
                   className={cn(
-                    'relative z-[120] flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-0 p-0 shadow-none',
+                    'relative z-[120]',
+                    'flex h-11 w-11',
+                    'items-center justify-center',
+                    'rounded-full',
+                    'border-0',
+                    'p-0',
+                    'shadow-none',
                     'touch-manipulation',
-                    'cursor-pointer',
-                    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2',
+                    'transition-all duration-300',
 
                     inverted
-                      ? 'text-white hover:bg-white/10'
-                      : 'text-slate-900 hover:bg-slate-100'
+                      ? [
+                          'text-white',
+                          'hover:bg-white/10',
+                        ]
+                      : [
+                          'text-slate-900',
+                          'hover:bg-slate-100',
+                        ],
+
+                    'focus-visible:outline-none',
+                    'focus-visible:ring-2',
+                    'focus-visible:ring-primary',
+                    'focus-visible:ring-offset-2'
                   )}
                 />
               }
             >
+
               {open ? (
                 <X
                   className="pointer-events-none h-6 w-6"
@@ -232,146 +474,286 @@ export function SiteHeader() {
                   strokeWidth={2}
                 />
               )}
+
             </SheetTrigger>
 
-            {/* ===================================================== */}
-            {/* MOBILE SHEET */}
-            {/* ===================================================== */}
+            {/* =================================================
+                MOBILE SHEET
+            ================================================== */}
 
             <SheetContent
               side="right"
               className={cn(
-                'z-[200] flex h-full w-[88%] max-w-sm flex-col p-0',
-                'border-l border-slate-200 bg-white',
+                'z-[200]',
+                'flex h-full',
+                'w-[90%] max-w-sm',
+                'flex-col',
+                'border-l border-slate-200',
+                'bg-white',
+                'p-0',
                 'shadow-2xl'
               )}
             >
 
-              {/* =================================================== */}
-              {/* SHEET HEADER */}
-              {/* =================================================== */}
+              {/* =============================================
+                  MOBILE HEADER
+              ============================================== */}
 
-              <SheetHeader className="border-b border-slate-200 p-6">
+              <SheetHeader
+                className={cn(
+                  'border-b border-slate-200',
+                  'px-6 py-5'
+                )}
+              >
 
                 <SheetTitle className="text-left">
+
                   <Logo />
+
                 </SheetTitle>
 
               </SheetHeader>
 
-              {/* =================================================== */}
-              {/* MOBILE NAVIGATION */}
-              {/* =================================================== */}
+              {/* =============================================
+                  MOBILE NAVIGATION
+              ============================================== */}
 
               <nav
-                className="flex flex-1 flex-col gap-2 overflow-y-auto p-6"
+                className="flex flex-1 flex-col overflow-y-auto px-5 py-6"
                 aria-label="Mobile navigation"
               >
 
-                {visibleNavLinks.map((link) => {
-                  const active =
-                    link.href === '/'
-                      ? pathname === '/'
-                      : pathname.startsWith(link.href)
+                <div className="space-y-1.5">
 
-                  return (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      onClick={() => setOpen(false)}
-                      className={cn(
-                        'block w-full rounded-xl px-4 py-3 text-base font-semibold',
-                        'transition-colors duration-200',
-                        'touch-manipulation',
+                  {visibleNavLinks.map((link) => {
 
-                        active
-                          ? 'bg-primary text-white shadow-sm'
-                          : 'text-slate-700 hover:bg-slate-100 active:bg-slate-200'
-                      )}
-                    >
-                      {link.label}
-                    </Link>
-                  )
-                })}
+                    const active =
+                      link.href === '/'
+                        ? pathname === '/'
+                        : pathname.startsWith(link.href)
 
-                {/* ================================================= */}
-                {/* REQUEST QUOTE */}
-                {/* ================================================= */}
+                    return (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        onClick={() => setOpen(false)}
+                        aria-current={
+                          active
+                            ? 'page'
+                            : undefined
+                        }
+                        className={cn(
+                          'group flex w-full',
+                          'items-center justify-between',
+                          'rounded-xl',
+                          'px-4 py-3.5',
+                          'text-base font-semibold',
+                          'transition-all duration-200',
+                          'touch-manipulation',
+
+                          active
+                            ? [
+                                'bg-primary',
+                                'text-white',
+                                'shadow-md',
+                              ]
+                            : [
+                                'text-slate-700',
+                                'hover:bg-slate-100',
+                                'hover:text-primary',
+                                'active:bg-slate-200',
+                              ]
+                        )}
+                      >
+
+                        <span>
+                          {link.label}
+                        </span>
+
+                        <ChevronRight
+                          className={cn(
+                            'h-4 w-4',
+                            'transition-transform duration-200',
+
+                            active
+                              ? 'text-white/70'
+                              : [
+                                  'text-slate-300',
+                                  'group-hover:translate-x-1',
+                                  'group-hover:text-primary',
+                                ]
+                          )}
+                        />
+
+                      </Link>
+                    )
+                  })}
+
+                </div>
+
+                {/* ===========================================
+                    MOBILE REQUEST QUOTE
+                ============================================ */}
 
                 <Link
                   href="/contact"
                   onClick={() => setOpen(false)}
                   className={cn(
                     buttonVariants(),
-                    'mt-6 flex h-12 w-full items-center justify-center rounded-xl bg-[#FF6B00] font-semibold text-white shadow-lg hover:bg-[#ff7d1f]'
+
+                    'mt-7',
+                    'flex h-13 w-full',
+                    'items-center justify-center',
+                    'rounded-xl',
+                    'bg-[#FF6B00]',
+                    'font-semibold',
+                    'text-white',
+                    'shadow-lg',
+                    'transition-all duration-300',
+                    'hover:bg-[#ff7d1f]',
+                    'hover:shadow-xl'
                   )}
                 >
                   Request a Quote
                 </Link>
 
-                {/* ================================================= */}
-                {/* CONTACT INFORMATION */}
-                {/* ================================================= */}
+                {/* ===========================================
+                    MOBILE CONTACTS
+                ============================================ */}
 
-                <div className="mt-8 space-y-4">
+                <div className="mt-8">
 
-                  {/* CEO */}
+                  <div className="mb-4">
 
-                  <a
-                    href="tel:+966556011122"
-                    className="block rounded-2xl border border-slate-200 bg-slate-50 p-4 transition-all hover:border-primary/30 hover:bg-white hover:shadow-md active:bg-slate-100"
-                  >
-                    <div className="flex items-center gap-3">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">
+                      Direct Contact
+                    </p>
 
-                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                        <Phone className="h-5 w-5 text-[#FF6B00]" />
+                    <p className="mt-1 text-sm text-slate-500">
+                      Speak directly with our team
+                    </p>
+
+                  </div>
+
+                  <div className="space-y-3">
+
+                    {/* CEO */}
+
+                    <a
+                      href={contacts.ceo.tel}
+                      className={cn(
+                        'group block rounded-2xl',
+                        'border border-slate-200',
+                        'bg-slate-50',
+                        'p-4',
+                        'transition-all duration-300',
+                        'hover:border-primary/30',
+                        'hover:bg-white',
+                        'hover:shadow-md',
+                        'active:bg-slate-100'
+                      )}
+                    >
+
+                      <div className="flex items-center gap-3">
+
+                        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/15">
+
+                          <Phone
+                            className="h-5 w-5 text-[#FF6B00]"
+                            strokeWidth={2.2}
+                          />
+
+                        </div>
+
+                        <div className="min-w-0">
+
+                          <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-slate-400">
+                            {contacts.ceo.mobileLabel}
+                          </p>
+
+                          <p className="mt-1 font-bold text-primary">
+                            {contacts.ceo.phone}
+                          </p>
+
+                          <p className="mt-0.5 text-xs text-slate-500">
+                            {contacts.ceo.description}
+                          </p>
+
+                        </div>
+
                       </div>
 
-                      <div className="min-w-0">
-                        <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">
-                          Chief Executive Officer
-                        </p>
+                    </a>
 
-                        <p className="mt-1 font-bold text-primary">
-                          +966 556 011 122
-                        </p>
+                    {/* Sales Manager */}
 
-                        <p className="text-xs text-slate-500">
-                          Executive &amp; Corporate Enquiries
-                        </p>
+                    <a
+                      href={contacts.sales.tel}
+                      className={cn(
+                        'group block rounded-2xl',
+                        'border border-slate-200',
+                        'bg-slate-50',
+                        'p-4',
+                        'transition-all duration-300',
+                        'hover:border-primary/30',
+                        'hover:bg-white',
+                        'hover:shadow-md',
+                        'active:bg-slate-100'
+                      )}
+                    >
+
+                      <div className="flex items-center gap-3">
+
+                        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/15">
+
+                          <Phone
+                            className="h-5 w-5 text-[#FF6B00]"
+                            strokeWidth={2.2}
+                          />
+
+                        </div>
+
+                        <div className="min-w-0">
+
+                          <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-slate-400">
+                            {contacts.sales.mobileLabel}
+                          </p>
+
+                          <p className="mt-1 text-sm font-semibold text-slate-900">
+                            {contacts.sales.name}
+                          </p>
+
+                          <p className="mt-0.5 font-bold text-primary">
+                            {contacts.sales.phone}
+                          </p>
+
+                        </div>
+
                       </div>
 
-                    </div>
-                  </a>
+                    </a>
 
-                  {/* Sales Manager */}
+                  </div>
 
-                  <a
-                    href="tel:+2348063332227"
-                    className="block rounded-2xl border border-slate-200 bg-slate-50 p-4 transition-all hover:border-primary/30 hover:bg-white hover:shadow-md active:bg-slate-100"
-                  >
-                    <div className="flex items-center gap-3">
+                </div>
 
-                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                        <Phone className="h-5 w-5 text-[#FF6B00]" />
-                      </div>
+                {/* ===========================================
+                    MOBILE FOOTER BRANDING
+                ============================================ */}
 
-                      <div className="min-w-0">
-                        <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">
-                          Sales Manager
-                        </p>
+                <div className="mt-auto pt-8">
 
-                        <p className="mt-1 text-sm font-semibold text-slate-900">
-                          Hafiz Umar Ballah
-                        </p>
+                  <div className="border-t border-slate-200 pt-5">
 
-                        <p className="font-bold text-primary">
-                          +234 806 333 2227
-                        </p>
-                      </div>
+                    <p className="text-center text-[10px] font-medium uppercase tracking-[0.18em] text-slate-400">
+                      UNASCO Aviation Limited
+                    </p>
 
-                    </div>
-                  </a>
+                    <p className="mt-1 text-center text-xs text-slate-400">
+                      Aviation • Cargo • Logistics
+                    </p>
+
+                  </div>
 
                 </div>
 
