@@ -21,14 +21,7 @@ const news = [
     excerpt:
       'Our expanded facility now features automated tracking and digital dashboards for full supply-chain transparency.',
   },
-  {
-    image: '/news-hajj.png',
-    category: 'Travel',
-    date: 'June 12, 2026',
-    title: 'Hajj 2026 travel packages now open for early registration',
-    excerpt:
-      'Secure your pilgrimage journey with dedicated flights, visa support and guided ground logistics.',
-  },
+  
 ]
 
 export function LatestNews() {

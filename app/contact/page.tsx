@@ -14,7 +14,7 @@ import { ContactForm } from "@/components/contact-form";
 export const metadata: Metadata = {
   title: "Contact UNASCO Aviation Limited",
   description:
-    "Contact UNASCO Aviation Limited for Flight Support Services, Air Cargo Transportation, Logistics Solutions, Airline Management and Hajj & Umrah Operations.",
+    "Contact UNASCO Aviation Limited for Flight Support Services, Air Cargo Transportation, Logistics Solutions, Airline Management and  Operations.",
 };
 
 const details = [
@@ -108,7 +108,7 @@ export default function ContactPage() {
               Connect with the UNASCO Aviation team for professional
               assistance with Flight Support Services, Air Cargo
               Transportation, Logistics Solutions, Airline Management,
-              General Aviation Services and Hajj & Umrah Operations.
+              General Aviation Services and Cargo Operations.
             </p>
 
             {/* CONTACT DETAILS */}
@@ -177,7 +177,7 @@ export default function ContactPage() {
                 Professional Aviation Services, Flight Operations,
                 Airline Management, Air Cargo Transportation,
                 Logistics Solutions, General Aviation, Travel Management,
-                and Hajj & Umrah Operations.
+                and Cargo Operations.
               </p>
 
               {/* Quick Contact */}

@@ -31,9 +31,9 @@ const contacts = {
     description: 'Executive & Corporate Enquiries',
   },
 
-  sales: {
-    label: 'Sales Manager',
-    mobileLabel: 'Sales Manager',
+  seals: {
+    label: 'Seals Manager',
+    mobileLabel: 'Seals Manager',
     name: 'Hafiz Umar Ballah',
     phone: '+234 806 333 2227',
     tel: 'tel:+2348063332227',
@@ -314,12 +314,12 @@ export function SiteHeader() {
           />
 
           {/* -------------------------------------------------
-              SALES MANAGER
+              SEALS MANAGER
           -------------------------------------------------- */}
 
           <a
-            href={contacts.sales.tel}
-            aria-label={`Call ${contacts.sales.mobileLabel}`}
+            href={contacts.seals.tel}
+            aria-label={`Call ${contacts.seals.mobileLabel}`}
             className={cn(
               'group flex items-center gap-2.5',
               'rounded-full px-3 py-2',
@@ -365,11 +365,11 @@ export function SiteHeader() {
                     : 'text-slate-400'
                 )}
               >
-                {contacts.sales.label}
+                {contacts.seals.label}
               </p>
 
               <p className="mt-0.5 text-xs font-bold">
-                {contacts.sales.phone}
+                {contacts.seals.phone}
               </p>
 
             </div>
@@ -685,10 +685,10 @@ export function SiteHeader() {
 
                     </a>
 
-                    {/* Sales Manager */}
+                    {/* Seals Manager */}
 
                     <a
-                      href={contacts.sales.tel}
+                      href={contacts.seals.tel}
                       className={cn(
                         'group block rounded-2xl',
                         'border border-slate-200',
@@ -716,15 +716,15 @@ export function SiteHeader() {
                         <div className="min-w-0">
 
                           <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-slate-400">
-                            {contacts.sales.mobileLabel}
+                            {contacts.seals.mobileLabel}
                           </p>
 
                           <p className="mt-1 text-sm font-semibold text-slate-900">
-                            {contacts.sales.name}
+                            {contacts.seals.name}
                           </p>
 
                           <p className="mt-0.5 font-bold text-primary">
-                            {contacts.sales.phone}
+                            {contacts.seals.phone}
                           </p>
 
                         </div>

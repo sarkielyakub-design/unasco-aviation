@@ -38,12 +38,7 @@ const reasons = [
     description:
       "A team of experienced aviation professionals dedicated to delivering quality services with integrity, professionalism and customer satisfaction.",
   },
-  {
-    icon: Briefcase,
-    title: "Complete Travel Solutions",
-    description:
-      "From Hajj & Umrah operations to corporate travel, aviation support and cargo management, we provide end-to-end solutions under one trusted brand.",
-  },
+  
 ];
 
 export function WhyChooseUs() {

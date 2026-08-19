@@ -26,13 +26,14 @@ export function Logo({
         className="
           block
           h-auto
-          w-[190px]
+          w-[125px]
           object-contain
-          sm:w-[205px]
-          lg:w-[225px]
-          transition-transform
+          transition-all
           duration-300
-          group-hover:scale-[1.02]
+          ease-out
+          group-hover:scale-[1.03]
+          sm:w-[140px]
+          lg:w-[155px]
         "
       />
     </Link>

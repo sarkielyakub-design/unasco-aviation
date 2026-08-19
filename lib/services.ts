@@ -44,11 +44,5 @@ export const services: Service[] = [
       'Global customs clearance, documentation and multimodal forwarding handled end to end.',
     href: '/logistics',
   },
-  {
-    icon: MoonStar,
-    title: 'Hajj & Umrah',
-    description:
-      'Dedicated pilgrimage travel with flights, visa support, accommodation and guided logistics.',
-    href: '/hajj-umrah',
-  },
+  
 ]

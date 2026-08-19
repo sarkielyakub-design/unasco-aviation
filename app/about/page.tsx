@@ -62,12 +62,7 @@ const services = [
       "Professional aviation and air travel support tailored to the needs of individuals, organizations and corporate clients.",
     icon: Building2,
   },
-  {
-    title: "Hajj & Umrah Operations",
-    description:
-      "Aviation and travel support for Hajj and Umrah operations, with a focus on reliable coordination and passenger experience.",
-    icon: Users,
-  },
+ 
 ];
 
 /* =========================================================
@@ -80,7 +75,7 @@ const currentTeam = [
     role: "Managing Director / CEO",
     image: "/team/khaled-al-dini.jpg",
     description:
-      "Experienced aviation professional with extensive experience in airline operations, aviation management and Hajj & Umrah operations.",
+      "Experienced aviation professional with extensive experience in airline operations, aviation management.",
   },
   {
     name: "Mr. Hafiz Umar Ballah",
@@ -138,8 +133,7 @@ const strengths = [
   "Flight Support Services",
   "Air Cargo Transportation",
   "Airline Management",
-  "Travel & Tours",
-  "Hajj & Umrah Operations",
+ 
   "Strategic Industry Partnerships",
   "Customer Satisfaction",
 ];
@@ -154,7 +148,7 @@ export default function AboutPage() {
       <PageHero
         breadcrumb="About UNASCO"
         title="Connecting Aviation, Cargo, People & Possibilities"
-        subtitle="UNASCO Aviation Limited provides professional aviation, flight support, cargo, logistics, travel and Hajj & Umrah solutions through experienced leadership, strategic relationships and a commitment to operational excellence."
+        subtitle="UNASCO Aviation Limited provides professional aviation, flight support, cargo, logistics solutions through experienced leadership, strategic relationships and a commitment to operational excellence."
       />
 
       {/* =====================================================
@@ -231,8 +225,8 @@ export default function AboutPage() {
             <p className="mt-5 text-lg leading-8 text-muted-foreground">
               The company provides professional Flight Support Services,
               Flight Operations, Airline Management, Air Cargo Transportation,
-              General Aviation & Air Travel Services, Logistics Solutions and
-              Hajj & Umrah Operations.
+              General Aviation & Air Travel Services, Logistics Solution.
+             
             </p>
 
             {/* HEAD OFFICE */}
@@ -355,7 +349,7 @@ export default function AboutPage() {
                 <p>
                   His professional experience includes airline operations,
                   airport services, ground handling, charter aviation and
-                  Hajj & Umrah operations, with experience involving
+                  operations, with experience involving
                   organizations such as Saudi Arabian Airlines, Emirates
                   Airlines, Malaysian Airlines, Philippine Airlines,
                   National Air Services and Flynas.
@@ -400,7 +394,7 @@ export default function AboutPage() {
 
             <p className="mt-6 text-lg leading-8 text-muted-foreground">
               The experience behind UNASCO is supported by aviation
-              operations, aviation management, Hajj & Umrah operations and
+              operations, aviation management and
               commercial aviation experience.
             </p>
           </div>
@@ -429,11 +423,11 @@ export default function AboutPage() {
               </div>
 
               <h3 className="mt-6 text-2xl font-bold">
-                Hajj & Umrah Operations
+               Cargo services
               </h3>
 
               <p className="mt-4 leading-7 text-muted-foreground">
-                Professional experience supporting Hajj and Umrah travel
+                Professional experience supporting cargoo and service
                 operations and passenger ground-operation activities.
               </p>
             </div>
@@ -826,7 +820,7 @@ export default function AboutPage() {
 
               <p className="mt-5 leading-8 text-muted-foreground">
                 Our collaboration network supports aviation, airline,
-                cargo, travel, Hajj & Umrah and institutional relationships,
+                cargo, travel and institutional relationships,
                 helping us create stronger solutions and opportunities for
                 our customers and partners.
               </p>
@@ -836,7 +830,6 @@ export default function AboutPage() {
                   "Airline Relationships",
                   "Cargo Networks",
                   "Travel Partnerships",
-                  "Hajj & Umrah Networks",
                   "Government Relationships",
                   "International Connections",
                 ].map((item) => (

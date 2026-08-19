@@ -9,7 +9,7 @@ const highlights = [
   "Flight Operations & Airline Management",
   "Air Cargo Transportation",
   "General Aviation & Travel Services",
-  "Hajj & Umrah Operations",
+ 
   "Nationwide & International Logistics",
 ];
 
@@ -69,8 +69,7 @@ export function CompanyProfile() {
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
             UNASCO Aviation Limited is a Nigerian aviation company providing
             world-class aviation support, flight operations, airline
-            management, air cargo transportation, logistics solutions,
-            and Hajj & Umrah travel services.
+            management, air cargo transportation, logistics solutions.
           </p>
 
           <p className="mt-5 text-lg leading-8 text-muted-foreground">

@@ -27,14 +27,14 @@ export const metadata: Metadata = {
     template: '%s | UNASCO Aviation Limited',
   },
   description:
-    'UNASCO Aviation Limited delivers world-class air cargo, freight forwarding, logistics, aviation support and Hajj & Umrah services across global routes with reliability and precision.',
+    'UNASCO Aviation Limited delivers world-class air cargo, freight forwarding, logistics, aviation support and Cargo services across global routes with reliability and precision.',
   keywords: [
     'UNASCO Aviation',
     'air cargo',
     'freight forwarding',
     'logistics',
     'aviation services',
-    'Hajj and Umrah',
+   
     'cargo tracking',
   ],
   generator: 'v0.app',

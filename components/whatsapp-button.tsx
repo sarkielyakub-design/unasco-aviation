@@ -10,7 +10,7 @@ const contacts = [
     whatsapp: '966556011122',
   },
   {
-    name: 'Sales Manager',
+    name: 'Seals Manager',
     number: '+234 806 333 2227',
     whatsapp: '2348063332227',
   },

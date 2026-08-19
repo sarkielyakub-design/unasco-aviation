@@ -18,7 +18,7 @@ const services = [
   'Aviation Services',
   'Cargo Services',
   'Logistics',
-  'Hajj & Umrah',
+ 
   'General Enquiry',
 ]
 
