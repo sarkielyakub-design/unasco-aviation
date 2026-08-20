@@ -2,13 +2,19 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, PlaneTakeoff, ShieldCheck, Globe2 } from 'lucide-react'
+import {
+  ArrowRight,
+  PlaneTakeoff,
+  ShieldCheck,
+  Globe2,
+  MapPin,
+} from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { buttonVariants } from '@/components/ui/button'
 
 export function HomeHero() {
   return (
-    <section className="group relative flex min-h-screen items-center overflow-hidden bg-slate-950">
+    <section className="group relative flex min-h-screen items-center overflow-hidden bg-[#12080A]">
 
       {/* =========================================================
           BACKGROUND IMAGE
@@ -32,14 +38,33 @@ export function HomeHero() {
       />
 
       {/* =========================================================
-          PREMIUM OVERLAY
+          PREMIUM MAROON OVERLAY
       ========================================================== */}
 
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/75 to-slate-950/25" />
+      <div
+        className="
+          absolute inset-0
+          bg-gradient-to-r
+          from-[#12080A]/95
+          via-[#12080A]/75
+          to-[#12080A]/25
+        "
+      />
 
-      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/20" />
+      <div
+        className="
+          absolute inset-0
+          bg-gradient-to-t
+          from-[#12080A]/90
+          via-transparent
+          to-[#12080A]/20
+        "
+      />
 
-      {/* Subtle blue glow */}
+      {/* =========================================================
+          MAROON LIGHT EFFECT
+      ========================================================== */}
+
       <div
         aria-hidden="true"
         className="
@@ -50,9 +75,24 @@ export function HomeHero() {
           h-96
           w-96
           rounded-full
-          bg-primary/20
+          bg-[#7A2330]/30
           blur-[120px]
           animate-pulse
+        "
+      />
+
+      <div
+        aria-hidden="true"
+        className="
+          pointer-events-none
+          absolute
+          -right-32
+          bottom-10
+          h-80
+          w-80
+          rounded-full
+          bg-[#8F2B3A]/20
+          blur-[120px]
         "
       />
 
@@ -70,14 +110,13 @@ export function HomeHero() {
 
           <div
             className="
-              animate-[fadeInUp_0.8s_ease-out_both]
               inline-flex
               items-center
               gap-3
               rounded-full
               border
               border-white/20
-              bg-white/10
+              bg-black/20
               px-5
               py-2.5
               text-sm
@@ -85,6 +124,7 @@ export function HomeHero() {
               text-white
               shadow-2xl
               backdrop-blur-xl
+              animate-[fadeInUp_0.8s_ease-out_both]
             "
           >
 
@@ -98,24 +138,38 @@ export function HomeHero() {
                   w-full
                   animate-ping
                   rounded-full
-                  bg-orange-400
+                  bg-[#C9828D]
                   opacity-75
                 "
               />
 
-              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-orange-400" />
+              <span
+                className="
+                  relative
+                  inline-flex
+                  h-2.5
+                  w-2.5
+                  rounded-full
+                  bg-[#C9828D]
+                "
+              />
 
             </span>
 
-            <PlaneTakeoff className="h-4 w-4 text-orange-400" />
+            <PlaneTakeoff className="h-4 w-4 text-[#C9828D]" />
 
             <span>
-              Aviation <span className="mx-1 text-white/40">•</span>
-              Cargo <span className="mx-1 text-white/40">•</span>
+              Aviation
+              <span className="mx-1.5 text-white/30">•</span>
+              Cargo
+              <span className="mx-1.5 text-white/30">•</span>
               Logistics
+              <span className="mx-1.5 text-white/30">•</span>
+              Hajj & Umrah
             </span>
 
           </div>
+
 
           {/* =====================================================
               MAIN HEADING
@@ -135,39 +189,41 @@ export function HomeHero() {
               xl:text-[5.5rem]
             "
           >
-              Unasco Cargo
-            
+
+            UNASCO
+            <span className="text-[#C9828D]">
+              {' '}Aviation
+            </span>
 
             <br />
 
-            <span
-              className="
-                relative
-                inline-block
-                text-primary
-              "
-            >
-              To The World.
+            <span className="relative inline-block text-white">
+
+              Connecting
+              <span className="text-[#C9828D]">
+                {' '}People & Cargo
+              </span>
 
               {/* Animated underline */}
               <span
                 aria-hidden="true"
                 className="
                   absolute
-                  -bottom-2
+                  -bottom-3
                   left-0
                   h-1
-                  w-20
+                  w-24
                   origin-left
                   animate-[scaleIn_0.8s_0.8s_ease-out_both]
                   rounded-full
-                  bg-orange-400
+                  bg-[#C9828D]
                 "
               />
 
             </span>
 
           </h1>
+
 
           {/* =====================================================
               DESCRIPTION
@@ -184,11 +240,12 @@ export function HomeHero() {
               sm:text-lg
             "
           >
-            UNASCO Aviation Limited provides professional aviation support,
-            air cargo transportation, logistics solutions, flight operations
-            and airline management with safety, reliability and operational
-            excellence.
+            UNASCO Aviation Limited provides professional aviation
+            support, air cargo transportation, logistics solutions,
+            flight operations, airline management and Hajj & Umrah
+            travel services with safety, reliability and excellence.
           </p>
+
 
           {/* =====================================================
               BUTTONS
@@ -204,7 +261,7 @@ export function HomeHero() {
             "
           >
 
-            {/* Primary CTA */}
+            {/* Primary */}
 
             <Link
               href="/contact"
@@ -214,17 +271,17 @@ export function HomeHero() {
                   group/btn
                   h-14
                   rounded-xl
-                  bg-[#FF6B00]
+                  bg-[#7A2330]
                   px-7
                   text-base
                   font-semibold
                   text-white
-                  shadow-[0_15px_40px_rgba(255,107,0,0.25)]
+                  shadow-[0_15px_40px_rgba(122,35,48,0.30)]
                   transition-all
                   duration-300
                   hover:-translate-y-1
-                  hover:bg-[#ff7d1f]
-                  hover:shadow-[0_20px_50px_rgba(255,107,0,0.35)]
+                  hover:bg-[#8F2B3A]
+                  hover:shadow-[0_20px_50px_rgba(122,35,48,0.40)]
                 `
               )}
             >
@@ -244,7 +301,8 @@ export function HomeHero() {
 
             </Link>
 
-            {/* Secondary CTA */}
+
+            {/* Secondary */}
 
             <Link
               href="/cargo-services"
@@ -265,14 +323,15 @@ export function HomeHero() {
                   hover:-translate-y-1
                   hover:border-white
                   hover:bg-white
-                  hover:text-slate-950
+                  hover:text-[#12080A]
                 `
               )}
             >
-              Explore Cargo Services
+              Explore Our Services
             </Link>
 
           </div>
+
 
           {/* =====================================================
               TRUST FEATURES
@@ -282,32 +341,32 @@ export function HomeHero() {
             className="
               mt-12
               grid
-              max-w-2xl
+              max-w-3xl
               gap-4
-              sm:grid-cols-2
+              sm:grid-cols-3
               animate-[fadeInUp_0.9s_0.6s_ease-out_both]
             "
           >
 
-            {/* Feature 1 */}
+            {/* Aviation */}
 
             <div
               className="
                 group/feature
                 flex
                 items-center
-                gap-4
+                gap-3
                 rounded-2xl
                 border
                 border-white/10
-                bg-white/5
-                px-5
+                bg-black/20
+                px-4
                 py-4
                 backdrop-blur-md
                 transition-all
                 duration-500
                 hover:-translate-y-1
-                hover:border-primary/40
+                hover:border-[#7A2330]/60
                 hover:bg-white/10
               "
             >
@@ -315,18 +374,18 @@ export function HomeHero() {
               <div
                 className="
                   flex
-                  h-11
-                  w-11
+                  h-10
+                  w-10
                   shrink-0
                   items-center
                   justify-center
                   rounded-xl
-                  bg-primary/15
-                  text-primary
+                  bg-[#7A2330]/30
+                  text-[#C9828D]
                   transition-all
                   duration-500
                   group-hover/feature:scale-110
-                  group-hover/feature:bg-primary
+                  group-hover/feature:bg-[#7A2330]
                   group-hover/feature:text-white
                 "
               >
@@ -339,7 +398,7 @@ export function HomeHero() {
                   Safe & Reliable
                 </p>
 
-                <p className="mt-0.5 text-xs text-white/50">
+                <p className="mt-0.5 text-xs text-white/45">
                   Professional Operations
                 </p>
 
@@ -347,25 +406,26 @@ export function HomeHero() {
 
             </div>
 
-            {/* Feature 2 */}
+
+            {/* Global */}
 
             <div
               className="
                 group/feature
                 flex
                 items-center
-                gap-4
+                gap-3
                 rounded-2xl
                 border
                 border-white/10
-                bg-white/5
-                px-5
+                bg-black/20
+                px-4
                 py-4
                 backdrop-blur-md
                 transition-all
                 duration-500
                 hover:-translate-y-1
-                hover:border-primary/40
+                hover:border-[#7A2330]/60
                 hover:bg-white/10
               "
             >
@@ -373,18 +433,18 @@ export function HomeHero() {
               <div
                 className="
                   flex
-                  h-11
-                  w-11
+                  h-10
+                  w-10
                   shrink-0
                   items-center
                   justify-center
                   rounded-xl
-                  bg-primary/15
-                  text-primary
+                  bg-[#7A2330]/30
+                  text-[#C9828D]
                   transition-all
                   duration-500
                   group-hover/feature:scale-110
-                  group-hover/feature:bg-primary
+                  group-hover/feature:bg-[#7A2330]
                   group-hover/feature:text-white
                 "
               >
@@ -394,11 +454,70 @@ export function HomeHero() {
               <div>
 
                 <p className="text-sm font-semibold text-white">
-                  International Network
+                  Global Network
                 </p>
 
-                <p className="mt-0.5 text-xs text-white/50">
-                  China • Nigeria • Global
+                <p className="mt-0.5 text-xs text-white/45">
+                  Africa • Asia • Global
+                </p>
+
+              </div>
+
+            </div>
+
+
+            {/* Hajj & Umrah */}
+
+            <div
+              className="
+                group/feature
+                flex
+                items-center
+                gap-3
+                rounded-2xl
+                border
+                border-white/10
+                bg-black/20
+                px-4
+                py-4
+                backdrop-blur-md
+                transition-all
+                duration-500
+                hover:-translate-y-1
+                hover:border-[#7A2330]/60
+                hover:bg-white/10
+              "
+            >
+
+              <div
+                className="
+                  flex
+                  h-10
+                  w-10
+                  shrink-0
+                  items-center
+                  justify-center
+                  rounded-xl
+                  bg-[#7A2330]/30
+                  text-[#C9828D]
+                  transition-all
+                  duration-500
+                  group-hover/feature:scale-110
+                  group-hover/feature:bg-[#7A2330]
+                  group-hover/feature:text-white
+                "
+              >
+               <MapPin className="h-5 w-5" />
+              </div>
+
+              <div>
+
+                <p className="text-sm font-semibold text-white">
+                  Hajj & Umrah
+                </p>
+
+                <p className="mt-0.5 text-xs text-white/45">
+                  Makkah • Madinah
                 </p>
 
               </div>
@@ -410,6 +529,7 @@ export function HomeHero() {
         </div>
 
       </div>
+
 
       {/* =========================================================
           BOTTOM SCROLL INDICATOR
@@ -449,7 +569,7 @@ export function HomeHero() {
               h-1/2
               w-full
               animate-[scrollLine_1.8s_ease-in-out_infinite]
-              bg-white
+              bg-[#C9828D]
             "
           />
 

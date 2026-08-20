@@ -5,17 +5,26 @@
 @custom-variant dark (&:is(.dark *));
 
 /* =======================================================
-   UNASCO AVIATION DESIGN SYSTEM
-   Production Ready Theme
+   UNASCO AVIATION
+   PREMIUM CORPORATE DESIGN SYSTEM
+   Colors:
+   Maroon • Black • Grey • White
 ======================================================= */
 
 @theme inline {
 
-  /* Fonts */
+  /* =====================================================
+     FONTS
+  ===================================================== */
+
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
 
-  /* Core Colors */
+
+  /* =====================================================
+     CORE COLORS
+  ===================================================== */
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
@@ -43,7 +52,10 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  /* Charts */
+
+  /* =====================================================
+     CHARTS
+  ===================================================== */
 
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
@@ -51,7 +63,10 @@
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
 
-  /* Sidebar */
+
+  /* =====================================================
+     SIDEBAR
+  ===================================================== */
 
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
@@ -65,176 +80,191 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  /* Radius */
 
-  --radius-sm: calc(var(--radius) * .6);
-  --radius-md: calc(var(--radius) * .8);
+  /* =====================================================
+     RADIUS
+  ===================================================== */
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) * 1.4);
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
-
 }
+
+
+/* =======================================================
+   LIGHT MODE
+======================================================= */
+
 :root {
 
   color-scheme: light;
 
-  /* ==============================
-     Background Colors
-  ============================== */
+  /* =====================================================
+     BACKGROUND
+  ===================================================== */
 
-  --background: #F8FBFF;
-  --foreground: #10213B;
+  --background: #ffffff;
+  --foreground: #151515;
 
-  --card: #FFFFFF;
-  --card-foreground: #10213B;
+  --card: #ffffff;
+  --card-foreground: #151515;
 
-  --popover: #FFFFFF;
-  --popover-foreground: #10213B;
+  --popover: #ffffff;
+  --popover-foreground: #151515;
 
-  /* ==============================
-     Brand Colors
-  ============================== */
 
-  /* Navy Blue */
-  --primary: #0A2E6F;
-  --primary-foreground: #FFFFFF;
+  /* =====================================================
+     BRAND
+  ===================================================== */
 
-  /* Soft Blue */
-  --secondary: #EEF6FF;
-  --secondary-foreground: #12356F;
+  /* Main UNASCO Maroon */
+  --primary: #6B1F2A;
+  --primary-foreground: #ffffff;
 
-  /* Orange */
-  --accent: #FF6B00;
-  --accent-foreground: #FFFFFF;
+  /* Soft Grey */
+  --secondary: #F1F1F1;
+  --secondary-foreground: #262626;
 
-  /* ==============================
-     UI Colors
-  ============================== */
+  /* Deep Maroon Accent */
+  --accent: #8B2635;
+  --accent-foreground: #ffffff;
 
-  --muted: #F4F8FD;
-  --muted-foreground: #64748B;
 
-  --destructive: #DC2626;
+  /* =====================================================
+     UI
+  ===================================================== */
 
-  --border: #D9E7F5;
-  --input: #D9E7F5;
+  --muted: #F5F5F5;
+  --muted-foreground: #666666;
 
-  --ring: #0A2E6F;
+  --destructive: #991B1B;
 
-  /* ==============================
-     Charts
-  ============================== */
+  --border: #E2E2E2;
+  --input: #D6D6D6;
 
-  --chart-1: #0A2E6F;
-  --chart-2: #FF6B00;
-  --chart-3: #2563EB;
-  --chart-4: #60A5FA;
-  --chart-5: #BFDBFE;
+  --ring: #6B1F2A;
 
-  /* ==============================
-     Border Radius
-  ============================== */
+
+  /* =====================================================
+     CHARTS
+  ===================================================== */
+
+  --chart-1: #6B1F2A;
+  --chart-2: #8B2635;
+  --chart-3: #4B5563;
+  --chart-4: #737373;
+  --chart-5: #171717;
+
+
+  /* =====================================================
+     RADIUS
+  ===================================================== */
 
   --radius: 1rem;
 
-  /* ==============================
-     Sidebar
-  ============================== */
 
-  --sidebar: #0A2E6F;
+  /* =====================================================
+     SIDEBAR
+  ===================================================== */
 
-  --sidebar-foreground: #FFFFFF;
+  --sidebar: #111111;
+  --sidebar-foreground: #ffffff;
 
-  --sidebar-primary: #FF6B00;
+  --sidebar-primary: #8B2635;
+  --sidebar-primary-foreground: #ffffff;
 
-  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #292929;
+  --sidebar-accent-foreground: #ffffff;
 
-  --sidebar-accent: #123E88;
-
-  --sidebar-accent-foreground: #FFFFFF;
-
-  --sidebar-border: #214B97;
-
-  --sidebar-ring: #FF6B00;
-
+  --sidebar-border: #383838;
+  --sidebar-ring: #8B2635;
 }
+
+
+/* =======================================================
+   DARK MODE
+======================================================= */
+
 .dark {
 
   color-scheme: dark;
 
-  /* ==============================
-     Background
-  ============================== */
+  /* =====================================================
+     BACKGROUND
+  ===================================================== */
 
-  --background: #071427;
-  --foreground: #F8FAFC;
+  --background: #0D0D0D;
+  --foreground: #F7F7F7;
 
-  --card: #0E203D;
-  --card-foreground: #F8FAFC;
+  --card: #171717;
+  --card-foreground: #F7F7F7;
 
-  --popover: #0E203D;
-  --popover-foreground: #F8FAFC;
+  --popover: #171717;
+  --popover-foreground: #F7F7F7;
 
-  /* ==============================
-     Brand Colors
-  ============================== */
 
-  --primary: #FF7A1A;
-  --primary-foreground: #FFFFFF;
+  /* =====================================================
+     BRAND
+  ===================================================== */
 
-  --secondary: #12315E;
-  --secondary-foreground: #FFFFFF;
+  --primary: #8B2635;
+  --primary-foreground: #ffffff;
 
-  --accent: #1C4FA3;
-  --accent-foreground: #FFFFFF;
+  --secondary: #262626;
+  --secondary-foreground: #F5F5F5;
 
-  /* ==============================
-     UI Colors
-  ============================== */
+  --accent: #A83246;
+  --accent-foreground: #ffffff;
 
-  --muted: #152844;
-  --muted-foreground: #CBD5E1;
 
-  --destructive: #EF4444;
+  /* =====================================================
+     UI
+  ===================================================== */
 
-  --border: #24456E;
-  --input: #24456E;
+  --muted: #1F1F1F;
+  --muted-foreground: #B3B3B3;
 
-  --ring: #FF7A1A;
+  --destructive: #DC2626;
 
-  /* ==============================
-     Charts
-  ============================== */
+  --border: #333333;
+  --input: #404040;
 
-  --chart-1: #FF7A1A;
-  --chart-2: #0A2E6F;
-  --chart-3: #3B82F6;
-  --chart-4: #60A5FA;
+  --ring: #A83246;
+
+
+  /* =====================================================
+     CHARTS
+  ===================================================== */
+
+  --chart-1: #A83246;
+  --chart-2: #8B2635;
+  --chart-3: #737373;
+  --chart-4: #A3A3A3;
   --chart-5: #FFFFFF;
 
-  /* ==============================
-     Sidebar
-  ============================== */
 
-  --sidebar: #071427;
+  /* =====================================================
+     SIDEBAR
+  ===================================================== */
 
-  --sidebar-foreground: #FFFFFF;
+  --sidebar: #090909;
+  --sidebar-foreground: #ffffff;
 
-  --sidebar-primary: #FF7A1A;
+  --sidebar-primary: #A83246;
+  --sidebar-primary-foreground: #ffffff;
 
-  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #242424;
+  --sidebar-accent-foreground: #ffffff;
 
-  --sidebar-accent: #163E85;
-
-  --sidebar-accent-foreground: #FFFFFF;
-
-  --sidebar-border: #24456E;
-
-  --sidebar-ring: #FF7A1A;
-
+  --sidebar-border: #333333;
+  --sidebar-ring: #A83246;
 }
+
+
 /* =======================================================
    BASE STYLES
 ======================================================= */
@@ -246,9 +276,7 @@
   }
 
   html {
-
     scroll-behavior: smooth;
-
   }
 
   body {
@@ -258,7 +286,6 @@
     font-family: var(--font-sans);
 
     -webkit-font-smoothing: antialiased;
-
     -moz-osx-font-smoothing: grayscale;
 
     text-rendering: optimizeLegibility;
@@ -267,34 +294,33 @@
 
     min-height: 100vh;
 
+    /* Premium white / grey background */
     background:
 
       radial-gradient(
-        circle at top left,
-        rgba(11,46,109,.08),
-        transparent 35%
-      ),
-
-      radial-gradient(
-        circle at top right,
-        rgba(255,107,0,.08),
+        circle at 0% 0%,
+        rgba(107, 31, 42, 0.045),
         transparent 30%
       ),
 
       radial-gradient(
-        circle at bottom left,
-        rgba(37,99,235,.05),
+        circle at 100% 10%,
+        rgba(0, 0, 0, 0.035),
         transparent 30%
       ),
 
       linear-gradient(
         180deg,
         #ffffff 0%,
-        #f5f9ff 45%,
-        #eef6ff 100%
+        #fafafa 50%,
+        #f1f1f1 100%
       );
-
   }
+
+
+  /* =====================================================
+     HEADINGS
+  ===================================================== */
 
   h1,
   h2,
@@ -309,112 +335,192 @@
 
     font-weight: 700;
 
-    letter-spacing: -.03em;
+    letter-spacing: -0.035em;
 
-    line-height: 1.15;
-
+    line-height: 1.12;
   }
+
+
+  /* =====================================================
+     PARAGRAPHS
+  ===================================================== */
 
   p {
 
     color: var(--muted-foreground);
 
     line-height: 1.8;
-
   }
+
+
+  /* =====================================================
+     LINKS
+  ===================================================== */
 
   a {
 
-    transition: all .3s ease;
+    transition:
 
+      color 0.3s ease,
+      background-color 0.3s ease,
+      border-color 0.3s ease,
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
   }
+
+
+  /* =====================================================
+     IMAGES
+  ===================================================== */
 
   img {
 
     user-select: none;
 
     -webkit-user-drag: none;
-
   }
+
+
+  /* =====================================================
+     SELECTION
+  ===================================================== */
 
   ::selection {
 
     background: var(--primary);
 
-    color: white;
-
+    color: #ffffff;
   }
+
+
+  /* =====================================================
+     SCROLLBAR
+  ===================================================== */
 
   ::-webkit-scrollbar {
 
-    width: 10px;
-
-    height: 10px;
-
+    width: 9px;
+    height: 9px;
   }
 
   ::-webkit-scrollbar-track {
 
-    background: #edf4fb;
-
+    background: #EDEDED;
   }
 
   ::-webkit-scrollbar-thumb {
 
-    background: linear-gradient(
-      180deg,
-      var(--primary),
-      var(--accent)
-    );
+    background:
+
+      linear-gradient(
+        180deg,
+        #6B1F2A,
+        #8B2635
+      );
 
     border-radius: 999px;
-
   }
 
   ::-webkit-scrollbar-thumb:hover {
 
-    background: var(--primary);
-
+    background: #4A141D;
   }
-
 }
+
+
+/* =======================================================
+   CUSTOM UTILITIES
+======================================================= */
+
 @layer utilities {
 
+
+  /* =====================================================
+     CONTAINER
+  ===================================================== */
+
   .container-custom {
+
     @apply mx-auto max-w-7xl px-6 lg:px-8;
   }
 
+
+  /* =====================================================
+     SECTIONS
+  ===================================================== */
+
   .section {
+
     @apply py-24 lg:py-32;
   }
 
   .section-sm {
+
     @apply py-16 lg:py-20;
   }
 
+
+  /* =====================================================
+     PREMIUM GLASS
+  ===================================================== */
+
   .glass {
-    background: rgba(255,255,255,.7);
-    backdrop-filter: blur(18px);
-    border: 1px solid rgba(255,255,255,.5);
+
+    background: rgba(255, 255, 255, 0.78);
+
+    backdrop-filter: blur(20px);
+
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.65);
+
+    box-shadow:
+
+      0 20px 50px rgba(0, 0, 0, 0.08);
   }
+
 
   .glass-dark {
-    background: rgba(10,46,111,.08);
-    backdrop-filter: blur(18px);
+
+    background: rgba(15, 15, 15, 0.72);
+
+    backdrop-filter: blur(20px);
+
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
+
+  /* =====================================================
+     PREMIUM CARD
+  ===================================================== */
+
   .card-hover {
-    transition: .35s ease;
+
+    transition:
+
+      transform 0.5s cubic-bezier(.2,.8,.2,1),
+      box-shadow 0.5s ease,
+      border-color 0.4s ease;
   }
+
 
   .card-hover:hover {
 
     transform: translateY(-10px);
 
-    box-shadow:
-      0 30px 60px rgba(11,46,109,.12);
+    border-color: rgba(107, 31, 42, 0.35);
 
+    box-shadow:
+
+      0 25px 60px rgba(0, 0, 0, 0.12);
   }
+
+
+  /* =====================================================
+     HERO OVERLAY
+  ===================================================== */
 
   .hero-overlay {
 
@@ -422,97 +528,568 @@
 
       linear-gradient(
         90deg,
-        rgba(8,25,61,.90),
-        rgba(8,25,61,.55),
-        rgba(8,25,61,.20)
+        rgba(0, 0, 0, 0.88) 0%,
+        rgba(0, 0, 0, 0.68) 42%,
+        rgba(0, 0, 0, 0.30) 75%,
+        rgba(0, 0, 0, 0.12) 100%
       );
-
   }
+
+
+  /* =====================================================
+     MAROON GRADIENT
+  ===================================================== */
 
   .text-gradient {
 
-    background: linear-gradient(
-      90deg,
-      var(--primary),
-      var(--accent)
-    );
+    background:
+
+      linear-gradient(
+        90deg,
+        #6B1F2A,
+        #A83246
+      );
 
     -webkit-background-clip: text;
+    background-clip: text;
 
     -webkit-text-fill-color: transparent;
-
   }
+
+
+  /* =====================================================
+     PREMIUM BUTTON
+  ===================================================== */
 
   .button-gradient {
 
     background:
 
       linear-gradient(
-        90deg,
-        var(--primary),
-        #144ba5
+        135deg,
+        #5A1722,
+        #6B1F2A 50%,
+        #8B2635
       );
 
-    color: white;
+    color: #ffffff;
 
+    box-shadow:
+
+      0 10px 30px rgba(107, 31, 42, 0.22);
+
+    transition:
+
+      transform 0.3s ease,
+      box-shadow 0.3s ease,
+      background 0.3s ease;
   }
+
 
   .button-gradient:hover {
 
     background:
 
       linear-gradient(
-        90deg,
-        #08265c,
-        var(--primary)
+        135deg,
+        #4A141D,
+        #6B1F2A,
+        #7D2030
       );
 
-  }
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(-2px);
+
+    box-shadow:
+
+      0 15px 35px rgba(107, 31, 42, 0.30);
   }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  /* =====================================================
+     MAROON GLOW
+  ===================================================== */
+
+  .maroon-glow {
+
+    box-shadow:
+
+      0 0 0 1px rgba(107, 31, 42, 0.08),
+      0 20px 60px rgba(107, 31, 42, 0.14);
+  }
+
+
+  /* =====================================================
+     PREMIUM BORDER
+  ===================================================== */
+
+  .border-premium {
+
+    border: 1px solid rgba(107, 31, 42, 0.16);
+  }
+
+
+  /* =====================================================
+     ANIMATIONS
+  ===================================================== */
+
+  .animate-fade-in {
+
+    animation:
+
+      fadeIn 0.8s cubic-bezier(.2,.8,.2,1) both;
+  }
+
+
+  .animate-fade-up {
+
+    animation:
+
+      fadeInUp 0.9s cubic-bezier(.2,.8,.2,1) both;
+  }
+
+
+  .animate-fade-down {
+
+    animation:
+
+      fadeInDown 0.9s cubic-bezier(.2,.8,.2,1) both;
+  }
+
+
+  .animate-scale-in {
+
+    animation:
+
+      scaleIn 0.8s cubic-bezier(.2,.8,.2,1) both;
+  }
+
+
+  .animate-slide-left {
+
+    animation:
+
+      slideInLeft 0.9s cubic-bezier(.2,.8,.2,1) both;
+  }
+
+
+  .animate-slide-right {
+
+    animation:
+
+      slideInRight 0.9s cubic-bezier(.2,.8,.2,1) both;
+  }
+
+
+  .animate-float {
+
+    animation:
+
+      floating 5s ease-in-out infinite;
+  }
+
+
+  .animate-pulse-soft {
+
+    animation:
+
+      pulseSoft 3s ease-in-out infinite;
+  }
+
+
+  .animate-shine {
+
+    position: relative;
+
+    overflow: hidden;
+  }
+
+
+  .animate-shine::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    transform: translateX(-120%);
+
+    background:
+
+      linear-gradient(
+        100deg,
+        transparent 20%,
+        rgba(255,255,255,.18) 50%,
+        transparent 80%
+      );
+
+    animation:
+
+      shine 4s ease-in-out infinite;
+  }
+
+
+  /* =====================================================
+     STAGGER HELPERS
+  ===================================================== */
+
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .delay-500 {
+    animation-delay: 500ms;
+  }
+
+  .delay-600 {
+    animation-delay: 600ms;
+  }
+
+  .delay-700 {
+    animation-delay: 700ms;
+  }
+
+
+  /* =====================================================
+     REDUCED MOTION
+  ===================================================== */
+
+  @media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+      animation-duration: 0.01ms !important;
+
+      animation-iteration-count: 1 !important;
+
+      scroll-behavior: auto !important;
+
+      transition-duration: 0.01ms !important;
+    }
   }
 }
+
+
+/* =======================================================
+   KEYFRAMES
+======================================================= */
+
+
+/* Fade */
 
 @keyframes fadeIn {
+
   from {
+
     opacity: 0;
   }
 
   to {
+
     opacity: 1;
   }
 }
+
+
+/* Fade Up */
+
+@keyframes fadeInUp {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translate3d(0, 35px, 0);
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translate3d(0, 0, 0);
+  }
+}
+
+
+/* Fade Down */
+
+@keyframes fadeInDown {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translate3d(0, -35px, 0);
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translate3d(0, 0, 0);
+  }
+}
+
+
+/* Scale */
 
 @keyframes scaleIn {
+
   from {
+
     opacity: 0;
-    transform: scaleX(0);
+
+    transform:
+      scale(0.92);
   }
 
   to {
+
     opacity: 1;
-    transform: scaleX(1);
+
+    transform:
+      scale(1);
   }
 }
 
-@keyframes scrollLine {
-  0% {
-    transform: translateY(-100%);
+
+/* Slide Left */
+
+@keyframes slideInLeft {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translate3d(-60px, 0, 0);
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translate3d(0, 0, 0);
+  }
+}
+
+
+/* Slide Right */
+
+@keyframes slideInRight {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translate3d(60px, 0, 0);
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translate3d(0, 0, 0);
+  }
+}
+
+
+/* Floating */
+
+@keyframes floating {
+
+  0%,
+  100% {
+
+    transform:
+      translateY(0);
   }
 
   50% {
-    transform: translateY(100%);
+
+    transform:
+      translateY(-10px);
+  }
+}
+
+
+/* Soft Pulse */
+
+@keyframes pulseSoft {
+
+  0%,
+  100% {
+
+    transform:
+      scale(1);
+
+    opacity: 1;
+  }
+
+  50% {
+
+    transform:
+      scale(1.035);
+
+    opacity: 0.88;
+  }
+}
+
+
+/* Shine */
+
+@keyframes shine {
+
+  0% {
+
+    transform:
+      translateX(-120%);
+  }
+
+  45%,
+  100% {
+
+    transform:
+      translateX(120%);
+  }
+}
+
+
+/* =======================================================
+   PREMIUM MAROON LINE ANIMATION
+======================================================= */
+
+@keyframes maroonLine {
+
+  0% {
+
+    transform:
+      scaleX(0);
+
+    transform-origin: left;
+  }
+
+  50% {
+
+    transform:
+      scaleX(1);
+
+    transform-origin: left;
+  }
+
+  51% {
+
+    transform-origin: right;
   }
 
   100% {
-    transform: translateY(200%);
+
+    transform:
+      scaleX(0);
+
+    transform-origin: right;
   }
 }
+
+
+.animate-maroon-line {
+
+  animation:
+
+    maroonLine 3s ease-in-out infinite;
+}
+
+
+/* =======================================================
+   AIRCRAFT / HERO MOTION
+======================================================= */
+
+@keyframes aircraftDrift {
+
+  0% {
+
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+  }
+
+  50% {
+
+    transform:
+      translate3d(-12px, -6px, 0)
+      scale(1.025);
+  }
+
+  100% {
+
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+  }
+}
+
+
+.animate-aircraft {
+
+  animation:
+
+    aircraftDrift 12s ease-in-out infinite;
+}
+
+
+/* =======================================================
+   BACKGROUND MOTION
+======================================================= */
+
+@keyframes backgroundMove {
+
+  0% {
+
+    background-position:
+      0% 50%;
+  }
+
+  50% {
+
+    background-position:
+      100% 50%;
+  }
+
+  100% {
+
+    background-position:
+      0% 50%;
+  }
+}
+
+
+.animate-background {
+
+  background-size:
+    200% 200%;
+
+  animation:
+
+    backgroundMove 12s ease infinite;
 }

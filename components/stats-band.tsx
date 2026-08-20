@@ -5,7 +5,7 @@ import { MapPin, Package, ShieldCheck, Trophy } from 'lucide-react'
 
 const stats = [
   {
-    value: 2,
+    value: 0,
     suffix: '+',
     label: 'Years of Operations',
     icon: Trophy,
