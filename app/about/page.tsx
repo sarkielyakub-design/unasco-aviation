@@ -28,6 +28,15 @@ export const metadata: Metadata = {
 };
 
 /* =========================================================
+   BRAND COLORS
+========================================================= */
+
+const MAROON = "#561923";
+const MAROON_LIGHT = "#7A2330";
+const MAROON_SOFT = "#C9828D";
+const MAROON_DARK = "#3D1118";
+
+/* =========================================================
    CORE SERVICES
 ========================================================= */
 
@@ -62,7 +71,6 @@ const services = [
       "Professional aviation and air travel support tailored to the needs of individuals, organizations and corporate clients.",
     icon: Building2,
   },
- 
 ];
 
 /* =========================================================
@@ -75,7 +83,7 @@ const currentTeam = [
     role: "Managing Director / CEO",
     image: "/team/khaled-al-dini.jpg",
     description:
-      "Experienced aviation professional with extensive experience in airline operations, aviation management.",
+      "Experienced aviation professional with extensive experience in airline operations and aviation management.",
   },
   {
     name: "Mr. Hafiz Umar Ballah",
@@ -85,18 +93,18 @@ const currentTeam = [
       "Responsible for commercial development, marketing, customer relationships and strategic business growth.",
   },
   {
-    name: "Alhaji Bagudu M. Shafiyi",
-    role: "Director, Cargo Operations",
-    image: "/team/bagudu-shafiyi.jpg",
-    description:
-      "Provides leadership and direction across UNASCO's cargo operations and logistics activities.",
-  },
-  {
     name: "Mr. Usman K. Kudi",
     role: "Cargo Operations",
     image: "/team/usman-k-kudi.jpg",
     description:
       "Supports cargo coordination, operational activities and the efficient handling and movement of cargo.",
+  },
+  {
+    name: "Mr. William",
+    role: "Station Manager",
+    image: "/team/william.jpg",
+    description:
+      "Responsible for station coordination, operational activities and ensuring efficient day-to-day aviation and cargo support.",
   },
 ];
 
@@ -133,7 +141,6 @@ const strengths = [
   "Flight Support Services",
   "Air Cargo Transportation",
   "Airline Management",
- 
   "Strategic Industry Partnerships",
   "Customer Satisfaction",
 ];
@@ -147,8 +154,8 @@ export default function AboutPage() {
 
       <PageHero
         breadcrumb="About UNASCO"
-        title="Connecting Aviation, Cargo, People & Possibilities"
-        subtitle="UNASCO Aviation Limited provides professional aviation, flight support, cargo, logistics solutions through experienced leadership, strategic relationships and a commitment to operational excellence."
+        title="Built for Aviation. Driven by Excellence."
+        subtitle="UNASCO Aviation Limited provides professional aviation, flight support, cargo and logistics solutions through experienced leadership, strategic relationships and a commitment to operational excellence."
       />
 
       {/* =====================================================
@@ -156,12 +163,17 @@ export default function AboutPage() {
       ====================================================== */}
 
       <section className="relative overflow-hidden bg-white py-24 lg:py-32">
-        <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
+        <div
+          className="absolute left-0 top-0 h-96 w-96 rounded-full blur-3xl"
+          style={{ backgroundColor: `${MAROON}0D` }}
+        />
 
-        <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-orange-200/20 blur-3xl" />
+        <div
+          className="absolute bottom-0 right-0 h-96 w-96 rounded-full blur-3xl"
+          style={{ backgroundColor: `${MAROON_SOFT}26` }}
+        />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2">
-
           {/* IMAGE */}
 
           <div className="relative">
@@ -180,7 +192,13 @@ export default function AboutPage() {
 
             <div className="absolute -bottom-8 left-6 rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-2xl backdrop-blur sm:left-10">
               <div className="flex items-center gap-4">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                <div
+                  className="flex h-14 w-14 items-center justify-center rounded-2xl"
+                  style={{
+                    backgroundColor: `${MAROON}12`,
+                    color: MAROON,
+                  }}
+                >
                   <Building2 className="h-7 w-7" />
                 </div>
 
@@ -189,7 +207,10 @@ export default function AboutPage() {
                     Corporate Registration
                   </p>
 
-                  <p className="mt-1 text-2xl font-bold text-primary">
+                  <p
+                    className="mt-1 text-2xl font-bold"
+                    style={{ color: MAROON }}
+                  >
                     RC 8207934
                   </p>
 
@@ -204,13 +225,16 @@ export default function AboutPage() {
           {/* CONTENT */}
 
           <div>
-            <span className="text-sm font-semibold uppercase tracking-[0.25em] text-primary">
+            <span
+              className="text-sm font-semibold uppercase tracking-[0.25em]"
+              style={{ color: MAROON }}
+            >
               Company Profile
             </span>
 
             <h2 className="mt-5 text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
               Your Trusted
-              <span className="text-primary"> Aviation,</span>
+              <span style={{ color: MAROON }}> Aviation,</span>
               <br />
               Cargo & Logistics Partner
             </h2>
@@ -225,16 +249,23 @@ export default function AboutPage() {
             <p className="mt-5 text-lg leading-8 text-muted-foreground">
               The company provides professional Flight Support Services,
               Flight Operations, Airline Management, Air Cargo Transportation,
-              General Aviation & Air Travel Services, Logistics Solution.
-             
+              General Aviation & Air Travel Services, and Logistics Solutions.
             </p>
 
             {/* HEAD OFFICE */}
 
             <div className="mt-10">
-              <div className="flex gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-5 transition-all duration-300 hover:border-primary/30 hover:bg-white hover:shadow-lg">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                  <MapPin className="h-6 w-6 text-primary" />
+              <div className="flex gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-5 transition-all duration-300 hover:bg-white hover:shadow-lg">
+                <div
+                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
+                  style={{
+                    backgroundColor: `${MAROON}12`,
+                  }}
+                >
+                  <MapPin
+                    className="h-6 w-6"
+                    style={{ color: MAROON }}
+                  />
                 </div>
 
                 <div>
@@ -260,7 +291,12 @@ export default function AboutPage() {
               ].map((item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-primary/15 bg-primary/5 px-4 py-2 text-sm font-medium text-primary"
+                  className="rounded-full border px-4 py-2 text-sm font-medium"
+                  style={{
+                    borderColor: `${MAROON}26`,
+                    backgroundColor: `${MAROON}0D`,
+                    color: MAROON,
+                  }}
                 >
                   {item}
                 </span>
@@ -274,14 +310,22 @@ export default function AboutPage() {
           CEO MESSAGE
       ====================================================== */}
 
-      <section className="relative overflow-hidden bg-slate-950 py-24 lg:py-32">
-        <div className="absolute -left-40 top-0 h-[500px] w-[500px] rounded-full bg-primary/20 blur-3xl" />
+      <section
+        className="relative overflow-hidden py-24 lg:py-32"
+        style={{ backgroundColor: MAROON }}
+      >
+        <div
+          className="absolute -left-40 top-0 h-[500px] w-[500px] rounded-full blur-3xl"
+          style={{ backgroundColor: `${MAROON_LIGHT}55` }}
+        />
 
-        <div className="absolute -bottom-40 right-0 h-[500px] w-[500px] rounded-full bg-orange-500/10 blur-3xl" />
+        <div
+          className="absolute -bottom-40 right-0 h-[500px] w-[500px] rounded-full blur-3xl"
+          style={{ backgroundColor: `${MAROON_SOFT}1A` }}
+        />
 
         <div className="relative mx-auto max-w-7xl px-6">
           <div className="grid items-center gap-16 lg:grid-cols-[420px_1fr]">
-
             {/* CEO PHOTO */}
 
             <div className="relative">
@@ -309,13 +353,16 @@ export default function AboutPage() {
             {/* MESSAGE */}
 
             <div className="text-white">
-              <span className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-400">
+              <span
+                className="text-sm font-semibold uppercase tracking-[0.25em]"
+                style={{ color: MAROON_SOFT }}
+              >
                 Message From Our CEO
               </span>
 
               <h2 className="mt-5 text-4xl font-bold leading-tight sm:text-5xl">
                 Experience That
-                <span className="text-orange-400">
+                <span style={{ color: MAROON_SOFT }}>
                   {" "}
                   Inspires Our Future
                 </span>
@@ -349,14 +396,17 @@ export default function AboutPage() {
                 <p>
                   His professional experience includes airline operations,
                   airport services, ground handling, charter aviation and
-                  operations, with experience involving
-                  organizations such as Saudi Arabian Airlines, Emirates
-                  Airlines, Malaysian Airlines, Philippine Airlines,
-                  National Air Services and Flynas.
+                  operations, with experience involving organizations such as
+                  Saudi Arabian Airlines, Emirates Airlines, Malaysian
+                  Airlines, Philippine Airlines, National Air Services and
+                  Flynas.
                 </p>
               </div>
 
-              <div className="mt-10 border-l-4 border-orange-400 pl-6">
+              <div
+                className="mt-10 border-l-4 pl-6"
+                style={{ borderColor: MAROON_SOFT }}
+              >
                 <p className="text-xl font-semibold leading-8 text-white">
                   Our ambition is to build UNASCO into a respected aviation
                   organization that creates lasting value for customers,
@@ -365,7 +415,10 @@ export default function AboutPage() {
               </div>
 
               <div className="mt-8 flex items-center gap-3 text-sm text-white/50">
-                <Award className="h-5 w-5 text-orange-400" />
+                <Award
+                  className="h-5 w-5"
+                  style={{ color: MAROON_SOFT }}
+                />
 
                 <span>
                   Aviation leadership built on extensive industry experience
@@ -382,9 +435,11 @@ export default function AboutPage() {
 
       <section className="bg-white py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6">
-
           <div className="mx-auto max-w-3xl text-center">
-            <span className="text-sm font-semibold uppercase tracking-[0.25em] text-primary">
+            <span
+              className="text-sm font-semibold uppercase tracking-[0.25em]"
+              style={{ color: MAROON }}
+            >
               Leadership Experience
             </span>
 
@@ -394,15 +449,20 @@ export default function AboutPage() {
 
             <p className="mt-6 text-lg leading-8 text-muted-foreground">
               The experience behind UNASCO is supported by aviation
-              operations, aviation management and
-              commercial aviation experience.
+              operations, aviation management and commercial aviation
+              experience.
             </p>
           </div>
 
           <div className="mt-16 grid gap-8 lg:grid-cols-3">
-
-            <div className="group rounded-3xl border border-slate-200 bg-slate-50 p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary hover:bg-white hover:shadow-xl">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-white">
+            <div className="group rounded-3xl border border-slate-200 bg-slate-50 p-8 transition-all duration-300 hover:-translate-y-2 hover:bg-white hover:shadow-xl">
+              <div
+                className="flex h-14 w-14 items-center justify-center rounded-2xl"
+                style={{
+                  backgroundColor: `${MAROON}12`,
+                  color: MAROON,
+                }}
+              >
                 <PlaneTakeoff className="h-7 w-7" />
               </div>
 
@@ -417,23 +477,35 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="group rounded-3xl border border-slate-200 bg-slate-50 p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary hover:bg-white hover:shadow-xl">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-white">
+            <div className="group rounded-3xl border border-slate-200 bg-slate-50 p-8 transition-all duration-300 hover:-translate-y-2 hover:bg-white hover:shadow-xl">
+              <div
+                className="flex h-14 w-14 items-center justify-center rounded-2xl"
+                style={{
+                  backgroundColor: `${MAROON}12`,
+                  color: MAROON,
+                }}
+              >
                 <Users className="h-7 w-7" />
               </div>
 
               <h3 className="mt-6 text-2xl font-bold">
-               Cargo services
+                Cargo Services
               </h3>
 
               <p className="mt-4 leading-7 text-muted-foreground">
-                Professional experience supporting cargoo and service
+                Professional experience supporting cargo and service
                 operations and passenger ground-operation activities.
               </p>
             </div>
 
-            <div className="group rounded-3xl border border-slate-200 bg-slate-50 p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary hover:bg-white hover:shadow-xl">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-white">
+            <div className="group rounded-3xl border border-slate-200 bg-slate-50 p-8 transition-all duration-300 hover:-translate-y-2 hover:bg-white hover:shadow-xl">
+              <div
+                className="flex h-14 w-14 items-center justify-center rounded-2xl"
+                style={{
+                  backgroundColor: `${MAROON}12`,
+                  color: MAROON,
+                }}
+              >
                 <BriefcaseBusiness className="h-7 w-7" />
               </div>
 
@@ -447,7 +519,6 @@ export default function AboutPage() {
                 development.
               </p>
             </div>
-
           </div>
         </div>
       </section>
@@ -458,15 +529,17 @@ export default function AboutPage() {
 
       <section className="bg-slate-50 py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6">
-
           <div className="mx-auto max-w-3xl text-center">
-            <span className="text-sm font-semibold uppercase tracking-[0.25em] text-primary">
+            <span
+              className="text-sm font-semibold uppercase tracking-[0.25em]"
+              style={{ color: MAROON }}
+            >
               Our Services
             </span>
 
             <h2 className="mt-5 text-4xl font-bold sm:text-5xl">
               Aviation Solutions
-              <span className="text-primary">
+              <span style={{ color: MAROON }}>
                 {" "}
                 Built Around Excellence
               </span>
@@ -485,10 +558,16 @@ export default function AboutPage() {
               return (
                 <div
                   key={service.title}
-                  className="group rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-primary hover:shadow-2xl"
+                  className="group rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
                 >
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-white">
-                    <Icon className="h-7 w-7" />
+                  <div
+                    className="flex h-14 w-14 items-center justify-center rounded-2xl"
+                    style={{
+                      backgroundColor: `${MAROON}12`,
+                      color: MAROON,
+                    }}
+                  >
+                    <Icon className="h-7 w-7 transition-transform duration-300 group-hover:scale-110" />
                   </div>
 
                   <h3 className="mt-6 text-xl font-bold">
@@ -499,7 +578,10 @@ export default function AboutPage() {
                     {service.description}
                   </p>
 
-                  <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-primary">
+                  <div
+                    className="mt-6 flex items-center gap-2 text-sm font-semibold"
+                    style={{ color: MAROON }}
+                  >
                     Learn More
                     <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
                   </div>
@@ -515,20 +597,28 @@ export default function AboutPage() {
       ====================================================== */}
 
       <section className="relative overflow-hidden bg-white py-24 lg:py-32">
-        <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
+        <div
+          className="absolute left-0 top-0 h-96 w-96 rounded-full blur-3xl"
+          style={{ backgroundColor: `${MAROON}0D` }}
+        />
 
-        <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
+        <div
+          className="absolute bottom-0 right-0 h-96 w-96 rounded-full blur-3xl"
+          style={{ backgroundColor: `${MAROON}0D` }}
+        />
 
         <div className="relative mx-auto max-w-7xl px-6">
-
           <div className="mx-auto max-w-3xl text-center">
-            <span className="text-sm font-semibold uppercase tracking-[0.25em] text-primary">
+            <span
+              className="text-sm font-semibold uppercase tracking-[0.25em]"
+              style={{ color: MAROON }}
+            >
               Our Foundation
             </span>
 
             <h2 className="mt-5 text-4xl font-bold sm:text-5xl">
               Mission, Vision &
-              <span className="text-primary"> Quality</span>
+              <span style={{ color: MAROON }}> Quality</span>
             </h2>
 
             <p className="mt-6 text-lg leading-8 text-muted-foreground">
@@ -539,11 +629,16 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-16 grid gap-8 lg:grid-cols-3">
-
             {/* MISSION */}
 
-            <div className="group rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-2 hover:border-primary hover:shadow-2xl">
-              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-white">
+            <div className="group rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-2 hover:shadow-2xl">
+              <div
+                className="flex h-16 w-16 items-center justify-center rounded-2xl"
+                style={{
+                  backgroundColor: `${MAROON}12`,
+                  color: MAROON,
+                }}
+              >
                 <Target className="h-8 w-8" />
               </div>
 
@@ -563,8 +658,14 @@ export default function AboutPage() {
 
             {/* VISION */}
 
-            <div className="group rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-2 hover:border-primary hover:shadow-2xl">
-              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-white">
+            <div className="group rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-2 hover:shadow-2xl">
+              <div
+                className="flex h-16 w-16 items-center justify-center rounded-2xl"
+                style={{
+                  backgroundColor: `${MAROON}12`,
+                  color: MAROON,
+                }}
+              >
                 <Eye className="h-8 w-8" />
               </div>
 
@@ -582,8 +683,14 @@ export default function AboutPage() {
 
             {/* QUALITY */}
 
-            <div className="group rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-2 hover:border-primary hover:shadow-2xl">
-              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-white">
+            <div className="group rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-2 hover:shadow-2xl">
+              <div
+                className="flex h-16 w-16 items-center justify-center rounded-2xl"
+                style={{
+                  backgroundColor: `${MAROON}12`,
+                  color: MAROON,
+                }}
+              >
                 <Star className="h-8 w-8" />
               </div>
 
@@ -598,7 +705,6 @@ export default function AboutPage() {
                 vital resources, cost and time.
               </p>
             </div>
-
           </div>
         </div>
       </section>
@@ -609,9 +715,11 @@ export default function AboutPage() {
 
       <section className="bg-slate-50 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2">
-
           <div>
-            <span className="text-sm font-semibold uppercase tracking-[0.25em] text-primary">
+            <span
+              className="text-sm font-semibold uppercase tracking-[0.25em]"
+              style={{ color: MAROON }}
+            >
               Our Objectives
             </span>
 
@@ -626,7 +734,10 @@ export default function AboutPage() {
               serve our customers and build strategic relationships.
             </p>
 
-            <div className="mt-8 flex items-center gap-3 text-primary">
+            <div
+              className="mt-8 flex items-center gap-3"
+              style={{ color: MAROON }}
+            >
               <TrendingUp className="h-6 w-6" />
 
               <span className="font-semibold">
@@ -639,14 +750,23 @@ export default function AboutPage() {
             {objectives.map((objective, index) => (
               <div
                 key={objective}
-                className="group flex gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-primary hover:shadow-xl"
+                className="group flex gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:shadow-xl"
               >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary transition group-hover:bg-primary group-hover:text-white">
+                <div
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-bold"
+                  style={{
+                    backgroundColor: `${MAROON}12`,
+                    color: MAROON,
+                  }}
+                >
                   {String(index + 1).padStart(2, "0")}
                 </div>
 
                 <div className="flex gap-3">
-                  <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-primary" />
+                  <CheckCircle2
+                    className="mt-1 h-5 w-5 shrink-0"
+                    style={{ color: MAROON }}
+                  />
 
                   <p className="leading-7 text-muted-foreground">
                     {objective}
@@ -655,7 +775,6 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
-
         </div>
       </section>
 
@@ -665,9 +784,11 @@ export default function AboutPage() {
 
       <section className="bg-white py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6">
-
           <div className="mx-auto max-w-3xl text-center">
-            <span className="text-sm font-semibold uppercase tracking-[0.25em] text-primary">
+            <span
+              className="text-sm font-semibold uppercase tracking-[0.25em]"
+              style={{ color: MAROON }}
+            >
               Organization
             </span>
 
@@ -683,7 +804,10 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-16 flex justify-center">
-            <div className="rounded-3xl bg-primary px-12 py-7 text-center text-white shadow-2xl">
+            <div
+              className="rounded-3xl px-12 py-7 text-center text-white shadow-2xl"
+              style={{ backgroundColor: MAROON }}
+            >
               <Users className="mx-auto mb-3 h-8 w-8" />
 
               <h3 className="text-2xl font-bold">
@@ -700,7 +824,7 @@ export default function AboutPage() {
             {departments.map((department) => (
               <div
                 key={department}
-                className="rounded-2xl border border-slate-200 bg-slate-50 p-7 text-center transition-all hover:-translate-y-1 hover:border-primary hover:bg-white hover:shadow-xl"
+                className="rounded-2xl border border-slate-200 bg-slate-50 p-7 text-center transition-all hover:-translate-y-1 hover:bg-white hover:shadow-xl"
               >
                 <h3 className="font-bold">
                   {department}
@@ -715,11 +839,16 @@ export default function AboutPage() {
           CURRENT MANAGEMENT TEAM
       ====================================================== */}
 
-      <section className="bg-slate-950 py-24 lg:py-32">
+      <section
+        className="py-24 lg:py-32"
+        style={{ backgroundColor: MAROON }}
+      >
         <div className="mx-auto max-w-7xl px-6">
-
           <div className="mx-auto max-w-3xl text-center text-white">
-            <span className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-400">
+            <span
+              className="text-sm font-semibold uppercase tracking-[0.25em]"
+              style={{ color: MAROON_SOFT }}
+            >
               Our Current Team
             </span>
 
@@ -737,9 +866,12 @@ export default function AboutPage() {
             {currentTeam.map((member) => (
               <div
                 key={member.name}
-                className="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 transition-all duration-500 hover:-translate-y-2 hover:border-primary/50 hover:bg-white/10"
+                className="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 transition-all duration-500 hover:-translate-y-2 hover:bg-white/10"
               >
-                <div className="relative aspect-[4/5] overflow-hidden bg-slate-800">
+                <div
+                  className="relative aspect-[4/5] overflow-hidden"
+                  style={{ backgroundColor: MAROON_DARK }}
+                >
                   <Image
                     src={member.image}
                     alt={`${member.name} - ${member.role}`}
@@ -751,7 +883,10 @@ export default function AboutPage() {
                   <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
 
                   <div className="absolute bottom-5 left-5 right-5">
-                    <span className="inline-flex rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white">
+                    <span
+                      className="inline-flex rounded-full px-4 py-2 text-xs font-semibold text-white"
+                      style={{ backgroundColor: MAROON_LIGHT }}
+                    >
                       {member.role}
                     </span>
                   </div>
@@ -762,7 +897,10 @@ export default function AboutPage() {
                     {member.name}
                   </h3>
 
-                  <p className="mt-2 font-semibold text-orange-400">
+                  <p
+                    className="mt-2 font-semibold"
+                    style={{ color: MAROON_SOFT }}
+                  >
                     {member.role}
                   </p>
 
@@ -782,9 +920,7 @@ export default function AboutPage() {
 
       <section className="bg-white py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6">
-
           <div className="grid items-center gap-16 lg:grid-cols-2">
-
             {/* IMAGE */}
 
             <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-50 shadow-2xl">
@@ -800,13 +936,16 @@ export default function AboutPage() {
             {/* CONTENT */}
 
             <div>
-              <span className="text-sm font-semibold uppercase tracking-[0.25em] text-primary">
+              <span
+                className="text-sm font-semibold uppercase tracking-[0.25em]"
+                style={{ color: MAROON }}
+              >
                 Strategic Collaborations
               </span>
 
               <h2 className="mt-5 text-4xl font-bold sm:text-5xl">
                 Strong Connections.
-                <span className="text-primary">
+                <span style={{ color: MAROON }}>
                   {" "}
                   Bigger Possibilities.
                 </span>
@@ -820,9 +959,9 @@ export default function AboutPage() {
 
               <p className="mt-5 leading-8 text-muted-foreground">
                 Our collaboration network supports aviation, airline,
-                cargo, travel and institutional relationships,
-                helping us create stronger solutions and opportunities for
-                our customers and partners.
+                cargo, travel and institutional relationships, helping us
+                create stronger solutions and opportunities for our
+                customers and partners.
               </p>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -835,9 +974,12 @@ export default function AboutPage() {
                 ].map((item) => (
                   <div
                     key={item}
-                    className="flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50 p-4 transition hover:border-primary/30 hover:bg-white hover:shadow-md"
+                    className="flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50 p-4 transition hover:bg-white hover:shadow-md"
                   >
-                    <CheckCircle2 className="h-5 w-5 shrink-0 text-primary" />
+                    <CheckCircle2
+                      className="h-5 w-5 shrink-0"
+                      style={{ color: MAROON }}
+                    />
 
                     <span className="text-sm font-medium">
                       {item}
@@ -846,7 +988,6 @@ export default function AboutPage() {
                 ))}
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -857,15 +998,17 @@ export default function AboutPage() {
 
       <section className="bg-slate-50 py-24">
         <div className="mx-auto max-w-7xl px-6">
-
           <div className="mx-auto max-w-3xl text-center">
-            <span className="text-sm font-semibold uppercase tracking-[0.25em] text-primary">
+            <span
+              className="text-sm font-semibold uppercase tracking-[0.25em]"
+              style={{ color: MAROON }}
+            >
               Our Capability
             </span>
 
             <h2 className="mt-5 text-4xl font-bold sm:text-5xl">
               Experience Meets
-              <span className="text-primary">
+              <span style={{ color: MAROON }}>
                 {" "}
                 Operational Excellence
               </span>
@@ -879,9 +1022,11 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-16 grid gap-6 md:grid-cols-3">
-
-            <div className="group rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-2 hover:border-primary hover:shadow-xl">
-              <ShieldCheck className="h-10 w-10 text-primary transition group-hover:scale-110" />
+            <div className="group rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-2 hover:shadow-xl">
+              <ShieldCheck
+                className="h-10 w-10 transition group-hover:scale-110"
+                style={{ color: MAROON }}
+              />
 
               <h3 className="mt-6 text-xl font-bold">
                 Professional Standards
@@ -893,8 +1038,11 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="group rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-2 hover:border-primary hover:shadow-xl">
-              <Network className="h-10 w-10 text-primary transition group-hover:scale-110" />
+            <div className="group rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-2 hover:shadow-xl">
+              <Network
+                className="h-10 w-10 transition group-hover:scale-110"
+                style={{ color: MAROON }}
+              />
 
               <h3 className="mt-6 text-xl font-bold">
                 Strategic Industry Network
@@ -907,8 +1055,11 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="group rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-2 hover:border-primary hover:shadow-xl">
-              <PlaneTakeoff className="h-10 w-10 text-primary transition group-hover:scale-110" />
+            <div className="group rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-2 hover:shadow-xl">
+              <PlaneTakeoff
+                className="h-10 w-10 transition group-hover:scale-110"
+                style={{ color: MAROON }}
+              />
 
               <h3 className="mt-6 text-xl font-bold">
                 Operational Coordination
@@ -920,7 +1071,6 @@ export default function AboutPage() {
                 satisfaction.
               </p>
             </div>
-
           </div>
         </div>
       </section>
@@ -931,15 +1081,17 @@ export default function AboutPage() {
 
       <section className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-6">
-
           <div className="text-center">
-            <span className="text-sm font-semibold uppercase tracking-[0.25em] text-primary">
+            <span
+              className="text-sm font-semibold uppercase tracking-[0.25em]"
+              style={{ color: MAROON }}
+            >
               Why Choose UNASCO
             </span>
 
             <h2 className="mt-5 text-4xl font-bold sm:text-5xl">
               Built on Experience.
-              <span className="text-primary">
+              <span style={{ color: MAROON }}>
                 {" "}
                 Driven by Excellence.
               </span>
@@ -952,13 +1104,17 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {strengths.map((item) => (
               <div
                 key={item}
-                className="group rounded-3xl bg-primary p-8 text-center text-white transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+                className="group rounded-3xl p-8 text-center text-white transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+                style={{ backgroundColor: MAROON }}
               >
-                <CheckCircle2 className="mx-auto h-10 w-10 text-orange-300 transition group-hover:scale-110" />
+                <CheckCircle2
+                  className="mx-auto h-10 w-10 transition group-hover:scale-110"
+                  style={{ color: MAROON_SOFT }}
+                />
 
                 <h3 className="mt-5 font-semibold">
                   {item}
@@ -973,13 +1129,20 @@ export default function AboutPage() {
           CALL TO ACTION
       ====================================================== */}
 
-      <section className="relative overflow-hidden bg-primary py-24 lg:py-32">
-        <div className="absolute inset-0 bg-[url('/about-operations.png')] bg-cover bg-center opacity-10" />
+      <section
+        className="relative overflow-hidden py-24 lg:py-32"
+        style={{ backgroundColor: MAROON }}
+      >
+        <div
+          className="absolute inset-0 bg-[url('/about-operations.png')] bg-cover bg-center opacity-10"
+        />
 
         <div className="relative mx-auto max-w-5xl px-6 text-center text-white">
-
-          <span className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-300">
-            Let's Work Together
+          <span
+            className="text-sm font-semibold uppercase tracking-[0.25em]"
+            style={{ color: MAROON_SOFT }}
+          >
+            Let&apos;s Work Together
           </span>
 
           <h2 className="mt-5 text-4xl font-bold sm:text-6xl">
@@ -996,22 +1159,26 @@ export default function AboutPage() {
           </p>
 
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-
             <a
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-xl bg-white px-8 py-4 font-semibold text-primary shadow-xl transition hover:-translate-y-1 hover:shadow-2xl"
+              className="inline-flex items-center gap-2 rounded-xl bg-white px-8 py-4 font-semibold shadow-xl transition hover:-translate-y-1 hover:shadow-2xl"
+              style={{ color: MAROON }}
             >
               Contact UNASCO
               <ArrowRight className="h-5 w-5" />
             </a>
 
+            {/* IMPORTANT:
+                No onMouseEnter / onMouseLeave here.
+                This page is a Server Component.
+            */}
             <a
               href="/services"
-              className="inline-flex items-center gap-2 rounded-xl border border-white/50 px-8 py-4 font-semibold text-white transition hover:bg-white hover:text-primary"
+              className="inline-flex items-center gap-2 rounded-xl border border-white/50 px-8 py-4 font-semibold text-white transition hover:-translate-y-1 hover:bg-white hover:text-[#561923]"
             >
               Explore Services
+              <ArrowRight className="h-5 w-5" />
             </a>
-
           </div>
         </div>
       </section>
