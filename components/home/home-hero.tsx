@@ -1,5 +1,7 @@
 "use client";
 
+/// <reference types="react" />
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -15,10 +17,7 @@ import { buttonVariants } from "@/components/ui/button";
 export function HomeHero() {
   return (
     <section className="group relative flex min-h-screen items-center justify-center overflow-hidden bg-[#12080A]">
-      {/* =========================================================
-          BACKGROUND IMAGE
-      ========================================================== */}
-
+      {/* Background Image */}
       <Image
         src="/hero-cargo-aircraft.png"
         alt="UNASCO Aviation cargo aircraft operations"
@@ -36,10 +35,7 @@ export function HomeHero() {
         "
       />
 
-      {/* =========================================================
-          PREMIUM MAROON OVERLAY
-      ========================================================== */}
-
+      {/* Main Overlay */}
       <div
         className="
           absolute inset-0
@@ -50,6 +46,7 @@ export function HomeHero() {
         "
       />
 
+      {/* Bottom Overlay */}
       <div
         className="
           absolute inset-0
@@ -60,10 +57,7 @@ export function HomeHero() {
         "
       />
 
-      {/* =========================================================
-          CENTER MAROON LIGHT EFFECT
-      ========================================================== */}
-
+      {/* Maroon Glow - Left */}
       <div
         aria-hidden="true"
         className="
@@ -80,6 +74,7 @@ export function HomeHero() {
         "
       />
 
+      {/* Maroon Glow - Right */}
       <div
         aria-hidden="true"
         className="
@@ -95,10 +90,7 @@ export function HomeHero() {
         "
       />
 
-      {/* =========================================================
-          MAIN CONTENT
-      ========================================================== */}
-
+      {/* Main Content */}
       <div
         className="
           relative
@@ -117,10 +109,7 @@ export function HomeHero() {
       >
         <div className="flex w-full max-w-6xl flex-col items-center">
 
-          {/* =====================================================
-              BADGE
-          ====================================================== */}
-
+          {/* Badge */}
           <div
             className="
               inline-flex
@@ -179,10 +168,7 @@ export function HomeHero() {
             </span>
           </div>
 
-          {/* =====================================================
-              MAIN HEADING
-          ====================================================== */}
-
+          {/* Hero Heading */}
           <div
             className="
               mt-8
@@ -193,14 +179,13 @@ export function HomeHero() {
             "
           >
             {/* UNASCO */}
-
             <h1
               className="
                 font-extrabold
-                tracking-[-0.04em]
+                leading-none
+                tracking-[-0.05em]
                 text-white
                 text-6xl
-                leading-none
                 sm:text-7xl
                 md:text-8xl
                 lg:text-[7rem]
@@ -211,8 +196,7 @@ export function HomeHero() {
             </h1>
 
             {/* Connecting People & Cargo */}
-
-            <div
+            <h2
               className="
                 mt-4
                 text-3xl
@@ -231,10 +215,9 @@ export function HomeHero() {
               <span className="text-[#C9828D]">
                 People &amp; Cargo
               </span>
-            </div>
+            </h2>
 
-            {/* Decorative line */}
-
+            {/* Accent Line */}
             <div
               className="
                 mt-7
@@ -247,10 +230,7 @@ export function HomeHero() {
             />
           </div>
 
-          {/* =====================================================
-              DESCRIPTION
-          ====================================================== */}
-
+          {/* Description */}
           <p
             className="
               mt-8
@@ -269,10 +249,7 @@ export function HomeHero() {
             travel services with safety, reliability and excellence.
           </p>
 
-          {/* =====================================================
-              BUTTONS
-          ====================================================== */}
-
+          {/* Buttons */}
           <div
             className="
               mt-10
@@ -285,8 +262,7 @@ export function HomeHero() {
               animate-[fadeInUp_0.9s_0.45s_ease-out_both]
             "
           >
-            {/* PRIMARY */}
-
+            {/* Request Quote */}
             <Link
               href="/contact"
               className={cn(
@@ -324,8 +300,7 @@ export function HomeHero() {
               />
             </Link>
 
-            {/* SECONDARY */}
-
+            {/* Services */}
             <Link
               href="/cargo-services"
               className={cn(
@@ -354,10 +329,7 @@ export function HomeHero() {
             </Link>
           </div>
 
-          {/* =====================================================
-              TRUST FEATURES
-          ====================================================== */}
-
+          {/* Trust Features */}
           <div
             className="
               mt-12
@@ -369,10 +341,7 @@ export function HomeHero() {
               animate-[fadeInUp_0.9s_0.6s_ease-out_both]
             "
           >
-            {/* ===================================================
-                SAFE & RELIABLE
-            ==================================================== */}
-
+            {/* Safe & Reliable */}
             <div
               className="
                 group/feature
@@ -424,10 +393,7 @@ export function HomeHero() {
               </p>
             </div>
 
-            {/* ===================================================
-                GLOBAL NETWORK
-            ==================================================== */}
-
+            {/* Global Network */}
             <div
               className="
                 group/feature
@@ -479,10 +445,7 @@ export function HomeHero() {
               </p>
             </div>
 
-            {/* ===================================================
-                HAJJ & UMRAH
-            ==================================================== */}
-
+            {/* Hajj & Umrah */}
             <div
               className="
                 group/feature
@@ -537,10 +500,7 @@ export function HomeHero() {
         </div>
       </div>
 
-      {/* =========================================================
-          BOTTOM SCROLL INDICATOR
-      ========================================================== */}
-
+      {/* Bottom Explore Indicator */}
       <div
         className="
           absolute
