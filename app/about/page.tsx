@@ -87,7 +87,7 @@ const currentTeam = [
   },
   {
     name: "Mr. Hafiz Umar Ballah",
-    role: "Executive Director, Marketing",
+    role: "Executive Director,Seal Marketing",
     image: "/team/hafiz-umar-ballah.jpg",
     description:
       "Responsible for commercial development, marketing, customer relationships and strategic business growth.",
@@ -101,7 +101,7 @@ const currentTeam = [
   },
   {
     name: "Mr. William",
-    role: "Station Manager",
+    role: "Lagos Station Manager",
     image: "/team/william.jpg",
     description:
       "Responsible for station coordination, operational activities and ensuring efficient day-to-day aviation and cargo support.",
