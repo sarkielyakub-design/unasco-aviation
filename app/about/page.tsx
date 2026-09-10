@@ -87,7 +87,7 @@ const currentTeam = [
   },
   {
     name: "Mr. Hafiz Umar Ballah",
-    role: "Executive Director,Seal Marketing",
+    role: "Executive Director,Sales Marketing",
     image: "/team/hafiz-umar-ballah.jpg",
     description:
       "Responsible for commercial development, marketing, customer relationships and strategic business growth.",

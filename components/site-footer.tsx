@@ -152,7 +152,7 @@ export function SiteFooter() {
 
                 <div>
                   <h4 className="font-semibold text-white">
-                    Sales Manager
+                    Director Sales &amp; Marketing
                   </h4>
 
                   <a
