@@ -11,8 +11,8 @@ const contacts = [
   },
   {
     name: 'Seals Manager',
-    number: '+234 806 333 2227',
-    whatsapp: '2348063332227',
+    number: '+2348155558069',
+    whatsapp: '2348155558069',
   },
 ]
 

@@ -156,10 +156,10 @@ export function SiteFooter() {
                   </h4>
 
                   <a
-                    href="tel:+2348063332227"
+                    href="tel:+234 8155558069"
                     className="mt-1 block text-white/70 transition-colors duration-300 hover:text-[#C9828D]"
                   >
-                    +234 806 333 2227
+                    +234 8155558069
                   </a>
 
                   <p className="text-sm text-white/45">

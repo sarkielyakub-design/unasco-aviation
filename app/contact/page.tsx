@@ -23,7 +23,7 @@ const MAROON_LIGHT = "#7A2330";
 const MAROON_DARK = "#3D1118";
 
 const CEO_WHATSAPP = "https://wa.me/966556011122";
-const SALES_WHATSAPP = "https://wa.me/2348063332227";
+const SALES_WHATSAPP = "https://wa.me/+234 8155558069";
 
 const details = [
   {
