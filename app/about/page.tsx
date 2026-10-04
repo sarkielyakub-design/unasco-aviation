@@ -19,7 +19,9 @@ import {
   TrendingUp,
 } from "lucide-react";
 
-import { PageHero } from "@/components/page-hero";
+/* =========================================================
+   METADATA
+========================================================= */
 
 export const metadata: Metadata = {
   title: "About UNASCO Aviation Limited",
@@ -47,29 +49,40 @@ const services = [
       "Professional aviation support designed to assist airlines, aircraft operators and aviation partners with efficient and dependable operations.",
     icon: PlaneTakeoff,
   },
+
   {
     title: "Flight Operations",
     description:
       "Operational coordination and aviation support delivered with professionalism, efficiency and industry experience.",
     icon: Globe2,
   },
+
   {
     title: "Airline Management",
     description:
       "Management support for aviation operations, commercial activities, operational coordination and sustainable business development.",
     icon: BriefcaseBusiness,
   },
+
   {
     title: "Air Cargo Transportation",
     description:
       "Reliable cargo transportation and coordination solutions supporting the efficient movement and delivery of goods.",
     icon: PackageCheck,
   },
+
   {
     title: "General Aviation & Air Travel",
     description:
       "Professional aviation and air travel support tailored to the needs of individuals, organizations and corporate clients.",
     icon: Building2,
+  },
+
+  {
+    title: "General Sales Agents",
+    description:
+      "Professional airline representation, sales support, market development and commercial services for airlines and aviation partners.",
+    icon: BriefcaseBusiness,
   },
 ];
 
@@ -85,6 +98,7 @@ const currentTeam = [
     description:
       "Experienced aviation professional with extensive experience in airline operations and aviation management.",
   },
+
   {
     name: "Mr. Hafiz Umar Ballah",
     role: "Executive Director,Sales Marketing",
@@ -92,6 +106,7 @@ const currentTeam = [
     description:
       "Responsible for commercial development, marketing, customer relationships and strategic business growth.",
   },
+
   {
     name: "Mr. Usman K. Kudi",
     role: "Cargo Operations",
@@ -99,6 +114,7 @@ const currentTeam = [
     description:
       "Supports cargo coordination, operational activities and the efficient handling and movement of cargo.",
   },
+
   {
     name: "Mr. William",
     role: "Lagos Station Manager",
@@ -152,32 +168,51 @@ export default function AboutPage() {
           HERO
       ====================================================== */}
 
-      <PageHero
-        breadcrumb="About UNASCO"
-        title="Built for Aviation. Driven by Excellence."
-        subtitle="UNASCO Aviation Limited provides professional aviation, flight support, cargo and logistics solutions through experienced leadership, strategic relationships and a commitment to operational excellence."
-      />
+      <section className="relative overflow-hidden bg-[#3D1118] py-28 lg:py-36">
+        <div className="absolute -left-40 top-0 h-[500px] w-[500px] rounded-full bg-[#7A2330]/40 blur-[120px]" />
+
+        <div className="absolute -right-40 bottom-0 h-[500px] w-[500px] rounded-full bg-[#C9828D]/15 blur-[120px]" />
+
+        <div className="relative mx-auto max-w-7xl px-6">
+          <div className="mx-auto max-w-4xl text-center text-white">
+            <span className="inline-flex rounded-full border border-[#C9828D]/40 bg-white/5 px-5 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-[#F2C6CC] backdrop-blur-md">
+              About UNASCO
+            </span>
+
+            <h1 className="mt-7 text-5xl font-extrabold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
+              Built for Aviation.
+              <br />
+              <span className="text-[#C9828D]">
+                Driven by Excellence.
+              </span>
+            </h1>
+
+            <div className="mx-auto mt-7 h-1 w-24 rounded-full bg-[#C9828D]" />
+
+            <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-white/75 sm:text-xl">
+              UNASCO Aviation Limited provides professional aviation,
+              flight support, cargo and logistics solutions through
+              experienced leadership, strategic relationships and a
+              commitment to operational excellence.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* =====================================================
           COMPANY PROFILE
       ====================================================== */}
 
       <section className="relative overflow-hidden bg-white py-24 lg:py-32">
-        <div
-          className="absolute left-0 top-0 h-96 w-96 rounded-full blur-3xl"
-          style={{ backgroundColor: `${MAROON}0D` }}
-        />
+        <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-[#C9828D]/10 blur-3xl" />
 
-        <div
-          className="absolute bottom-0 right-0 h-96 w-96 rounded-full blur-3xl"
-          style={{ backgroundColor: `${MAROON_SOFT}26` }}
-        />
+        <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-[#7A2330]/5 blur-3xl" />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2">
           {/* IMAGE */}
 
           <div className="relative">
-            <div className="group overflow-hidden rounded-[2rem] shadow-2xl">
+            <div className="group overflow-hidden rounded-[2rem] border border-[#561923]/10 shadow-2xl">
               <Image
                 src="/about-operations.png"
                 alt="UNASCO Aviation Operations"
@@ -190,31 +225,22 @@ export default function AboutPage() {
 
             {/* REGISTRATION CARD */}
 
-            <div className="absolute -bottom-8 left-6 rounded-3xl border border-slate-200 bg-white/95 p-6 shadow-2xl backdrop-blur sm:left-10">
+            <div className="absolute -bottom-8 left-6 rounded-3xl border border-[#7A2330]/50 bg-[#561923] p-6 text-white shadow-2xl backdrop-blur sm:left-10">
               <div className="flex items-center gap-4">
-                <div
-                  className="flex h-14 w-14 items-center justify-center rounded-2xl"
-                  style={{
-                    backgroundColor: `${MAROON}12`,
-                    color: MAROON,
-                  }}
-                >
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#7A2330] text-[#F2C6CC]">
                   <Building2 className="h-7 w-7" />
                 </div>
 
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
                     Corporate Registration
                   </p>
 
-                  <p
-                    className="mt-1 text-2xl font-bold"
-                    style={{ color: MAROON }}
-                  >
+                  <p className="mt-1 text-2xl font-bold text-white">
                     RC 8207934
                   </p>
 
-                  <p className="text-xs text-muted-foreground">
+                  <p className="text-xs text-white/60">
                     Incorporated 27 January 2025
                   </p>
                 </div>
@@ -224,29 +250,26 @@ export default function AboutPage() {
 
           {/* CONTENT */}
 
-          <div>
-            <span
-              className="text-sm font-semibold uppercase tracking-[0.25em]"
-              style={{ color: MAROON }}
-            >
+          <div className="text-gray-900">
+            <span className="text-sm font-semibold uppercase tracking-[0.25em] text-[#561923]">
               Company Profile
             </span>
 
-            <h2 className="mt-5 text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
+            <h2 className="mt-5 text-4xl font-bold leading-tight tracking-tight text-gray-900 sm:text-5xl">
               Your Trusted
-              <span style={{ color: MAROON }}> Aviation,</span>
+              <span className="text-[#561923]"> Aviation,</span>
               <br />
               Cargo & Logistics Partner
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
+            <p className="mt-6 text-lg leading-8 text-gray-600">
               UNASCO Aviation Limited is an Air Travel and Aviation General
               Support Services Company incorporated under the laws of the
               Federal Republic of Nigeria as a Private Limited Liability
               Company.
             </p>
 
-            <p className="mt-5 text-lg leading-8 text-muted-foreground">
+            <p className="mt-5 text-lg leading-8 text-gray-600">
               The company provides professional Flight Support Services,
               Flight Operations, Airline Management, Air Cargo Transportation,
               General Aviation & Air Travel Services, and Logistics Solutions.
@@ -255,25 +278,17 @@ export default function AboutPage() {
             {/* HEAD OFFICE */}
 
             <div className="mt-10">
-              <div className="flex gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-5 transition-all duration-300 hover:bg-white hover:shadow-lg">
-                <div
-                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
-                  style={{
-                    backgroundColor: `${MAROON}12`,
-                  }}
-                >
-                  <MapPin
-                    className="h-6 w-6"
-                    style={{ color: MAROON }}
-                  />
+              <div className="flex gap-4 rounded-2xl border border-[#7A2330]/50 bg-[#561923] p-5 text-white transition-all duration-300 hover:bg-[#7A2330] hover:shadow-lg">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#7A2330]">
+                  <MapPin className="h-6 w-6 text-[#F2C6CC]" />
                 </div>
 
                 <div>
-                  <h4 className="font-semibold">
+                  <h4 className="font-semibold text-white">
                     Registered Head Office
                   </h4>
 
-                  <p className="mt-1 text-muted-foreground">
+                  <p className="mt-1 text-white/70">
                     No. 7 Bompai Road, Kano State, Nigeria
                   </p>
                 </div>
@@ -291,12 +306,7 @@ export default function AboutPage() {
               ].map((item) => (
                 <span
                   key={item}
-                  className="rounded-full border px-4 py-2 text-sm font-medium"
-                  style={{
-                    borderColor: `${MAROON}26`,
-                    backgroundColor: `${MAROON}0D`,
-                    color: MAROON,
-                  }}
+                  className="rounded-full border border-[#7A2330]/60 bg-[#561923] px-4 py-2 text-sm font-medium text-white"
                 >
                   {item}
                 </span>
@@ -310,26 +320,17 @@ export default function AboutPage() {
           CEO MESSAGE
       ====================================================== */}
 
-      <section
-        className="relative overflow-hidden py-24 lg:py-32"
-        style={{ backgroundColor: MAROON }}
-      >
-        <div
-          className="absolute -left-40 top-0 h-[500px] w-[500px] rounded-full blur-3xl"
-          style={{ backgroundColor: `${MAROON_LIGHT}55` }}
-        />
+      <section className="relative overflow-hidden bg-[#561923] py-24 lg:py-32">
+        <div className="absolute -left-40 top-0 h-[500px] w-[500px] rounded-full bg-[#7A2330]/50 blur-3xl" />
 
-        <div
-          className="absolute -bottom-40 right-0 h-[500px] w-[500px] rounded-full blur-3xl"
-          style={{ backgroundColor: `${MAROON_SOFT}1A` }}
-        />
+        <div className="absolute -bottom-40 right-0 h-[500px] w-[500px] rounded-full bg-[#C9828D]/10 blur-3xl" />
 
         <div className="relative mx-auto max-w-7xl px-6">
           <div className="grid items-center gap-16 lg:grid-cols-[420px_1fr]">
             {/* CEO PHOTO */}
 
             <div className="relative">
-              <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-2xl">
+              <div className="overflow-hidden rounded-[2rem] border border-[#7A2330] bg-[#3D1118] shadow-2xl">
                 <Image
                   src="/team/khaled-al-dini.jpg"
                   alt="Mr. Khaled S. Al-Dini - Managing Director and CEO"
@@ -339,8 +340,8 @@ export default function AboutPage() {
                 />
               </div>
 
-              <div className="absolute -bottom-6 left-6 right-6 rounded-2xl border border-white/10 bg-white/10 p-5 shadow-xl backdrop-blur-xl">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
+              <div className="absolute -bottom-6 left-6 right-6 rounded-2xl border border-[#7A2330]/70 bg-[#561923]/95 p-5 shadow-xl backdrop-blur-xl">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C9828D]">
                   Managing Director / CEO
                 </p>
 
@@ -353,16 +354,13 @@ export default function AboutPage() {
             {/* MESSAGE */}
 
             <div className="text-white">
-              <span
-                className="text-sm font-semibold uppercase tracking-[0.25em]"
-                style={{ color: MAROON_SOFT }}
-              >
+              <span className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C9828D]">
                 Message From Our CEO
               </span>
 
               <h2 className="mt-5 text-4xl font-bold leading-tight sm:text-5xl">
                 Experience That
-                <span style={{ color: MAROON_SOFT }}>
+                <span className="text-[#C9828D]">
                   {" "}
                   Inspires Our Future
                 </span>
@@ -403,10 +401,7 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div
-                className="mt-10 border-l-4 pl-6"
-                style={{ borderColor: MAROON_SOFT }}
-              >
+              <div className="mt-10 border-l-4 border-[#C9828D] pl-6">
                 <p className="text-xl font-semibold leading-8 text-white">
                   Our ambition is to build UNASCO into a respected aviation
                   organization that creates lasting value for customers,
@@ -415,10 +410,7 @@ export default function AboutPage() {
               </div>
 
               <div className="mt-8 flex items-center gap-3 text-sm text-white/50">
-                <Award
-                  className="h-5 w-5"
-                  style={{ color: MAROON_SOFT }}
-                />
+                <Award className="h-5 w-5 text-[#C9828D]" />
 
                 <span>
                   Aviation leadership built on extensive industry experience
@@ -436,18 +428,15 @@ export default function AboutPage() {
       <section className="bg-white py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl text-center">
-            <span
-              className="text-sm font-semibold uppercase tracking-[0.25em]"
-              style={{ color: MAROON }}
-            >
+            <span className="text-sm font-semibold uppercase tracking-[0.25em] text-[#561923]">
               Leadership Experience
             </span>
 
-            <h2 className="mt-5 text-4xl font-bold sm:text-5xl">
+            <h2 className="mt-5 text-4xl font-bold text-gray-900 sm:text-5xl">
               A Proven Aviation Journey
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
+            <p className="mt-6 text-lg leading-8 text-gray-600">
               The experience behind UNASCO is supported by aviation
               operations, aviation management and commercial aviation
               experience.
@@ -455,14 +444,8 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-16 grid gap-8 lg:grid-cols-3">
-            <div className="group rounded-3xl border border-slate-200 bg-slate-50 p-8 transition-all duration-300 hover:-translate-y-2 hover:bg-white hover:shadow-xl">
-              <div
-                className="flex h-14 w-14 items-center justify-center rounded-2xl"
-                style={{
-                  backgroundColor: `${MAROON}12`,
-                  color: MAROON,
-                }}
-              >
+            <div className="group rounded-3xl border border-[#7A2330]/50 bg-[#561923] p-8 text-white transition-all duration-300 hover:-translate-y-2 hover:bg-[#7A2330] hover:shadow-xl">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#7A2330] text-[#F2C6CC]">
                 <PlaneTakeoff className="h-7 w-7" />
               </div>
 
@@ -470,21 +453,15 @@ export default function AboutPage() {
                 Airline Operations
               </h3>
 
-              <p className="mt-4 leading-7 text-muted-foreground">
+              <p className="mt-4 leading-7 text-white/70">
                 Experience across airline operations, airport services,
                 ground handling, commercial activities and operational
                 management.
               </p>
             </div>
 
-            <div className="group rounded-3xl border border-slate-200 bg-slate-50 p-8 transition-all duration-300 hover:-translate-y-2 hover:bg-white hover:shadow-xl">
-              <div
-                className="flex h-14 w-14 items-center justify-center rounded-2xl"
-                style={{
-                  backgroundColor: `${MAROON}12`,
-                  color: MAROON,
-                }}
-              >
+            <div className="group rounded-3xl border border-[#7A2330]/50 bg-[#561923] p-8 text-white transition-all duration-300 hover:-translate-y-2 hover:bg-[#7A2330] hover:shadow-xl">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#7A2330] text-[#F2C6CC]">
                 <Users className="h-7 w-7" />
               </div>
 
@@ -492,20 +469,14 @@ export default function AboutPage() {
                 Cargo Services
               </h3>
 
-              <p className="mt-4 leading-7 text-muted-foreground">
+              <p className="mt-4 leading-7 text-white/70">
                 Professional experience supporting cargo and service
                 operations and passenger ground-operation activities.
               </p>
             </div>
 
-            <div className="group rounded-3xl border border-slate-200 bg-slate-50 p-8 transition-all duration-300 hover:-translate-y-2 hover:bg-white hover:shadow-xl">
-              <div
-                className="flex h-14 w-14 items-center justify-center rounded-2xl"
-                style={{
-                  backgroundColor: `${MAROON}12`,
-                  color: MAROON,
-                }}
-              >
+            <div className="group rounded-3xl border border-[#7A2330]/50 bg-[#561923] p-8 text-white transition-all duration-300 hover:-translate-y-2 hover:bg-[#7A2330] hover:shadow-xl">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#7A2330] text-[#F2C6CC]">
                 <BriefcaseBusiness className="h-7 w-7" />
               </div>
 
@@ -513,7 +484,7 @@ export default function AboutPage() {
                 Aviation Management
               </h3>
 
-              <p className="mt-4 leading-7 text-muted-foreground">
+              <p className="mt-4 leading-7 text-white/70">
                 Experience in operational procedures, standards, commercial
                 activities, manpower planning, cost control and station
                 development.
@@ -527,25 +498,22 @@ export default function AboutPage() {
           CORE SERVICES
       ====================================================== */}
 
-      <section className="bg-slate-50 py-24 lg:py-32">
+      <section className="bg-white py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl text-center">
-            <span
-              className="text-sm font-semibold uppercase tracking-[0.25em]"
-              style={{ color: MAROON }}
-            >
+            <span className="text-sm font-semibold uppercase tracking-[0.25em] text-[#561923]">
               Our Services
             </span>
 
-            <h2 className="mt-5 text-4xl font-bold sm:text-5xl">
+            <h2 className="mt-5 text-4xl font-bold text-gray-900 sm:text-5xl">
               Aviation Solutions
-              <span style={{ color: MAROON }}>
+              <span className="text-[#561923]">
                 {" "}
                 Built Around Excellence
               </span>
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
+            <p className="mt-6 text-lg leading-8 text-gray-600">
               Professional aviation, cargo, logistics and travel support
               designed around the needs of our customers and partners.
             </p>
@@ -558,30 +526,21 @@ export default function AboutPage() {
               return (
                 <div
                   key={service.title}
-                  className="group rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+                  className="group rounded-3xl border border-[#7A2330]/50 bg-[#561923] p-8 text-white shadow-lg transition-all duration-500 hover:-translate-y-2 hover:bg-[#7A2330] hover:shadow-2xl"
                 >
-                  <div
-                    className="flex h-14 w-14 items-center justify-center rounded-2xl"
-                    style={{
-                      backgroundColor: `${MAROON}12`,
-                      color: MAROON,
-                    }}
-                  >
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#7A2330] text-[#F2C6CC]">
                     <Icon className="h-7 w-7 transition-transform duration-300 group-hover:scale-110" />
                   </div>
 
-                  <h3 className="mt-6 text-xl font-bold">
+                  <h3 className="mt-6 text-xl font-bold text-white">
                     {service.title}
                   </h3>
 
-                  <p className="mt-4 leading-7 text-muted-foreground">
+                  <p className="mt-4 leading-7 text-white/70">
                     {service.description}
                   </p>
 
-                  <div
-                    className="mt-6 flex items-center gap-2 text-sm font-semibold"
-                    style={{ color: MAROON }}
-                  >
+                  <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-[#F2C6CC]">
                     Learn More
                     <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
                   </div>
@@ -597,31 +556,22 @@ export default function AboutPage() {
       ====================================================== */}
 
       <section className="relative overflow-hidden bg-white py-24 lg:py-32">
-        <div
-          className="absolute left-0 top-0 h-96 w-96 rounded-full blur-3xl"
-          style={{ backgroundColor: `${MAROON}0D` }}
-        />
+        <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-[#C9828D]/10 blur-3xl" />
 
-        <div
-          className="absolute bottom-0 right-0 h-96 w-96 rounded-full blur-3xl"
-          style={{ backgroundColor: `${MAROON}0D` }}
-        />
+        <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-[#7A2330]/5 blur-3xl" />
 
         <div className="relative mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl text-center">
-            <span
-              className="text-sm font-semibold uppercase tracking-[0.25em]"
-              style={{ color: MAROON }}
-            >
+            <span className="text-sm font-semibold uppercase tracking-[0.25em] text-[#561923]">
               Our Foundation
             </span>
 
-            <h2 className="mt-5 text-4xl font-bold sm:text-5xl">
+            <h2 className="mt-5 text-4xl font-bold text-gray-900 sm:text-5xl">
               Mission, Vision &
-              <span style={{ color: MAROON }}> Quality</span>
+              <span className="text-[#561923]"> Quality</span>
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
+            <p className="mt-6 text-lg leading-8 text-gray-600">
               Everything we do is driven by professionalism, operational
               excellence, continuous improvement and strong relationships
               with our customers and partners.
@@ -631,14 +581,8 @@ export default function AboutPage() {
           <div className="mt-16 grid gap-8 lg:grid-cols-3">
             {/* MISSION */}
 
-            <div className="group rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-2 hover:shadow-2xl">
-              <div
-                className="flex h-16 w-16 items-center justify-center rounded-2xl"
-                style={{
-                  backgroundColor: `${MAROON}12`,
-                  color: MAROON,
-                }}
-              >
+            <div className="group rounded-3xl border border-[#7A2330]/50 bg-[#561923] p-8 text-white shadow-lg transition hover:-translate-y-2 hover:bg-[#7A2330] hover:shadow-2xl">
+              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#7A2330] text-[#F2C6CC]">
                 <Target className="h-8 w-8" />
               </div>
 
@@ -646,7 +590,7 @@ export default function AboutPage() {
                 Our Mission
               </h3>
 
-              <p className="mt-5 leading-8 text-muted-foreground">
+              <p className="mt-5 leading-8 text-white/70">
                 To deliver qualitative and efficient services that satisfy
                 our customers by engaging qualified, experienced and highly
                 motivated professionals while working together with our
@@ -658,14 +602,8 @@ export default function AboutPage() {
 
             {/* VISION */}
 
-            <div className="group rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-2 hover:shadow-2xl">
-              <div
-                className="flex h-16 w-16 items-center justify-center rounded-2xl"
-                style={{
-                  backgroundColor: `${MAROON}12`,
-                  color: MAROON,
-                }}
-              >
+            <div className="group rounded-3xl border border-[#7A2330]/50 bg-[#561923] p-8 text-white shadow-lg transition hover:-translate-y-2 hover:bg-[#7A2330] hover:shadow-2xl">
+              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#7A2330] text-[#F2C6CC]">
                 <Eye className="h-8 w-8" />
               </div>
 
@@ -673,7 +611,7 @@ export default function AboutPage() {
                 Our Vision
               </h3>
 
-              <p className="mt-5 leading-8 text-muted-foreground">
+              <p className="mt-5 leading-8 text-white/70">
                 To become a world player in the aviation industry by
                 working together with our local and international partners
                 to build a viable and sustainable future that creates
@@ -683,14 +621,8 @@ export default function AboutPage() {
 
             {/* QUALITY */}
 
-            <div className="group rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-2 hover:shadow-2xl">
-              <div
-                className="flex h-16 w-16 items-center justify-center rounded-2xl"
-                style={{
-                  backgroundColor: `${MAROON}12`,
-                  color: MAROON,
-                }}
-              >
+            <div className="group rounded-3xl border border-[#7A2330]/50 bg-[#561923] p-8 text-white shadow-lg transition hover:-translate-y-2 hover:bg-[#7A2330] hover:shadow-2xl">
+              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#7A2330] text-[#F2C6CC]">
                 <Star className="h-8 w-8" />
               </div>
 
@@ -698,7 +630,7 @@ export default function AboutPage() {
                 Our Quality
               </h3>
 
-              <p className="mt-5 leading-8 text-muted-foreground">
+              <p className="mt-5 leading-8 text-white/70">
                 We value healthy business relationships and customer
                 expectations. We continually improve our work processes,
                 procedures and service quality while reducing waste in
@@ -713,31 +645,25 @@ export default function AboutPage() {
           OBJECTIVES
       ====================================================== */}
 
-      <section className="bg-slate-50 py-24">
+      <section className="bg-white py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2">
           <div>
-            <span
-              className="text-sm font-semibold uppercase tracking-[0.25em]"
-              style={{ color: MAROON }}
-            >
+            <span className="text-sm font-semibold uppercase tracking-[0.25em] text-[#561923]">
               Our Objectives
             </span>
 
-            <h2 className="mt-5 text-4xl font-bold sm:text-5xl">
+            <h2 className="mt-5 text-4xl font-bold text-gray-900 sm:text-5xl">
               Driving Excellence
               <br />
               Every Day
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
+            <p className="mt-6 text-lg leading-8 text-gray-600">
               Our objectives guide how we operate, develop our people,
               serve our customers and build strategic relationships.
             </p>
 
-            <div
-              className="mt-8 flex items-center gap-3"
-              style={{ color: MAROON }}
-            >
+            <div className="mt-8 flex items-center gap-3 text-[#561923]">
               <TrendingUp className="h-6 w-6" />
 
               <span className="font-semibold">
@@ -750,25 +676,16 @@ export default function AboutPage() {
             {objectives.map((objective, index) => (
               <div
                 key={objective}
-                className="group flex gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:shadow-xl"
+                className="group flex gap-4 rounded-2xl border border-[#7A2330]/50 bg-[#561923] p-6 text-white shadow-lg transition hover:bg-[#7A2330] hover:shadow-xl"
               >
-                <div
-                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-bold"
-                  style={{
-                    backgroundColor: `${MAROON}12`,
-                    color: MAROON,
-                  }}
-                >
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#7A2330] text-sm font-bold text-[#F2C6CC]">
                   {String(index + 1).padStart(2, "0")}
                 </div>
 
                 <div className="flex gap-3">
-                  <CheckCircle2
-                    className="mt-1 h-5 w-5 shrink-0"
-                    style={{ color: MAROON }}
-                  />
+                  <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-[#F2C6CC]" />
 
-                  <p className="leading-7 text-muted-foreground">
+                  <p className="leading-7 text-white/75">
                     {objective}
                   </p>
                 </div>
@@ -785,18 +702,15 @@ export default function AboutPage() {
       <section className="bg-white py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl text-center">
-            <span
-              className="text-sm font-semibold uppercase tracking-[0.25em]"
-              style={{ color: MAROON }}
-            >
+            <span className="text-sm font-semibold uppercase tracking-[0.25em] text-[#561923]">
               Organization
             </span>
 
-            <h2 className="mt-5 text-4xl font-bold sm:text-5xl">
+            <h2 className="mt-5 text-4xl font-bold text-gray-900 sm:text-5xl">
               Company Structure
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
+            <p className="mt-6 text-lg leading-8 text-gray-600">
               UNASCO operates through specialized functions working
               together to deliver aviation, cargo, logistics and travel
               solutions.
@@ -804,11 +718,8 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-16 flex justify-center">
-            <div
-              className="rounded-3xl px-12 py-7 text-center text-white shadow-2xl"
-              style={{ backgroundColor: MAROON }}
-            >
-              <Users className="mx-auto mb-3 h-8 w-8" />
+            <div className="rounded-3xl bg-[#561923] px-12 py-7 text-center text-white shadow-2xl">
+              <Users className="mx-auto mb-3 h-8 w-8 text-[#F2C6CC]" />
 
               <h3 className="text-2xl font-bold">
                 MANAGEMENT
@@ -824,7 +735,7 @@ export default function AboutPage() {
             {departments.map((department) => (
               <div
                 key={department}
-                className="rounded-2xl border border-slate-200 bg-slate-50 p-7 text-center transition-all hover:-translate-y-1 hover:bg-white hover:shadow-xl"
+                className="rounded-2xl border border-[#7A2330]/50 bg-[#561923] p-7 text-center text-white transition-all hover:-translate-y-1 hover:bg-[#7A2330] hover:shadow-xl"
               >
                 <h3 className="font-bold">
                   {department}
@@ -839,24 +750,18 @@ export default function AboutPage() {
           CURRENT MANAGEMENT TEAM
       ====================================================== */}
 
-      <section
-        className="py-24 lg:py-32"
-        style={{ backgroundColor: MAROON }}
-      >
+      <section className="bg-white py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="mx-auto max-w-3xl text-center text-white">
-            <span
-              className="text-sm font-semibold uppercase tracking-[0.25em]"
-              style={{ color: MAROON_SOFT }}
-            >
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="text-sm font-semibold uppercase tracking-[0.25em] text-[#561923]">
               Our Current Team
             </span>
 
-            <h2 className="mt-5 text-4xl font-bold sm:text-5xl">
+            <h2 className="mt-5 text-4xl font-bold text-gray-900 sm:text-5xl">
               Leadership & Management
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-white/60">
+            <p className="mt-6 text-lg leading-8 text-gray-600">
               Meet the professionals responsible for leading, developing
               and supporting UNASCO Aviation Limited.
             </p>
@@ -866,12 +771,9 @@ export default function AboutPage() {
             {currentTeam.map((member) => (
               <div
                 key={member.name}
-                className="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 transition-all duration-500 hover:-translate-y-2 hover:bg-white/10"
+                className="group overflow-hidden rounded-3xl border border-[#7A2330]/60 bg-[#561923] transition-all duration-500 hover:-translate-y-2 hover:bg-[#7A2330] hover:shadow-2xl"
               >
-                <div
-                  className="relative aspect-[4/5] overflow-hidden"
-                  style={{ backgroundColor: MAROON_DARK }}
-                >
+                <div className="relative aspect-[4/5] overflow-hidden bg-[#3D1118]">
                   <Image
                     src={member.image}
                     alt={`${member.name} - ${member.role}`}
@@ -880,13 +782,10 @@ export default function AboutPage() {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
 
-                  <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#3D1118] via-[#561923]/50 to-transparent" />
 
                   <div className="absolute bottom-5 left-5 right-5">
-                    <span
-                      className="inline-flex rounded-full px-4 py-2 text-xs font-semibold text-white"
-                      style={{ backgroundColor: MAROON_LIGHT }}
-                    >
+                    <span className="inline-flex rounded-full bg-[#7A2330] px-4 py-2 text-xs font-semibold text-white">
                       {member.role}
                     </span>
                   </div>
@@ -897,14 +796,11 @@ export default function AboutPage() {
                     {member.name}
                   </h3>
 
-                  <p
-                    className="mt-2 font-semibold"
-                    style={{ color: MAROON_SOFT }}
-                  >
+                  <p className="mt-2 font-semibold text-[#F2C6CC]">
                     {member.role}
                   </p>
 
-                  <p className="mt-4 text-sm leading-7 text-white/60">
+                  <p className="mt-4 text-sm leading-7 text-white/65">
                     {member.description}
                   </p>
                 </div>
@@ -923,7 +819,7 @@ export default function AboutPage() {
           <div className="grid items-center gap-16 lg:grid-cols-2">
             {/* IMAGE */}
 
-            <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-50 shadow-2xl">
+            <div className="relative overflow-hidden rounded-[2rem] border border-[#561923]/10 bg-[#561923] shadow-2xl">
               <Image
                 src="/company/collaborations.jpg"
                 alt="UNASCO Aviation strategic collaborations"
@@ -936,28 +832,25 @@ export default function AboutPage() {
             {/* CONTENT */}
 
             <div>
-              <span
-                className="text-sm font-semibold uppercase tracking-[0.25em]"
-                style={{ color: MAROON }}
-              >
+              <span className="text-sm font-semibold uppercase tracking-[0.25em] text-[#561923]">
                 Strategic Collaborations
               </span>
 
-              <h2 className="mt-5 text-4xl font-bold sm:text-5xl">
+              <h2 className="mt-5 text-4xl font-bold text-gray-900 sm:text-5xl">
                 Strong Connections.
-                <span style={{ color: MAROON }}>
+                <span className="text-[#561923]">
                   {" "}
                   Bigger Possibilities.
                 </span>
               </h2>
 
-              <p className="mt-6 text-lg leading-8 text-muted-foreground">
+              <p className="mt-6 text-lg leading-8 text-gray-600">
                 UNASCO Aviation Limited recognizes that strong aviation
                 businesses are built through strategic partnerships,
                 professional relationships and reliable industry networks.
               </p>
 
-              <p className="mt-5 leading-8 text-muted-foreground">
+              <p className="mt-5 leading-8 text-gray-600">
                 Our collaboration network supports aviation, airline,
                 cargo, travel and institutional relationships, helping us
                 create stronger solutions and opportunities for our
@@ -974,12 +867,9 @@ export default function AboutPage() {
                 ].map((item) => (
                   <div
                     key={item}
-                    className="flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50 p-4 transition hover:bg-white hover:shadow-md"
+                    className="flex items-center gap-3 rounded-xl border border-[#7A2330]/50 bg-[#561923] p-4 text-white transition hover:bg-[#7A2330] hover:shadow-md"
                   >
-                    <CheckCircle2
-                      className="h-5 w-5 shrink-0"
-                      style={{ color: MAROON }}
-                    />
+                    <CheckCircle2 className="h-5 w-5 shrink-0 text-[#F2C6CC]" />
 
                     <span className="text-sm font-medium">
                       {item}
@@ -996,25 +886,22 @@ export default function AboutPage() {
           OPERATIONAL CAPABILITY
       ====================================================== */}
 
-      <section className="bg-slate-50 py-24">
+      <section className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl text-center">
-            <span
-              className="text-sm font-semibold uppercase tracking-[0.25em]"
-              style={{ color: MAROON }}
-            >
+            <span className="text-sm font-semibold uppercase tracking-[0.25em] text-[#561923]">
               Our Capability
             </span>
 
-            <h2 className="mt-5 text-4xl font-bold sm:text-5xl">
+            <h2 className="mt-5 text-4xl font-bold text-gray-900 sm:text-5xl">
               Experience Meets
-              <span style={{ color: MAROON }}>
+              <span className="text-[#561923]">
                 {" "}
                 Operational Excellence
               </span>
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
+            <p className="mt-6 text-lg leading-8 text-gray-600">
               Our approach combines aviation experience, professional
               standards and strategic industry relationships to deliver
               dependable services.
@@ -1022,50 +909,41 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-16 grid gap-6 md:grid-cols-3">
-            <div className="group rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-2 hover:shadow-xl">
-              <ShieldCheck
-                className="h-10 w-10 transition group-hover:scale-110"
-                style={{ color: MAROON }}
-              />
+            <div className="group rounded-3xl border border-[#7A2330]/50 bg-[#561923] p-8 text-white shadow-lg transition hover:-translate-y-2 hover:bg-[#7A2330] hover:shadow-xl">
+              <ShieldCheck className="h-10 w-10 text-[#F2C6CC] transition group-hover:scale-110" />
 
               <h3 className="mt-6 text-xl font-bold">
                 Professional Standards
               </h3>
 
-              <p className="mt-4 leading-7 text-muted-foreground">
+              <p className="mt-4 leading-7 text-white/70">
                 We continuously improve our processes and procedures to
                 deliver dependable and professional aviation services.
               </p>
             </div>
 
-            <div className="group rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-2 hover:shadow-xl">
-              <Network
-                className="h-10 w-10 transition group-hover:scale-110"
-                style={{ color: MAROON }}
-              />
+            <div className="group rounded-3xl border border-[#7A2330]/50 bg-[#561923] p-8 text-white shadow-lg transition hover:-translate-y-2 hover:bg-[#7A2330] hover:shadow-xl">
+              <Network className="h-10 w-10 text-[#F2C6CC] transition group-hover:scale-110" />
 
               <h3 className="mt-6 text-xl font-bold">
                 Strategic Industry Network
               </h3>
 
-              <p className="mt-4 leading-7 text-muted-foreground">
+              <p className="mt-4 leading-7 text-white/70">
                 Strong professional relationships help connect our
                 operations with trusted partners and opportunities across
                 the aviation industry.
               </p>
             </div>
 
-            <div className="group rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-2 hover:shadow-xl">
-              <PlaneTakeoff
-                className="h-10 w-10 transition group-hover:scale-110"
-                style={{ color: MAROON }}
-              />
+            <div className="group rounded-3xl border border-[#7A2330]/50 bg-[#561923] p-8 text-white shadow-lg transition hover:-translate-y-2 hover:bg-[#7A2330] hover:shadow-xl">
+              <PlaneTakeoff className="h-10 w-10 text-[#F2C6CC] transition group-hover:scale-110" />
 
               <h3 className="mt-6 text-xl font-bold">
                 Operational Coordination
               </h3>
 
-              <p className="mt-4 leading-7 text-muted-foreground">
+              <p className="mt-4 leading-7 text-white/70">
                 Our teams coordinate aviation, cargo and travel activities
                 with a focus on reliability, efficiency and customer
                 satisfaction.
@@ -1082,22 +960,19 @@ export default function AboutPage() {
       <section className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-center">
-            <span
-              className="text-sm font-semibold uppercase tracking-[0.25em]"
-              style={{ color: MAROON }}
-            >
+            <span className="text-sm font-semibold uppercase tracking-[0.25em] text-[#561923]">
               Why Choose UNASCO
             </span>
 
-            <h2 className="mt-5 text-4xl font-bold sm:text-5xl">
+            <h2 className="mt-5 text-4xl font-bold text-gray-900 sm:text-5xl">
               Built on Experience.
-              <span style={{ color: MAROON }}>
+              <span className="text-[#561923]">
                 {" "}
                 Driven by Excellence.
               </span>
             </h2>
 
-            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-muted-foreground">
+            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-600">
               We are committed to building long-term relationships through
               dependable aviation services, professional operations and
               customer-focused solutions.
@@ -1108,13 +983,9 @@ export default function AboutPage() {
             {strengths.map((item) => (
               <div
                 key={item}
-                className="group rounded-3xl p-8 text-center text-white transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
-                style={{ backgroundColor: MAROON }}
+                className="group rounded-3xl border border-[#7A2330]/50 bg-[#561923] p-8 text-center text-white transition-all duration-300 hover:-translate-y-2 hover:bg-[#7A2330] hover:shadow-2xl"
               >
-                <CheckCircle2
-                  className="mx-auto h-10 w-10 transition group-hover:scale-110"
-                  style={{ color: MAROON_SOFT }}
-                />
+                <CheckCircle2 className="mx-auto h-10 w-10 text-[#F2C6CC] transition group-hover:scale-110" />
 
                 <h3 className="mt-5 font-semibold">
                   {item}
@@ -1129,19 +1000,11 @@ export default function AboutPage() {
           CALL TO ACTION
       ====================================================== */}
 
-      <section
-        className="relative overflow-hidden py-24 lg:py-32"
-        style={{ backgroundColor: MAROON }}
-      >
-        <div
-          className="absolute inset-0 bg-[url('/about-operations.png')] bg-cover bg-center opacity-10"
-        />
+      <section className="relative overflow-hidden bg-[#561923] py-24 lg:py-32">
+        <div className="absolute inset-0 bg-[url('/about-operations.png')] bg-cover bg-center opacity-10" />
 
         <div className="relative mx-auto max-w-5xl px-6 text-center text-white">
-          <span
-            className="text-sm font-semibold uppercase tracking-[0.25em]"
-            style={{ color: MAROON_SOFT }}
-          >
+          <span className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C9828D]">
             Let&apos;s Work Together
           </span>
 
@@ -1161,22 +1024,19 @@ export default function AboutPage() {
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <a
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-xl bg-white px-8 py-4 font-semibold shadow-xl transition hover:-translate-y-1 hover:shadow-2xl"
-              style={{ color: MAROON }}
+              className="inline-flex items-center gap-2 rounded-xl bg-white px-8 py-4 font-semibold text-[#561923] shadow-xl transition hover:-translate-y-1 hover:shadow-2xl"
             >
               Contact UNASCO
+
               <ArrowRight className="h-5 w-5" />
             </a>
 
-            {/* IMPORTANT:
-                No onMouseEnter / onMouseLeave here.
-                This page is a Server Component.
-            */}
             <a
               href="/services"
               className="inline-flex items-center gap-2 rounded-xl border border-white/50 px-8 py-4 font-semibold text-white transition hover:-translate-y-1 hover:bg-white hover:text-[#561923]"
             >
               Explore Services
+
               <ArrowRight className="h-5 w-5" />
             </a>
           </div>

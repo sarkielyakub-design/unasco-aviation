@@ -1,9 +1,11 @@
 "use client";
 
 /// <reference types="react" />
+
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+
 import {
   ArrowRight,
   PlaneTakeoff,
@@ -11,12 +13,14 @@ import {
   Globe2,
   MapPin,
 } from "lucide-react";
+
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 
 export function HomeHero() {
   return (
     <section className="group relative flex min-h-screen items-center justify-center overflow-hidden bg-[#12080A]">
+
       {/* Background Image */}
       <Image
         src="/hero-cargo-aircraft.png"
@@ -107,9 +111,93 @@ export function HomeHero() {
           lg:px-8
         "
       >
+
         <div className="flex w-full max-w-6xl flex-col items-center">
 
-          {/* Badge */}
+          {/* =====================================================
+              IATA / NANTA LOGOS
+          ====================================================== */}
+
+          <div
+            className="
+              mb-6
+              flex
+              flex-wrap
+              items-center
+              justify-center
+              gap-4
+              animate-[fadeInUp_0.8s_ease-out_both]
+            "
+          >
+
+            {/* IATA */}
+            <div
+              className="
+                flex
+                h-16
+                min-w-[150px]
+                items-center
+                justify-center
+                overflow-hidden
+                rounded-2xl
+                border
+                border-white/20
+                bg-white
+                px-5
+                shadow-xl
+                backdrop-blur-md
+                transition-all
+                duration-300
+                hover:-translate-y-1
+                hover:shadow-2xl
+              "
+            >
+              <Image
+                src="/logos/iata.png"
+                alt="IATA"
+                width={120}
+                height={60}
+                className="h-12 w-auto object-contain"
+              />
+            </div>
+
+            {/* NANTA */}
+            <div
+              className="
+                flex
+                h-16
+                min-w-[150px]
+                items-center
+                justify-center
+                overflow-hidden
+                rounded-2xl
+                border
+                border-white/20
+                bg-white
+                px-5
+                shadow-xl
+                backdrop-blur-md
+                transition-all
+                duration-300
+                hover:-translate-y-1
+                hover:shadow-2xl
+              "
+            >
+              <Image
+                src="/logos/nanta.png"
+                alt="NANTA"
+                width={150}
+                height={60}
+                className="h-12 w-auto object-contain"
+              />
+            </div>
+
+          </div>
+
+          {/* =====================================================
+              BADGE
+          ====================================================== */}
+
           <div
             className="
               inline-flex
@@ -129,7 +217,9 @@ export function HomeHero() {
               animate-[fadeInUp_0.8s_ease-out_both]
             "
           >
+
             <span className="relative flex h-2.5 w-2.5">
+
               <span
                 className="
                   absolute
@@ -153,22 +243,42 @@ export function HomeHero() {
                   bg-[#C9828D]
                 "
               />
+
             </span>
 
-            <PlaneTakeoff className="h-4 w-4 text-[#C9828D]" />
+            <PlaneTakeoff
+              className="h-4 w-4 text-[#C9828D]"
+            />
 
             <span>
               Aviation
-              <span className="mx-1.5 text-white/30">•</span>
+
+              <span className="mx-1.5 text-white/30">
+                •
+              </span>
+
               Cargo
-              <span className="mx-1.5 text-white/30">•</span>
+
+              <span className="mx-1.5 text-white/30">
+                •
+              </span>
+
               Logistics
-              <span className="mx-1.5 text-white/30">•</span>
+
+              <span className="mx-1.5 text-white/30">
+                •
+              </span>
+
               Hajj &amp; Umrah
             </span>
+
           </div>
 
-          {/* Hero Heading */}
+
+          {/* =====================================================
+              HERO HEADING
+          ====================================================== */}
+
           <div
             className="
               mt-8
@@ -178,6 +288,7 @@ export function HomeHero() {
               animate-[fadeInUp_0.9s_0.15s_ease-out_both]
             "
           >
+
             {/* UNASCO */}
             <h1
               className="
@@ -195,6 +306,7 @@ export function HomeHero() {
               UNASCO
             </h1>
 
+
             {/* Connecting People & Cargo */}
             <h2
               className="
@@ -208,6 +320,7 @@ export function HomeHero() {
                 lg:text-6xl
               "
             >
+
               <span className="text-white">
                 Connecting{" "}
               </span>
@@ -215,7 +328,9 @@ export function HomeHero() {
               <span className="text-[#C9828D]">
                 People &amp; Cargo
               </span>
+
             </h2>
+
 
             {/* Accent Line */}
             <div
@@ -228,9 +343,14 @@ export function HomeHero() {
                 shadow-[0_0_25px_rgba(201,130,141,0.45)]
               "
             />
+
           </div>
 
-          {/* Description */}
+
+          {/* =====================================================
+              DESCRIPTION
+          ====================================================== */}
+
           <p
             className="
               mt-8
@@ -244,12 +364,16 @@ export function HomeHero() {
             "
           >
             UNASCO Aviation Limited provides professional aviation
-            support, air cargo transportation, logistics solutions,
+            support, air cargo transportation,general sales agent, logistics solutions,
             flight operations, airline management and Hajj &amp; Umrah
             travel services with safety, reliability and excellence.
           </p>
 
-          {/* Buttons */}
+
+          {/* =====================================================
+              BUTTONS
+          ====================================================== */}
+
           <div
             className="
               mt-10
@@ -262,6 +386,7 @@ export function HomeHero() {
               animate-[fadeInUp_0.9s_0.45s_ease-out_both]
             "
           >
+
             {/* Request Quote */}
             <Link
               href="/contact"
@@ -300,6 +425,7 @@ export function HomeHero() {
               />
             </Link>
 
+
             {/* Services */}
             <Link
               href="/cargo-services"
@@ -327,9 +453,14 @@ export function HomeHero() {
             >
               Explore Our Services
             </Link>
+
           </div>
 
-          {/* Trust Features */}
+
+          {/* =====================================================
+              TRUST FEATURES
+          ====================================================== */}
+
           <div
             className="
               mt-12
@@ -341,6 +472,7 @@ export function HomeHero() {
               animate-[fadeInUp_0.9s_0.6s_ease-out_both]
             "
           >
+
             {/* Safe & Reliable */}
             <div
               className="
@@ -364,6 +496,7 @@ export function HomeHero() {
                 hover:bg-white/10
               "
             >
+
               <div
                 className="
                   flex
@@ -391,7 +524,9 @@ export function HomeHero() {
               <p className="mt-1 text-xs text-white/50">
                 Professional Operations
               </p>
+
             </div>
+
 
             {/* Global Network */}
             <div
@@ -416,6 +551,7 @@ export function HomeHero() {
                 hover:bg-white/10
               "
             >
+
               <div
                 className="
                   flex
@@ -443,7 +579,9 @@ export function HomeHero() {
               <p className="mt-1 text-xs text-white/50">
                 Africa • Asia • Global
               </p>
+
             </div>
+
 
             {/* Hajj & Umrah */}
             <div
@@ -468,6 +606,7 @@ export function HomeHero() {
                 hover:bg-white/10
               "
             >
+
               <div
                 className="
                   flex
@@ -495,12 +634,20 @@ export function HomeHero() {
               <p className="mt-1 text-xs text-white/50">
                 Makkah • Madinah
               </p>
+
             </div>
+
           </div>
+
         </div>
+
       </div>
 
-      {/* Bottom Explore Indicator */}
+
+      {/* =====================================================
+          BOTTOM EXPLORE INDICATOR
+      ====================================================== */}
+
       <div
         className="
           absolute
@@ -516,6 +663,7 @@ export function HomeHero() {
           animate-[fadeIn_1s_1.2s_ease-out_both]
         "
       >
+
         <span
           className="
             text-[10px]
@@ -528,6 +676,7 @@ export function HomeHero() {
         </span>
 
         <div className="h-10 w-px overflow-hidden bg-white/20">
+
           <div
             className="
               h-1/2
@@ -536,8 +685,11 @@ export function HomeHero() {
               bg-[#C9828D]
             "
           />
+
         </div>
+
       </div>
+
     </section>
   );
 }
