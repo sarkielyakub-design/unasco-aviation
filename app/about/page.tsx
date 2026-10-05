@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+
 import {
   Building2,
   MapPin,
@@ -19,28 +20,11 @@ import {
   TrendingUp,
 } from "lucide-react";
 
-/* =========================================================
-   METADATA
-========================================================= */
-
 export const metadata: Metadata = {
   title: "About UNASCO Aviation Limited",
   description:
     "Learn about UNASCO Aviation Limited, our leadership, aviation expertise, cargo operations, strategic relationships and commitment to professional aviation services.",
 };
-
-/* =========================================================
-   BRAND COLORS
-========================================================= */
-
-const MAROON = "#561923";
-const MAROON_LIGHT = "#7A2330";
-const MAROON_SOFT = "#C9828D";
-const MAROON_DARK = "#3D1118";
-
-/* =========================================================
-   CORE SERVICES
-========================================================= */
 
 const services = [
   {
@@ -49,35 +33,30 @@ const services = [
       "Professional aviation support designed to assist airlines, aircraft operators and aviation partners with efficient and dependable operations.",
     icon: PlaneTakeoff,
   },
-
   {
     title: "Flight Operations",
     description:
       "Operational coordination and aviation support delivered with professionalism, efficiency and industry experience.",
     icon: Globe2,
   },
-
   {
     title: "Airline Management",
     description:
       "Management support for aviation operations, commercial activities, operational coordination and sustainable business development.",
     icon: BriefcaseBusiness,
   },
-
   {
     title: "Air Cargo Transportation",
     description:
       "Reliable cargo transportation and coordination solutions supporting the efficient movement and delivery of goods.",
     icon: PackageCheck,
   },
-
   {
     title: "General Aviation & Air Travel",
     description:
       "Professional aviation and air travel support tailored to the needs of individuals, organizations and corporate clients.",
     icon: Building2,
   },
-
   {
     title: "General Sales Agents",
     description:
@@ -85,10 +64,6 @@ const services = [
     icon: BriefcaseBusiness,
   },
 ];
-
-/* =========================================================
-   CURRENT MANAGEMENT TEAM
-========================================================= */
 
 const currentTeam = [
   {
@@ -98,15 +73,13 @@ const currentTeam = [
     description:
       "Experienced aviation professional with extensive experience in airline operations and aviation management.",
   },
-
   {
     name: "Mr. Hafiz Umar Ballah",
-    role: "Executive Director,Sales Marketing",
+    role: "Executive Director, Sales Marketing",
     image: "/team/hafiz-umar-ballah.jpg",
     description:
       "Responsible for commercial development, marketing, customer relationships and strategic business growth.",
   },
-
   {
     name: "Mr. Usman K. Kudi",
     role: "Cargo Operations",
@@ -114,7 +87,6 @@ const currentTeam = [
     description:
       "Supports cargo coordination, operational activities and the efficient handling and movement of cargo.",
   },
-
   {
     name: "Mr. William",
     role: "Lagos Station Manager",
@@ -124,20 +96,12 @@ const currentTeam = [
   },
 ];
 
-/* =========================================================
-   OBJECTIVES
-========================================================= */
-
 const objectives = [
   "Provide excellent and unique services that meet customer expectations while maximizing shareholder value.",
   "Develop local expertise capable of meeting international aviation industry standards.",
   "Remain a leading provider of flight operation support and travel solutions with professionalism and sound business ethics.",
   "Continuously improve our services while working with strategic local and international partners.",
 ];
-
-/* =========================================================
-   COMPANY DEPARTMENTS
-========================================================= */
 
 const departments = [
   "Finance",
@@ -147,10 +111,6 @@ const departments = [
   "Administration & Human Resources",
   "Booking & Reservation",
 ];
-
-/* =========================================================
-   WHY CHOOSE UNASCO
-========================================================= */
 
 const strengths = [
   "Experienced Aviation Professionals",
@@ -164,10 +124,7 @@ const strengths = [
 export default function AboutPage() {
   return (
     <>
-      {/* =====================================================
-          HERO
-      ====================================================== */}
-
+      {/* HERO */}
       <section className="relative overflow-hidden bg-[#3D1118] py-28 lg:py-36">
         <div className="absolute -left-40 top-0 h-[500px] w-[500px] rounded-full bg-[#7A2330]/40 blur-[120px]" />
 
@@ -175,21 +132,21 @@ export default function AboutPage() {
 
         <div className="relative mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-4xl text-center text-white">
-            <span className="inline-flex rounded-full border border-[#C9828D]/40 bg-white/5 px-5 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-[#F2C6CC] backdrop-blur-md">
+            <span className="inline-flex rounded-full border border-[#C9828D]/40 bg-white/5 px-5 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-white backdrop-blur-md">
               About UNASCO
             </span>
 
             <h1 className="mt-7 text-5xl font-extrabold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
               Built for Aviation.
               <br />
-              <span className="text-[#C9828D]">
+              <span className="text-white">
                 Driven by Excellence.
               </span>
             </h1>
 
             <div className="mx-auto mt-7 h-1 w-24 rounded-full bg-[#C9828D]" />
 
-            <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-white/75 sm:text-xl">
+            <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-white sm:text-xl">
               UNASCO Aviation Limited provides professional aviation,
               flight support, cargo and logistics solutions through
               experienced leadership, strategic relationships and a
@@ -199,10 +156,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* =====================================================
-          COMPANY PROFILE
-      ====================================================== */}
-
+      {/* COMPANY PROFILE */}
       <section className="relative overflow-hidden bg-white py-24 lg:py-32">
         <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-[#C9828D]/10 blur-3xl" />
 
@@ -210,7 +164,6 @@ export default function AboutPage() {
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2">
           {/* IMAGE */}
-
           <div className="relative">
             <div className="group overflow-hidden rounded-[2rem] border border-[#561923]/10 shadow-2xl">
               <Image
@@ -224,7 +177,6 @@ export default function AboutPage() {
             </div>
 
             {/* REGISTRATION CARD */}
-
             <div className="absolute -bottom-8 left-6 rounded-3xl border border-[#7A2330]/50 bg-[#561923] p-6 text-white shadow-2xl backdrop-blur sm:left-10">
               <div className="flex items-center gap-4">
                 <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#7A2330] text-[#F2C6CC]">
@@ -232,7 +184,7 @@ export default function AboutPage() {
                 </div>
 
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white">
                     Corporate Registration
                   </p>
 
@@ -240,7 +192,7 @@ export default function AboutPage() {
                     RC 8207934
                   </p>
 
-                  <p className="text-xs text-white/60">
+                  <p className="text-xs text-white">
                     Incorporated 27 January 2025
                   </p>
                 </div>
@@ -249,7 +201,6 @@ export default function AboutPage() {
           </div>
 
           {/* CONTENT */}
-
           <div className="text-gray-900">
             <span className="text-sm font-semibold uppercase tracking-[0.25em] text-[#561923]">
               Company Profile
@@ -276,7 +227,6 @@ export default function AboutPage() {
             </p>
 
             {/* HEAD OFFICE */}
-
             <div className="mt-10">
               <div className="flex gap-4 rounded-2xl border border-[#7A2330]/50 bg-[#561923] p-5 text-white transition-all duration-300 hover:bg-[#7A2330] hover:shadow-lg">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#7A2330]">
@@ -288,7 +238,7 @@ export default function AboutPage() {
                     Registered Head Office
                   </h4>
 
-                  <p className="mt-1 text-white/70">
+                  <p className="mt-1 text-white">
                     No. 7 Bompai Road, Kano State, Nigeria
                   </p>
                 </div>
@@ -296,7 +246,6 @@ export default function AboutPage() {
             </div>
 
             {/* COMPANY POSITIONING */}
-
             <div className="mt-8 flex flex-wrap gap-3">
               {[
                 "Aviation Support",
@@ -316,10 +265,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* =====================================================
-          CEO MESSAGE
-      ====================================================== */}
-
+      {/* CEO MESSAGE */}
       <section className="relative overflow-hidden bg-[#561923] py-24 lg:py-32">
         <div className="absolute -left-40 top-0 h-[500px] w-[500px] rounded-full bg-[#7A2330]/50 blur-3xl" />
 
@@ -328,7 +274,6 @@ export default function AboutPage() {
         <div className="relative mx-auto max-w-7xl px-6">
           <div className="grid items-center gap-16 lg:grid-cols-[420px_1fr]">
             {/* CEO PHOTO */}
-
             <div className="relative">
               <div className="overflow-hidden rounded-[2rem] border border-[#7A2330] bg-[#3D1118] shadow-2xl">
                 <Image
@@ -341,7 +286,7 @@ export default function AboutPage() {
               </div>
 
               <div className="absolute -bottom-6 left-6 right-6 rounded-2xl border border-[#7A2330]/70 bg-[#561923]/95 p-5 shadow-xl backdrop-blur-xl">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C9828D]">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white">
                   Managing Director / CEO
                 </p>
 
@@ -352,21 +297,20 @@ export default function AboutPage() {
             </div>
 
             {/* MESSAGE */}
-
             <div className="text-white">
-              <span className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C9828D]">
+              <span className="text-sm font-semibold uppercase tracking-[0.25em] text-white">
                 Message From Our CEO
               </span>
 
-              <h2 className="mt-5 text-4xl font-bold leading-tight sm:text-5xl">
+              <h2 className="mt-5 text-4xl font-bold leading-tight text-white sm:text-5xl">
                 Experience That
-                <span className="text-[#C9828D]">
+                <span className="text-white">
                   {" "}
                   Inspires Our Future
                 </span>
               </h2>
 
-              <div className="mt-8 space-y-6 text-lg leading-8 text-white/70">
+              <div className="mt-8 space-y-6 text-lg leading-8 text-white">
                 <p>
                   Aviation is built on trust, discipline, experience and
                   strong relationships. At UNASCO Aviation Limited, we are
@@ -409,8 +353,8 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="mt-8 flex items-center gap-3 text-sm text-white/50">
-                <Award className="h-5 w-5 text-[#C9828D]" />
+              <div className="mt-8 flex items-center gap-3 text-sm text-white">
+                <Award className="h-5 w-5 text-[#F2C6CC]" />
 
                 <span>
                   Aviation leadership built on extensive industry experience
@@ -421,10 +365,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* =====================================================
-          LEADERSHIP EXPERIENCE
-      ====================================================== */}
-
+      {/* LEADERSHIP EXPERIENCE */}
       <section className="bg-white py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl text-center">
@@ -453,7 +394,7 @@ export default function AboutPage() {
                 Airline Operations
               </h3>
 
-              <p className="mt-4 leading-7 text-white/70">
+              <p className="mt-4 leading-7 text-white">
                 Experience across airline operations, airport services,
                 ground handling, commercial activities and operational
                 management.
@@ -469,7 +410,7 @@ export default function AboutPage() {
                 Cargo Services
               </h3>
 
-              <p className="mt-4 leading-7 text-white/70">
+              <p className="mt-4 leading-7 text-white">
                 Professional experience supporting cargo and service
                 operations and passenger ground-operation activities.
               </p>
@@ -484,7 +425,7 @@ export default function AboutPage() {
                 Aviation Management
               </h3>
 
-              <p className="mt-4 leading-7 text-white/70">
+              <p className="mt-4 leading-7 text-white">
                 Experience in operational procedures, standards, commercial
                 activities, manpower planning, cost control and station
                 development.
@@ -494,10 +435,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* =====================================================
-          CORE SERVICES
-      ====================================================== */}
-
+      {/* CORE SERVICES */}
       <section className="bg-white py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl text-center">
@@ -536,11 +474,11 @@ export default function AboutPage() {
                     {service.title}
                   </h3>
 
-                  <p className="mt-4 leading-7 text-white/70">
+                  <p className="mt-4 leading-7 text-white">
                     {service.description}
                   </p>
 
-                  <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-[#F2C6CC]">
+                  <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-white">
                     Learn More
                     <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
                   </div>
@@ -551,10 +489,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* =====================================================
-          MISSION / VISION / QUALITY
-      ====================================================== */}
-
+      {/* MISSION / VISION / QUALITY */}
       <section className="relative overflow-hidden bg-white py-24 lg:py-32">
         <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-[#C9828D]/10 blur-3xl" />
 
@@ -580,7 +515,6 @@ export default function AboutPage() {
 
           <div className="mt-16 grid gap-8 lg:grid-cols-3">
             {/* MISSION */}
-
             <div className="group rounded-3xl border border-[#7A2330]/50 bg-[#561923] p-8 text-white shadow-lg transition hover:-translate-y-2 hover:bg-[#7A2330] hover:shadow-2xl">
               <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#7A2330] text-[#F2C6CC]">
                 <Target className="h-8 w-8" />
@@ -590,7 +524,7 @@ export default function AboutPage() {
                 Our Mission
               </h3>
 
-              <p className="mt-5 leading-8 text-white/70">
+              <p className="mt-5 leading-8 text-white">
                 To deliver qualitative and efficient services that satisfy
                 our customers by engaging qualified, experienced and highly
                 motivated professionals while working together with our
@@ -601,7 +535,6 @@ export default function AboutPage() {
             </div>
 
             {/* VISION */}
-
             <div className="group rounded-3xl border border-[#7A2330]/50 bg-[#561923] p-8 text-white shadow-lg transition hover:-translate-y-2 hover:bg-[#7A2330] hover:shadow-2xl">
               <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#7A2330] text-[#F2C6CC]">
                 <Eye className="h-8 w-8" />
@@ -611,7 +544,7 @@ export default function AboutPage() {
                 Our Vision
               </h3>
 
-              <p className="mt-5 leading-8 text-white/70">
+              <p className="mt-5 leading-8 text-white">
                 To become a world player in the aviation industry by
                 working together with our local and international partners
                 to build a viable and sustainable future that creates
@@ -620,7 +553,6 @@ export default function AboutPage() {
             </div>
 
             {/* QUALITY */}
-
             <div className="group rounded-3xl border border-[#7A2330]/50 bg-[#561923] p-8 text-white shadow-lg transition hover:-translate-y-2 hover:bg-[#7A2330] hover:shadow-2xl">
               <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#7A2330] text-[#F2C6CC]">
                 <Star className="h-8 w-8" />
@@ -630,7 +562,7 @@ export default function AboutPage() {
                 Our Quality
               </h3>
 
-              <p className="mt-5 leading-8 text-white/70">
+              <p className="mt-5 leading-8 text-white">
                 We value healthy business relationships and customer
                 expectations. We continually improve our work processes,
                 procedures and service quality while reducing waste in
@@ -641,10 +573,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* =====================================================
-          OBJECTIVES
-      ====================================================== */}
-
+      {/* OBJECTIVES */}
       <section className="bg-white py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2">
           <div>
@@ -678,14 +607,14 @@ export default function AboutPage() {
                 key={objective}
                 className="group flex gap-4 rounded-2xl border border-[#7A2330]/50 bg-[#561923] p-6 text-white shadow-lg transition hover:bg-[#7A2330] hover:shadow-xl"
               >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#7A2330] text-sm font-bold text-[#F2C6CC]">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#7A2330] text-sm font-bold text-white">
                   {String(index + 1).padStart(2, "0")}
                 </div>
 
                 <div className="flex gap-3">
                   <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-[#F2C6CC]" />
 
-                  <p className="leading-7 text-white/75">
+                  <p className="leading-7 text-white">
                     {objective}
                   </p>
                 </div>
@@ -695,10 +624,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* =====================================================
-          COMPANY STRUCTURE
-      ====================================================== */}
-
+      {/* COMPANY STRUCTURE */}
       <section className="bg-white py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl text-center">
@@ -725,7 +651,7 @@ export default function AboutPage() {
                 MANAGEMENT
               </h3>
 
-              <p className="mt-1 text-sm text-white/70">
+              <p className="mt-1 text-sm text-white">
                 Executive Leadership & Operational Oversight
               </p>
             </div>
@@ -746,10 +672,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* =====================================================
-          CURRENT MANAGEMENT TEAM
-      ====================================================== */}
-
+      {/* CURRENT MANAGEMENT TEAM */}
       <section className="bg-white py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl text-center">
@@ -796,11 +719,11 @@ export default function AboutPage() {
                     {member.name}
                   </h3>
 
-                  <p className="mt-2 font-semibold text-[#F2C6CC]">
+                  <p className="mt-2 font-semibold text-white">
                     {member.role}
                   </p>
 
-                  <p className="mt-4 text-sm leading-7 text-white/65">
+                  <p className="mt-4 text-sm leading-7 text-white">
                     {member.description}
                   </p>
                 </div>
@@ -810,15 +733,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* =====================================================
-          STRATEGIC COLLABORATIONS
-      ====================================================== */}
-
+      {/* STRATEGIC COLLABORATIONS */}
       <section className="bg-white py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid items-center gap-16 lg:grid-cols-2">
             {/* IMAGE */}
-
             <div className="relative overflow-hidden rounded-[2rem] border border-[#561923]/10 bg-[#561923] shadow-2xl">
               <Image
                 src="/company/collaborations.jpg"
@@ -830,7 +749,6 @@ export default function AboutPage() {
             </div>
 
             {/* CONTENT */}
-
             <div>
               <span className="text-sm font-semibold uppercase tracking-[0.25em] text-[#561923]">
                 Strategic Collaborations
@@ -882,10 +800,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* =====================================================
-          OPERATIONAL CAPABILITY
-      ====================================================== */}
-
+      {/* OPERATIONAL CAPABILITY */}
       <section className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl text-center">
@@ -916,7 +831,7 @@ export default function AboutPage() {
                 Professional Standards
               </h3>
 
-              <p className="mt-4 leading-7 text-white/70">
+              <p className="mt-4 leading-7 text-white">
                 We continuously improve our processes and procedures to
                 deliver dependable and professional aviation services.
               </p>
@@ -929,7 +844,7 @@ export default function AboutPage() {
                 Strategic Industry Network
               </h3>
 
-              <p className="mt-4 leading-7 text-white/70">
+              <p className="mt-4 leading-7 text-white">
                 Strong professional relationships help connect our
                 operations with trusted partners and opportunities across
                 the aviation industry.
@@ -943,7 +858,7 @@ export default function AboutPage() {
                 Operational Coordination
               </h3>
 
-              <p className="mt-4 leading-7 text-white/70">
+              <p className="mt-4 leading-7 text-white">
                 Our teams coordinate aviation, cargo and travel activities
                 with a focus on reliability, efficiency and customer
                 satisfaction.
@@ -953,10 +868,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* =====================================================
-          WHY CHOOSE UNASCO
-      ====================================================== */}
-
+      {/* WHY CHOOSE UNASCO */}
       <section className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-center">
@@ -996,25 +908,22 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* =====================================================
-          CALL TO ACTION
-      ====================================================== */}
-
+      {/* CALL TO ACTION */}
       <section className="relative overflow-hidden bg-[#561923] py-24 lg:py-32">
         <div className="absolute inset-0 bg-[url('/about-operations.png')] bg-cover bg-center opacity-10" />
 
         <div className="relative mx-auto max-w-5xl px-6 text-center text-white">
-          <span className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C9828D]">
+          <span className="text-sm font-semibold uppercase tracking-[0.25em] text-white">
             Let&apos;s Work Together
           </span>
 
-          <h2 className="mt-5 text-4xl font-bold sm:text-6xl">
+          <h2 className="mt-5 text-4xl font-bold text-white sm:text-6xl">
             Your Journey Starts
             <br />
             With the Right Aviation Partner.
           </h2>
 
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-white/80">
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-white">
             Whether you require flight support, cargo transportation,
             airline management, travel management, Hajj & Umrah
             operations or logistics solutions, UNASCO Aviation Limited
@@ -1027,7 +936,6 @@ export default function AboutPage() {
               className="inline-flex items-center gap-2 rounded-xl bg-white px-8 py-4 font-semibold text-[#561923] shadow-xl transition hover:-translate-y-1 hover:shadow-2xl"
             >
               Contact UNASCO
-
               <ArrowRight className="h-5 w-5" />
             </a>
 
@@ -1036,7 +944,6 @@ export default function AboutPage() {
               className="inline-flex items-center gap-2 rounded-xl border border-white/50 px-8 py-4 font-semibold text-white transition hover:-translate-y-1 hover:bg-white hover:text-[#561923]"
             >
               Explore Services
-
               <ArrowRight className="h-5 w-5" />
             </a>
           </div>

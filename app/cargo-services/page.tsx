@@ -8,24 +8,20 @@ import {
   PackageSearch,
   Timer,
   Globe2,
-  PlaneTakeoff,
   FileCheck2,
   Truck,
   Warehouse,
   Scale,
   Headphones,
+  ChevronRight,
 } from "lucide-react";
-
-import { PageHero } from "@/components/page-hero";
 
 import {
   FeatureSplit,
   FeatureGrid,
-  ProcessSteps,
 } from "@/components/sections";
 
 import { CargoTracking } from "@/components/cargo-tracking";
-
 import { QuoteCta } from "@/components/quote-cta";
 
 export const metadata: Metadata = {
@@ -46,12 +42,58 @@ export default function CargoServicesPage() {
           HERO
       ====================================================== */}
 
-      <section className="relative overflow-hidden bg-[#561923] text-white">
-        <PageHero
-          title="Air cargo that arrives as promised"
-          subtitle="General freight, perishables, pharma and time-critical shipments moved with precision handling and full visibility."
-          breadcrumb="Cargo Services"
-        />
+      <section className="relative overflow-hidden bg-[#561923] py-24 lg:py-32">
+        {/* Background glow */}
+        <div className="absolute -left-40 -top-40 h-[500px] w-[500px] rounded-full bg-[#7A2330]/60 blur-[120px]" />
+
+        <div className="absolute -right-40 top-10 h-[500px] w-[500px] rounded-full bg-[#3D1118]/80 blur-[120px]" />
+
+        <div className="absolute bottom-[-180px] left-1/3 h-[420px] w-[420px] rounded-full bg-[#C9828D]/10 blur-[120px]" />
+
+        {/* Decorative circles */}
+        <div className="pointer-events-none absolute right-0 top-0 h-full w-1/3 opacity-10">
+          <div className="absolute right-20 top-20 h-64 w-64 rounded-full border border-white/30" />
+          <div className="absolute right-[-80px] top-40 h-96 w-96 rounded-full border border-white/20" />
+        </div>
+
+        <div className="relative mx-auto max-w-7xl px-6">
+          {/* Breadcrumb */}
+          <div className="flex items-center gap-2 text-sm">
+            <a
+              href="/"
+              className="text-white transition hover:text-[#F2C6CC]"
+            >
+              Home
+            </a>
+
+            <ChevronRight className="h-4 w-4 text-[#F2C6CC]" />
+
+            <span className="font-medium text-white">
+              Cargo Services
+            </span>
+          </div>
+
+          <div className="mt-12 max-w-5xl">
+            {/* Eyebrow */}
+            <span className="inline-flex rounded-full border border-[#C9828D]/50 bg-white/5 px-5 py-2.5 text-sm font-semibold uppercase tracking-[0.22em] text-white backdrop-blur-sm">
+              Cargo Services
+            </span>
+
+            {/* Main heading */}
+            <h1 className="mt-7 text-5xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl">
+              Air cargo that arrives as promised
+            </h1>
+
+            {/* Accent line */}
+            <div className="mt-8 h-1.5 w-28 rounded-full bg-[#C9828D]" />
+
+            {/* Description */}
+            <p className="mt-8 max-w-4xl text-lg leading-8 text-white sm:text-xl">
+              General freight, perishables, pharma and time-critical
+              shipments moved with precision handling and full visibility.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* =====================================================
@@ -96,8 +138,8 @@ export default function CargoServicesPage() {
             </h2>
 
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              From routine freight to sensitive and high-value goods, we apply
-              the right process to protect your cargo.
+              From routine freight to sensitive and high-value goods, we
+              apply the right process to protect your cargo.
             </p>
           </div>
 
@@ -151,11 +193,11 @@ export default function CargoServicesPage() {
                     <Icon className="h-7 w-7 transition duration-300 group-hover:scale-110" />
                   </div>
 
-                  <h3 className="mt-6 text-xl font-bold">
+                  <h3 className="mt-6 text-xl font-bold text-white">
                     {item.title}
                   </h3>
 
-                  <p className="mt-4 leading-7 text-white/70">
+                  <p className="mt-4 leading-7 text-white">
                     {item.description}
                   </p>
                 </div>
@@ -172,6 +214,7 @@ export default function CargoServicesPage() {
       <section className="bg-white py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid items-center gap-16 lg:grid-cols-2">
+            {/* Image */}
             <div className="relative overflow-hidden rounded-[2rem] bg-[#561923] p-3 shadow-2xl">
               <div className="relative overflow-hidden rounded-[1.6rem]">
                 <Image
@@ -185,18 +228,18 @@ export default function CargoServicesPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#3D1118]/90 via-transparent to-transparent" />
 
                 <div className="absolute bottom-8 left-8 right-8">
-                  <div className="rounded-2xl border border-white/10 bg-[#561923]/90 p-6 text-white backdrop-blur-md">
+                  <div className="rounded-2xl border border-white/10 bg-[#561923]/95 p-6 text-white backdrop-blur-md">
                     <div className="flex items-center gap-4">
                       <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#7A2330]">
                         <Boxes className="h-6 w-6 text-[#F2C6CC]" />
                       </div>
 
                       <div>
-                        <h3 className="text-xl font-bold">
+                        <h3 className="text-xl font-bold text-white">
                           Professional Cargo Handling
                         </h3>
 
-                        <p className="mt-1 text-sm text-white/65">
+                        <p className="mt-1 text-sm text-white">
                           Secure cargo handling from acceptance through
                           delivery.
                         </p>
@@ -207,6 +250,7 @@ export default function CargoServicesPage() {
               </div>
             </div>
 
+            {/* Content */}
             <div>
               <span className="text-sm font-semibold uppercase tracking-[0.25em] text-[#561923]">
                 Cargo Operations
@@ -262,9 +306,11 @@ export default function CargoServicesPage() {
                         </div>
 
                         <div>
-                          <h3 className="font-bold">{item.title}</h3>
+                          <h3 className="font-bold text-white">
+                            {item.title}
+                          </h3>
 
-                          <p className="mt-1 text-sm leading-6 text-white/70">
+                          <p className="mt-1 text-sm leading-6 text-white">
                             {item.text}
                           </p>
                         </div>
@@ -293,7 +339,7 @@ export default function CargoServicesPage() {
               Know where your shipment is
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-white/70">
+            <p className="mt-6 text-lg leading-8 text-white">
               Enter an air waybill number for a live status update. Try a
               sample number to see it in action.
             </p>
@@ -368,11 +414,11 @@ export default function CargoServicesPage() {
                     <Icon className="h-7 w-7" />
                   </div>
 
-                  <h3 className="mt-6 text-xl font-bold">
+                  <h3 className="mt-6 text-xl font-bold text-white">
                     {item.title}
                   </h3>
 
-                  <p className="mt-4 text-sm leading-7 text-white/70">
+                  <p className="mt-4 text-sm leading-7 text-white">
                     {item.description}
                   </p>
                 </div>
@@ -386,34 +432,73 @@ export default function CargoServicesPage() {
           SHIPPING PROCESS
       ====================================================== */}
 
-      <section className="bg-[#561923] py-24 lg:py-32 text-white">
+      <section className="bg-[#561923] py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6">
-          <ProcessSteps
-            eyebrow="Shipping Process"
-            title="Simple, transparent, on time"
-            steps={[
-              {
-                title: "Book",
-                description:
-                  "Request a quote and reserve capacity on the routes you need.",
-              },
-              {
-                title: "Collect",
-                description:
-                  "We pick up, screen and prepare your cargo for uplift.",
-              },
-              {
-                title: "Fly",
-                description:
-                  "Your shipment is loaded, tracked and flown to destination.",
-              },
-              {
-                title: "Deliver",
-                description:
-                  "Customs clearance and final delivery, confirmed with proof.",
-              },
-            ]}
-          />
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="text-sm font-semibold uppercase tracking-[0.25em] text-[#F2C6CC]">
+              Shipping Process
+            </span>
+
+            <h2 className="mt-5 text-4xl font-bold tracking-tight text-white sm:text-5xl">
+              Simple, transparent, on time
+            </h2>
+
+            <p className="mt-6 text-lg leading-8 text-white">
+              From booking to final delivery, every stage is coordinated
+              around visibility, reliability and timely execution.
+            </p>
+          </div>
+
+          <div className="relative mt-16">
+            {/* Desktop connector */}
+            <div className="absolute left-[12%] right-[12%] top-8 hidden h-px bg-[#C9828D]/40 lg:block" />
+
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+              {[
+                {
+                  number: "01",
+                  title: "Book",
+                  description:
+                    "Request a quote and reserve capacity on the routes you need.",
+                },
+                {
+                  number: "02",
+                  title: "Collect",
+                  description:
+                    "We pick up, screen and prepare your cargo for uplift.",
+                },
+                {
+                  number: "03",
+                  title: "Fly",
+                  description:
+                    "Your shipment is loaded, tracked and flown to destination.",
+                },
+                {
+                  number: "04",
+                  title: "Deliver",
+                  description:
+                    "Customs clearance and final delivery, confirmed with proof.",
+                },
+              ].map((step) => (
+                <div
+                  key={step.number}
+                  className="relative rounded-3xl border border-white/10 bg-[#7A2330] p-8 text-white shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
+                >
+                  <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full border-4 border-[#561923] bg-[#C9828D] text-lg font-extrabold text-[#561923]">
+                    {step.number}
+                  </div>
+
+                  <h3 className="mt-7 text-2xl font-bold text-white">
+                    {step.title}
+                  </h3>
+
+                  <p className="mt-4 leading-7 text-white">
+                    {step.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

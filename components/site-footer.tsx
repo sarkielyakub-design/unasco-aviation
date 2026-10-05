@@ -175,14 +175,14 @@ export function SiteFooter() {
 
                 <div>
                   <h4 className="font-semibold text-white">
-                    Official Email
+                    CustomerCare
                   </h4>
 
                   <a
                     href="mailto:unascoaviationltd@gmail.com"
                     className="mt-1 block break-all text-white/70 transition-colors duration-300 hover:text-[#C9828D]"
                   >
-                    unascoaviationltd@gmail.com
+                    customercare@unascoltd.com
                   </a>
 
                   <p className="text-sm text-white/45">
@@ -205,7 +205,7 @@ export function SiteFooter() {
                     href="mailto:unascol2025@gmail.com"
                     className="mt-1 block break-all text-white/70 transition-colors duration-300 hover:text-[#C9828D]"
                   >
-                    unascol2025@gmail.com
+                    support@unascoltd.com
                   </a>
 
                   <p className="text-sm text-white/45">

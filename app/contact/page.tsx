@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+
 import {
   Mail,
   Phone,
@@ -8,9 +9,8 @@ import {
   Globe2,
   MessageCircle,
   ArrowRight,
+  ChevronRight,
 } from "lucide-react";
-
-import { PageHero } from "@/components/page-hero";
 
 export const metadata: Metadata = {
   title: "Contact UNASCO Aviation Limited",
@@ -20,10 +20,11 @@ export const metadata: Metadata = {
 
 const MAROON = "#561923";
 const MAROON_LIGHT = "#7A2330";
+const MAROON_SOFT = "#F2C6CC";
 const MAROON_DARK = "#3D1118";
 
 const CEO_WHATSAPP = "https://wa.me/966556011122";
-const SALES_WHATSAPP = "https://wa.me/+234 8155558069";
+const SALES_WHATSAPP = "https://wa.me/2348063332227";
 
 const details = [
   {
@@ -45,17 +46,17 @@ const details = [
   {
     icon: Mail,
     title: "Official Email",
-    value: "unascoaviationltd@gmail.com",
+    value: "customerservice@unascoltd.com",
     sub: "Corporate & General Business Enquiries",
-    href: "mailto:unascoaviationltd@gmail.com",
+    href: "mailto:customerservice@unascoltd.com",
     type: "email",
   },
   {
     icon: Mail,
     title: "Customer Support Email",
-    value: "unascol2025@gmail.com",
+    value: "support@unascoltd.com",
     sub: "Customer Support & Service Enquiries",
-    href: "mailto:unascol2025@gmail.com",
+    href: "mailto:support@unascoltd.com",
     type: "email",
   },
   {
@@ -84,47 +85,91 @@ const details = [
 export default function ContactPage() {
   return (
     <>
-      <PageHero
-        subtitle="Contact UNASCO"
-        breadcrumb="Contact"
-        title="Let's Connect With Our Aviation Team"
-      />
+      {/* =====================================================
+          HERO
+      ====================================================== */}
+
+      <section className="relative overflow-hidden bg-[#561923] py-24 lg:py-32">
+        {/* Background effects */}
+        <div className="absolute -left-40 -top-40 h-[500px] w-[500px] rounded-full bg-[#7A2330]/60 blur-[120px]" />
+
+        <div className="absolute -right-40 top-10 h-[500px] w-[500px] rounded-full bg-[#3D1118]/80 blur-[120px]" />
+
+        <div className="absolute bottom-[-180px] left-1/3 h-[420px] w-[420px] rounded-full bg-[#C9828D]/10 blur-[120px]" />
+
+        {/* Decorative circles */}
+        <div className="pointer-events-none absolute right-0 top-0 h-full w-1/3 opacity-10">
+          <div className="absolute right-20 top-20 h-64 w-64 rounded-full border border-white/30" />
+          <div className="absolute right-[-80px] top-40 h-96 w-96 rounded-full border border-white/20" />
+        </div>
+
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+          {/* Breadcrumb */}
+          <div className="flex items-center gap-2 text-sm">
+            <a
+              href="/"
+              className="text-white transition hover:text-[#F2C6CC]"
+            >
+              Home
+            </a>
+
+            <ChevronRight className="h-4 w-4 text-[#F2C6CC]" />
+
+            <span className="font-medium text-white">
+              Contact
+            </span>
+          </div>
+
+          <div className="mt-12 max-w-5xl">
+            {/* Eyebrow */}
+            <span className="inline-flex rounded-full border border-[#C9828D]/50 bg-white/5 px-5 py-2.5 text-sm font-semibold uppercase tracking-[0.22em] text-white backdrop-blur-sm">
+              Contact UNASCO
+            </span>
+
+            {/* Heading */}
+            <h1 className="mt-7 text-5xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl">
+              Let&apos;s Connect With Our Aviation Team
+            </h1>
+
+            {/* Accent */}
+            <div className="mt-8 h-1.5 w-28 rounded-full bg-[#C9828D]" />
+
+            {/* Description */}
+            <p className="mt-8 max-w-4xl text-lg leading-8 text-white sm:text-xl">
+              Connect directly with UNASCO Aviation for professional
+              assistance with aviation services, air cargo, logistics,
+              airline management and travel operations.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
+          CONTACT INFORMATION
+      ====================================================== */}
 
       <section className="relative overflow-hidden bg-white py-24 lg:py-32">
-        {/* Background Decoration */}
-
+        {/* Background decorations */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute left-0 top-0 h-96 w-96 rounded-full blur-3xl"
-          style={{
-            backgroundColor: "rgba(86, 25, 35, 0.06)",
-          }}
+          className="pointer-events-none absolute left-0 top-0 h-96 w-96 rounded-full bg-[#561923]/5 blur-3xl"
         />
 
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute bottom-0 right-0 h-96 w-96 rounded-full blur-3xl"
-          style={{
-            backgroundColor: "rgba(86, 25, 35, 0.05)",
-          }}
+          className="pointer-events-none absolute bottom-0 right-0 h-96 w-96 rounded-full bg-[#561923]/5 blur-3xl"
         />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          {/* =====================================================
-              HEADER
-          ===================================================== */}
-
+          {/* Header */}
           <div className="mx-auto max-w-3xl text-center">
-            <span
-              className="text-sm font-semibold uppercase tracking-[0.25em]"
-              style={{ color: MAROON }}
-            >
+            <span className="text-sm font-semibold uppercase tracking-[0.25em] text-[#561923]">
               Contact Information
             </span>
 
             <h2 className="mt-5 text-4xl font-bold leading-tight text-slate-900 sm:text-5xl">
               We Are Ready To{" "}
-              <span style={{ color: MAROON }}>
+              <span className="text-[#561923]">
                 Assist You
               </span>
             </h2>
@@ -138,50 +183,35 @@ export default function ContactPage() {
             </p>
           </div>
 
-          {/* =====================================================
-              WHATSAPP CONTACT
-          ===================================================== */}
+          {/* =================================================
+              DIRECT WHATSAPP CONTACT
+          ================================================== */}
 
           <div className="mx-auto mt-14 max-w-5xl">
-            <div
-              className="overflow-hidden rounded-[2rem] border shadow-xl"
-              style={{
-                borderColor: "rgba(86, 25, 35, 0.12)",
-                background:
-                  "linear-gradient(135deg, #ffffff 0%, #faf6f7 100%)",
-              }}
-            >
+            <div className="overflow-hidden rounded-[2rem] bg-[#561923] shadow-2xl">
               <div className="grid lg:grid-cols-2">
                 {/* CEO */}
-
-                <div className="border-b border-slate-200 p-8 lg:border-b-0 lg:border-r lg:p-10">
+                <div className="border-b border-white/10 p-8 lg:border-b-0 lg:border-r lg:p-10">
                   <div className="flex items-start gap-5">
-                    <div
-                      className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl text-white shadow-lg"
-                      style={{
-                        backgroundColor: MAROON,
-                        boxShadow:
-                          "0 12px 30px rgba(86,25,35,0.20)",
-                      }}
-                    >
+                    <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-[#7A2330] text-[#F2C6CC] shadow-lg">
                       <MessageCircle className="h-8 w-8" />
                     </div>
 
                     <div>
-                      <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
+                      <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#F2C6CC]">
                         Executive Contact
                       </p>
 
-                      <h3 className="mt-2 text-2xl font-bold text-slate-900">
+                      <h3 className="mt-2 text-2xl font-bold text-white">
                         Chief Executive Officer
                       </h3>
 
-                      <p className="mt-2 text-lg font-semibold text-slate-700">
+                      <p className="mt-2 text-lg font-semibold text-white">
                         +966 556 011 122
                       </p>
 
-                      <p className="mt-1 text-sm text-slate-500">
-                        Executive & Corporate Enquiries
+                      <p className="mt-1 text-sm text-white">
+                        Executive &amp; Corporate Enquiries
                       </p>
                     </div>
                   </div>
@@ -190,17 +220,7 @@ export default function ContactPage() {
                     href={CEO_WHATSAPP}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="
-                      mt-8 flex h-14 w-full
-                      items-center justify-center gap-3
-                      rounded-xl
-                      font-bold text-white
-                      shadow-lg
-                      transition-all duration-300
-                      hover:-translate-y-1
-                      hover:shadow-xl
-                    "
-                    style={{ backgroundColor: MAROON }}
+                    className="mt-8 flex h-14 w-full items-center justify-center gap-3 rounded-xl bg-[#7A2330] font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-[#8E2D3C] hover:shadow-xl"
                   >
                     <MessageCircle className="h-5 w-5" />
 
@@ -210,36 +230,28 @@ export default function ContactPage() {
                   </a>
                 </div>
 
-                {/* Director Sales Manager */}
-
+                {/* Sales */}
                 <div className="p-8 lg:p-10">
                   <div className="flex items-start gap-5">
-                    <div
-                      className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl text-white shadow-lg"
-                      style={{
-                        backgroundColor: MAROON_LIGHT,
-                        boxShadow:
-                          "0 12px 30px rgba(122,35,48,0.20)",
-                      }}
-                    >
+                    <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-[#7A2330] text-[#F2C6CC] shadow-lg">
                       <MessageCircle className="h-8 w-8" />
                     </div>
 
                     <div>
-                      <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
-                        Sales & Business
+                      <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#F2C6CC]">
+                        Sales &amp; Business
                       </p>
 
-                      <h3 className="mt-2 text-2xl font-bold text-slate-900">
+                      <h3 className="mt-2 text-2xl font-bold text-white">
                         Director, Sales Manager
                       </h3>
 
-                      <p className="mt-2 text-lg font-semibold text-slate-700">
+                      <p className="mt-2 text-lg font-semibold text-white">
                         +234 806 333 2227
                       </p>
 
-                      <p className="mt-1 text-sm text-slate-500">
-                        Hafiz Umar Ballah • Sales & Business Enquiries
+                      <p className="mt-1 text-sm text-white">
+                        Hafiz Umar Ballah • Sales &amp; Business Enquiries
                       </p>
                     </div>
                   </div>
@@ -248,17 +260,7 @@ export default function ContactPage() {
                     href={SALES_WHATSAPP}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="
-                      mt-8 flex h-14 w-full
-                      items-center justify-center gap-3
-                      rounded-xl
-                      font-bold text-white
-                      shadow-lg
-                      transition-all duration-300
-                      hover:-translate-y-1
-                      hover:shadow-xl
-                    "
-                    style={{ backgroundColor: MAROON_LIGHT }}
+                    className="mt-8 flex h-14 w-full items-center justify-center gap-3 rounded-xl bg-[#7A2330] font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-[#8E2D3C] hover:shadow-xl"
                   >
                     <MessageCircle className="h-5 w-5" />
 
@@ -271,54 +273,27 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* =====================================================
-              CONTACT DETAILS
-          ===================================================== */}
+          {/* =================================================
+              CONTACT DETAIL CARDS
+          ================================================== */}
 
           <div className="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {details.map((item) => {
               const Icon = item.icon;
-
               const isWhatsApp = item.type === "whatsapp";
 
               return (
                 <div
                   key={`${item.title}-${item.value}`}
-                  className="
-                    group rounded-3xl
-                    border border-slate-200
-                    bg-white
-                    p-6
-                    shadow-sm
-                    transition-all duration-300
-                    hover:-translate-y-1
-                    hover:shadow-xl
-                  "
-                  style={{
-                    borderColor: "rgba(86,25,35,0.10)",
-                  }}
+                  className="group rounded-3xl border border-[#7A2330]/50 bg-[#561923] p-7 text-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:bg-[#7A2330] hover:shadow-2xl"
                 >
                   {/* Icon */}
-
-                  <div
-                    className="
-                      flex h-14 w-14
-                      shrink-0 items-center justify-center
-                      rounded-2xl
-                      transition-all duration-300
-                      group-hover:text-white
-                    "
-                    style={{
-                      backgroundColor: "rgba(86,25,35,0.08)",
-                      color: MAROON,
-                    }}
-                  >
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#7A2330] text-[#F2C6CC] transition-all duration-300 group-hover:bg-[#F2C6CC] group-hover:text-[#561923]">
                     <Icon className="h-7 w-7" />
                   </div>
 
                   {/* Content */}
-
-                  <h3 className="mt-5 text-lg font-semibold text-slate-900">
+                  <h3 className="mt-5 text-lg font-bold text-white">
                     {item.title}
                   </h3>
 
@@ -331,21 +306,17 @@ export default function ContactPage() {
                           ? "noopener noreferrer"
                           : undefined
                       }
-                      className="mt-2 block break-words font-semibold transition-colors hover:underline"
-                      style={{ color: MAROON }}
+                      className="mt-2 block break-words font-semibold text-white transition-colors hover:text-[#F2C6CC] hover:underline"
                     >
                       {item.value}
                     </a>
                   ) : (
-                    <p
-                      className="mt-2 font-semibold"
-                      style={{ color: MAROON }}
-                    >
+                    <p className="mt-2 font-semibold text-white">
                       {item.value}
                     </p>
                   )}
 
-                  <p className="mt-2 text-sm leading-6 text-slate-500">
+                  <p className="mt-2 text-sm leading-6 text-white">
                     {item.sub}
                   </p>
 
@@ -354,17 +325,12 @@ export default function ContactPage() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="
-                        mt-5 inline-flex
-                        items-center gap-2
-                        text-sm font-bold
-                        transition-all
-                        hover:gap-3
-                      "
-                      style={{ color: MAROON }}
+                      className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#F2C6CC] transition-all hover:gap-3 hover:text-white"
                     >
                       <MessageCircle className="h-4 w-4" />
+
                       Chat on WhatsApp
+
                       <ArrowRight className="h-3.5 w-3.5" />
                     </a>
                   )}
@@ -373,36 +339,23 @@ export default function ContactPage() {
             })}
           </div>
 
-          {/* =====================================================
+          {/* =================================================
               COMPANY CARD
-          ===================================================== */}
+          ================================================== */}
 
-          <div
-            className="mt-16 overflow-hidden rounded-[2rem] p-8 text-white shadow-2xl lg:p-10"
-            style={{
-              background:
-                "linear-gradient(135deg, #3D1118 0%, #561923 55%, #7A2330 100%)",
-            }}
-          >
+          <div className="mt-16 overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#3D1118] via-[#561923] to-[#7A2330] p-8 text-white shadow-2xl lg:p-10">
             <div className="grid gap-10 lg:grid-cols-[1fr_420px] lg:items-center">
+              {/* Company information */}
               <div>
-                <div
-                  className="
-                    flex h-14 w-14
-                    items-center justify-center
-                    rounded-2xl
-                    bg-white/10
-                    backdrop-blur
-                  "
-                >
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 backdrop-blur">
                   <Building2 className="h-7 w-7 text-white" />
                 </div>
 
-                <h3 className="mt-6 text-3xl font-bold">
+                <h3 className="mt-6 text-3xl font-bold text-white">
                   UNASCO Aviation Limited
                 </h3>
 
-                <p className="mt-4 max-w-2xl leading-8 text-white/75">
+                <p className="mt-4 max-w-2xl leading-8 text-white">
                   Professional Aviation Services, Flight Operations,
                   Airline Management, Air Cargo Transportation,
                   Logistics Solutions, General Aviation, Travel
@@ -410,54 +363,44 @@ export default function ContactPage() {
                 </p>
 
                 <div className="mt-7 flex flex-wrap gap-3">
-                  <span className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm text-white/90">
+                  <span className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm text-white">
                     Aviation Services
                   </span>
 
-                  <span className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm text-white/90">
+                  <span className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm text-white">
                     Air Cargo
                   </span>
 
-                  <span className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm text-white/90">
+                  <span className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm text-white">
                     Logistics
                   </span>
 
-                  <span className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm text-white/90">
+                  <span className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm text-white">
                     Travel Management
                   </span>
                 </div>
               </div>
 
-              {/* Quick WhatsApp Contacts */}
-
+              {/* Quick Contacts */}
               <div className="rounded-3xl border border-white/10 bg-white/10 p-6 backdrop-blur-md">
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/60">
-                  Direct WhatsApp
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-white">
+                  Direct Contacts
                 </p>
 
                 <div className="mt-5 space-y-4">
                   {/* CEO */}
-
                   <a
                     href={CEO_WHATSAPP}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="
-                      flex items-center gap-4
-                      rounded-2xl
-                      border border-white/10
-                      bg-white/5
-                      p-4
-                      transition-all duration-300
-                      hover:bg-white/10
-                    "
+                    className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 transition-all duration-300 hover:bg-white/10"
                   >
                     <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-[#561923]">
                       <MessageCircle className="h-5 w-5" />
                     </div>
 
                     <div className="min-w-0">
-                      <p className="text-xs uppercase tracking-wider text-white/55">
+                      <p className="text-xs uppercase tracking-wider text-white">
                         Chief Executive Officer
                       </p>
 
@@ -466,31 +409,22 @@ export default function ContactPage() {
                       </p>
                     </div>
 
-                    <ArrowRight className="ml-auto h-4 w-4 shrink-0 text-white/50" />
+                    <ArrowRight className="ml-auto h-4 w-4 shrink-0 text-white" />
                   </a>
 
-                  {/* Director Sales Manager */}
-
+                  {/* Sales */}
                   <a
                     href={SALES_WHATSAPP}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="
-                      flex items-center gap-4
-                      rounded-2xl
-                      border border-white/10
-                      bg-white/5
-                      p-4
-                      transition-all duration-300
-                      hover:bg-white/10
-                    "
+                    className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 transition-all duration-300 hover:bg-white/10"
                   >
                     <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-[#561923]">
                       <MessageCircle className="h-5 w-5" />
                     </div>
 
                     <div className="min-w-0">
-                      <p className="text-xs uppercase tracking-wider text-white/55">
+                      <p className="text-xs uppercase tracking-wider text-white">
                         Director, Sales Manager
                       </p>
 
@@ -499,35 +433,46 @@ export default function ContactPage() {
                       </p>
                     </div>
 
-                    <ArrowRight className="ml-auto h-4 w-4 shrink-0 text-white/50" />
+                    <ArrowRight className="ml-auto h-4 w-4 shrink-0 text-white" />
                   </a>
                 </div>
 
-                {/* Email */}
-
+                {/* Official Customer Service Email */}
                 <a
-                  href="mailto:unascoaviationltd@gmail.com"
-                  className="
-                    mt-4 flex items-center gap-4
-                    rounded-2xl
-                    border border-white/10
-                    bg-white/5
-                    p-4
-                    transition-all duration-300
-                    hover:bg-white/10
-                  "
+                  href="mailto:customerservice@unascoltd.com"
+                  className="mt-4 flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 transition-all duration-300 hover:bg-white/10"
                 >
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-[#561923]">
                     <Mail className="h-5 w-5" />
                   </div>
 
                   <div className="min-w-0">
-                    <p className="text-xs uppercase tracking-wider text-white/55">
-                      Official Email
+                    <p className="text-xs uppercase tracking-wider text-white">
+                      Official Customer Service
                     </p>
 
                     <p className="mt-1 break-all font-semibold text-white">
-                      unascoaviationltd@gmail.com
+                      customerservice@unascoltd.com
+                    </p>
+                  </div>
+                </a>
+
+                {/* Customer Support Email */}
+                <a
+                  href="mailto:support@unascoltd.com"
+                  className="mt-4 flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 transition-all duration-300 hover:bg-white/10"
+                >
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-[#561923]">
+                    <Mail className="h-5 w-5" />
+                  </div>
+
+                  <div className="min-w-0">
+                    <p className="text-xs uppercase tracking-wider text-white">
+                      Customer Support
+                    </p>
+
+                    <p className="mt-1 break-all font-semibold text-white">
+                      support@unascoltd.com
                     </p>
                   </div>
                 </a>
@@ -535,65 +480,55 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* =====================================================
+          {/* =================================================
               HEAD OFFICE
-          ===================================================== */}
+          ================================================== */}
 
           <div className="mt-10 grid gap-5 md:grid-cols-2">
-            <div className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm">
+            {/* Head Office */}
+            <div className="rounded-3xl border border-[#7A2330]/50 bg-[#561923] p-7 text-white shadow-lg transition hover:bg-[#7A2330]">
               <div className="flex items-start gap-4">
-                <div
-                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
-                  style={{
-                    backgroundColor: "rgba(86,25,35,0.08)",
-                    color: MAROON,
-                  }}
-                >
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#7A2330] text-[#F2C6CC]">
                   <MapPin className="h-6 w-6" />
                 </div>
 
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
+                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#F2C6CC]">
                     Head Office
                   </p>
 
-                  <h3 className="mt-2 text-xl font-bold text-slate-900">
+                  <h3 className="mt-2 text-xl font-bold text-white">
                     Kano, Nigeria
                   </h3>
 
-                  <p className="mt-2 leading-7 text-slate-600">
+                  <p className="mt-2 leading-7 text-white">
                     No. 7 Bompai Road, Kano State, Nigeria
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm">
+            {/* Working Hours */}
+            <div className="rounded-3xl border border-[#7A2330]/50 bg-[#561923] p-7 text-white shadow-lg transition hover:bg-[#7A2330]">
               <div className="flex items-start gap-4">
-                <div
-                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
-                  style={{
-                    backgroundColor: "rgba(86,25,35,0.08)",
-                    color: MAROON,
-                  }}
-                >
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#7A2330] text-[#F2C6CC]">
                   <Clock className="h-6 w-6" />
                 </div>
 
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
+                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#F2C6CC]">
                     Working Hours
                   </p>
 
-                  <h3 className="mt-2 text-xl font-bold text-slate-900">
+                  <h3 className="mt-2 text-xl font-bold text-white">
                     Monday - Friday
                   </h3>
 
-                  <p className="mt-2 leading-7 text-slate-600">
+                  <p className="mt-2 leading-7 text-white">
                     08:00 AM - 06:00 PM
                   </p>
 
-                  <p className="mt-1 text-sm text-slate-500">
+                  <p className="mt-1 text-sm text-white">
                     Operations Support Available 24/7
                   </p>
                 </div>
@@ -601,26 +536,23 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* =====================================================
+          {/* =================================================
               FINAL WHATSAPP CTA
-          ===================================================== */}
+          ================================================== */}
 
-          <div className="mt-16 text-center">
-            <p
-              className="text-sm font-bold uppercase tracking-[0.25em]"
-              style={{ color: MAROON }}
-            >
+          <div className="mt-16 rounded-[2rem] bg-[#561923] p-10 text-center shadow-2xl lg:p-14">
+            <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#F2C6CC]">
               Need Assistance?
             </p>
 
-            <h2 className="mt-4 text-3xl font-bold text-slate-900 sm:text-4xl">
+            <h2 className="mt-4 text-3xl font-bold text-white sm:text-4xl">
               Speak Directly With UNASCO
             </h2>
 
-            <p className="mx-auto mt-4 max-w-2xl leading-7 text-slate-600">
-              For fast enquiries, business discussions, sales
-              assistance or aviation service requests, contact our
-              team directly through WhatsApp.
+            <p className="mx-auto mt-4 max-w-2xl leading-7 text-white">
+              For fast enquiries, business discussions, sales assistance
+              or aviation service requests, contact our team directly
+              through WhatsApp.
             </p>
 
             <div className="mt-8 flex flex-wrap justify-center gap-4">
@@ -628,18 +560,7 @@ export default function ContactPage() {
                 href={SALES_WHATSAPP}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="
-                  inline-flex h-14
-                  items-center gap-3
-                  rounded-full
-                  px-7
-                  font-bold text-white
-                  shadow-xl
-                  transition-all duration-300
-                  hover:-translate-y-1
-                  hover:shadow-2xl
-                "
-                style={{ backgroundColor: MAROON }}
+                className="inline-flex h-14 items-center gap-3 rounded-full bg-[#7A2330] px-7 font-bold text-white shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-[#8E2D3C] hover:shadow-2xl"
               >
                 <MessageCircle className="h-5 w-5" />
 
@@ -652,20 +573,7 @@ export default function ContactPage() {
                 href={CEO_WHATSAPP}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="
-                  inline-flex h-14
-                  items-center gap-3
-                  rounded-full
-                  border-2
-                  px-7
-                  font-bold
-                  transition-all duration-300
-                  hover:-translate-y-1
-                "
-                style={{
-                  borderColor: MAROON,
-                  color: MAROON,
-                }}
+                className="inline-flex h-14 items-center gap-3 rounded-full border-2 border-white px-7 font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:text-[#561923]"
               >
                 <MessageCircle className="h-5 w-5" />
 
