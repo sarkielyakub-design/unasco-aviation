@@ -1,9 +1,10 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import { Menu, X, ChevronRight } from 'lucide-react'
+import { Menu, X, ChevronRight, ArrowRight } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
 import { navLinks } from '@/lib/site'
@@ -17,6 +18,14 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet'
+
+/* =========================================================
+   BRAND COLORS
+========================================================= */
+
+const MAROON = '#561923'
+const MAROON_LIGHT = '#7A2330'
+const MAROON_SOFT = '#F2C6CC'
 
 /* =========================================================
    SITE HEADER
@@ -62,7 +71,6 @@ export function SiteHeader() {
   ======================================================= */
 
   const solid = scrolled || !isHome
-  const inverted = !solid
 
   return (
     <header
@@ -78,177 +86,265 @@ export function SiteHeader() {
               'backdrop-blur-2xl',
             ]
           : [
-              'bg-gradient-to-b',
-              'from-black/75',
-              'via-black/35',
-              'to-transparent',
-            ]
+              'bg-white',
+              'shadow-[0_4px_25px_rgba(0,0,0,0.08)]',
+            ],
       )}
     >
-
       {/* =====================================================
           HEADER CONTAINER
       ====================================================== */}
 
       <div
         className={cn(
-          'mx-auto flex w-full max-w-7xl items-center',
-          'justify-between',
-          'px-5 sm:px-6 lg:px-8',
+          'mx-auto flex w-full max-w-[1800px] items-center',
+          'gap-2 px-3 sm:px-4 lg:px-5 xl:px-6',
           'transition-all duration-500',
 
           solid
-            ? 'h-[84px] lg:h-[92px]'
-            : 'h-[88px] lg:h-[96px]'
+            ? 'h-[78px] lg:h-[82px]'
+            : 'h-[82px] lg:h-[88px]',
         )}
       >
-
         {/* ===================================================
-            LOGO
+            UNASCO LOGO
         ==================================================== */}
 
         <div className="relative z-[110] shrink-0">
-
           <Logo
-            inverted={inverted}
             className="
+              scale-[0.90]
               transition-transform
               duration-300
-              hover:scale-[1.015]
+              hover:scale-[0.93]
             "
           />
-
         </div>
 
+        {/* ===================================================
+            IATA BADGE
+        ==================================================== */}
+
+        <div
+          className="
+            hidden
+            h-[50px]
+            w-[76px]
+            shrink-0
+            items-center
+            justify-center
+            rounded-full
+            border
+            border-neutral-200
+            bg-white
+            px-2
+            shadow-[0_4px_14px_rgba(0,0,0,0.10)]
+            transition-all
+            duration-300
+            hover:-translate-y-0.5
+            hover:shadow-[0_7px_20px_rgba(0,0,0,0.14)]
+            lg:flex
+          "
+        >
+          <Image
+            src="/logos/iata.png"
+            alt="IATA"
+            width={90}
+            height={55}
+            priority
+            className="
+              h-auto
+              max-h-[34px]
+              w-auto
+              max-w-[60px]
+              object-contain
+            "
+          />
+        </div>
 
         {/* ===================================================
             DESKTOP NAVIGATION
+
+            IMPORTANT:
+            This navigation now has a controlled width.
+            It cannot expand underneath NANTA.
         ==================================================== */}
 
         <nav
-          className={cn(
-            'hidden lg:flex',
-            'items-center gap-1.5',
-            'rounded-full',
-            'px-2 py-2',
-            'transition-all duration-500',
-
-            solid
-              ? [
-                  'border border-neutral-200/80',
-                  'bg-neutral-50/80',
-                  'shadow-sm',
-                ]
-              : [
-                  'border border-white/10',
-                  'bg-white/5',
-                  'backdrop-blur-xl',
-                ]
-          )}
+          className="
+            hidden
+            min-w-0
+            flex-1
+            items-center
+            justify-center
+            lg:flex
+          "
           aria-label="Primary navigation"
         >
+          <div
+            className="
+              flex
+              w-full
+              max-w-[800px]
+              min-w-0
+              items-center
+              justify-center
+              gap-0
+              rounded-full
+              border
+              border-neutral-200
+              bg-white
+              px-1
+              py-1.5
+              shadow-[0_4px_16px_rgba(0,0,0,0.08)]
+            "
+          >
+            {navLinks.map((link) => {
+              const active =
+                link.href === '/'
+                  ? pathname === '/'
+                  : pathname.startsWith(link.href)
 
-          {navLinks.map((link) => {
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  aria-current={active ? 'page' : undefined}
+                  className={cn(
+                    'relative',
+                    'shrink-0',
+                    'rounded-full',
+                    'px-2 lg:px-2.5 xl:px-3',
+                    'py-2.5',
+                    'text-[12px] xl:text-[13px]',
+                    'font-semibold',
+                    'whitespace-nowrap',
+                    'transition-all',
+                    'duration-300',
 
-            const active =
-              link.href === '/'
-                ? pathname === '/'
-                : pathname.startsWith(link.href)
-
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                aria-current={
-                  active ? 'page' : undefined
-                }
-                className={cn(
-                  'relative rounded-full',
-                  'px-5 py-2.5',
-                  'text-sm font-semibold',
-                  'transition-all duration-300',
-                  'whitespace-nowrap',
-
-                  inverted
-                    ? [
-                        'text-white/80',
-                        'hover:bg-white/10',
-                        'hover:text-white',
-                      ]
-                    : [
-                        'text-neutral-700',
-                        'hover:bg-primary/10',
-                        'hover:text-primary',
-                      ],
-
-                  active &&
-                    (inverted
+                    active
                       ? [
-                          'bg-white/15',
-                          'text-white',
-                          'shadow-sm',
-                        ]
-                      : [
-                          'bg-primary',
+                          'bg-[#561923]',
                           'text-white',
                           'shadow-md',
-                        ])
-                )}
-              >
-                {link.label}
-              </Link>
-            )
-          })}
-
+                        ]
+                      : [
+                          'text-neutral-800',
+                          'hover:bg-[#F2C6CC]',
+                          'hover:text-[#561923]',
+                        ],
+                  )}
+                >
+                  {link.label}
+                </Link>
+              )
+            })}
+          </div>
         </nav>
 
-
         {/* ===================================================
-            DESKTOP RIGHT SIDE
+            RIGHT SIDE
         ==================================================== */}
 
-        <div className="hidden items-center lg:flex">
+        <div
+          className="
+            hidden
+            shrink-0
+            items-center
+            gap-2
+            lg:flex
+          "
+        >
+          {/* =================================================
+              NANTA BADGE
+          ================================================== */}
+
+          <div
+            className="
+              flex
+              h-[50px]
+              w-[76px]
+              shrink-0
+              items-center
+              justify-center
+              rounded-full
+              border
+              border-neutral-200
+              bg-white
+              px-2
+              shadow-[0_4px_14px_rgba(0,0,0,0.10)]
+              transition-all
+              duration-300
+              hover:-translate-y-0.5
+              hover:shadow-[0_7px_20px_rgba(0,0,0,0.14)]
+            "
+          >
+            <Image
+              src="/logos/nanta.png"
+              alt="NANTA"
+              width={90}
+              height={55}
+              priority
+              className="
+                h-auto
+                max-h-[34px]
+                w-auto
+                max-w-[60px]
+                object-contain
+              "
+            />
+          </div>
+
+          {/* =================================================
+              REQUEST A QUOTE
+          ================================================== */}
 
           <Link
             href="/contact"
             className={cn(
               buttonVariants(),
 
-              'ml-4',
-              'h-12',
+              'flex',
+              'h-[50px]',
+              'min-w-[155px]',
+              'shrink-0',
+              'items-center',
+              'justify-center',
+              'gap-2',
               'rounded-full',
-              'bg-primary',
-              'px-7',
+              'bg-[#561923]',
+              'px-4',
+              'text-[12px]',
               'font-semibold',
               'text-white',
-              'shadow-lg',
-              'shadow-black/10',
-              'transition-all duration-300',
-
+              'shadow-[0_6px_18px_rgba(86,25,35,0.22)]',
+              'transition-all',
+              'duration-300',
               'hover:-translate-y-0.5',
-              'hover:bg-[#561923]',
-              'hover:shadow-xl'
+              'hover:bg-[#7A2330]',
+              'hover:shadow-[0_9px_24px_rgba(86,25,35,0.28)]',
             )}
           >
-            Request a Quote
+            <span>Request a Quote</span>
+
+            <ArrowRight
+              className="h-4 w-4"
+              strokeWidth={2}
+            />
           </Link>
-
         </div>
-
 
         {/* ===================================================
             MOBILE MENU
         ==================================================== */}
 
-        <div className="relative z-[110] lg:hidden">
-
+        <div className="relative z-[110] ml-auto lg:hidden">
           <Sheet
             open={open}
             onOpenChange={setOpen}
           >
-
             {/* =================================================
-                MOBILE MENU TRIGGER
+                MOBILE MENU BUTTON
             ================================================== */}
 
             <SheetTrigger
@@ -263,36 +359,24 @@ export function SiteHeader() {
                       : 'Open navigation menu'
                   }
                   aria-expanded={open}
-                  className={cn(
-                    'relative z-[120]',
-                    'flex h-11 w-11',
-                    'items-center justify-center',
-                    'rounded-full',
-                    'border-0',
-                    'p-0',
-                    'shadow-none',
-                    'touch-manipulation',
-                    'transition-all duration-300',
-
-                    inverted
-                      ? [
-                          'text-white',
-                          'hover:bg-white/10',
-                        ]
-                      : [
-                          'text-neutral-900',
-                          'hover:bg-neutral-100',
-                        ],
-
-                    'focus-visible:outline-none',
-                    'focus-visible:ring-2',
-                    'focus-visible:ring-primary',
-                    'focus-visible:ring-offset-2'
-                  )}
+                  className="
+                    flex
+                    h-11
+                    w-11
+                    items-center
+                    justify-center
+                    rounded-full
+                    bg-[#561923]
+                    p-0
+                    text-white
+                    shadow-md
+                    transition-all
+                    duration-300
+                    hover:bg-[#7A2330]
+                  "
                 />
               }
             >
-
               {open ? (
                 <X
                   className="pointer-events-none h-6 w-6"
@@ -304,9 +388,7 @@ export function SiteHeader() {
                   strokeWidth={2}
                 />
               )}
-
             </SheetTrigger>
-
 
             {/* =================================================
                 MOBILE SHEET
@@ -314,18 +396,20 @@ export function SiteHeader() {
 
             <SheetContent
               side="right"
-              className={cn(
-                'z-[200]',
-                'flex h-full',
-                'w-[90%] max-w-sm',
-                'flex-col',
-                'border-l border-neutral-200',
-                'bg-white',
-                'p-0',
-                'shadow-2xl'
-              )}
+              className="
+                z-[200]
+                flex
+                h-full
+                w-[90%]
+                max-w-sm
+                flex-col
+                border-l
+                border-neutral-200
+                bg-white
+                p-0
+                shadow-2xl
+              "
             >
-
               {/* =============================================
                   MOBILE HEADER
               ============================================== */}
@@ -338,15 +422,10 @@ export function SiteHeader() {
                   py-5
                 "
               >
-
                 <SheetTitle className="text-left">
-
                   <Logo />
-
                 </SheetTitle>
-
               </SheetHeader>
-
 
               {/* =============================================
                   MOBILE NAVIGATION
@@ -363,11 +442,8 @@ export function SiteHeader() {
                 "
                 aria-label="Mobile navigation"
               >
-
                 <div className="space-y-1.5">
-
                   {navLinks.map((link) => {
-
                     const active =
                       link.href === '/'
                         ? pathname === '/'
@@ -379,9 +455,7 @@ export function SiteHeader() {
                         href={link.href}
                         onClick={() => setOpen(false)}
                         aria-current={
-                          active
-                            ? 'page'
-                            : undefined
+                          active ? 'page' : undefined
                         }
                         className={cn(
                           'group flex w-full',
@@ -390,26 +464,21 @@ export function SiteHeader() {
                           'px-4 py-3.5',
                           'text-base font-semibold',
                           'transition-all duration-200',
-                          'touch-manipulation',
 
                           active
                             ? [
-                                'bg-primary',
+                                'bg-[#561923]',
                                 'text-white',
                                 'shadow-md',
                               ]
                             : [
                                 'text-neutral-700',
-                                'hover:bg-neutral-100',
-                                'hover:text-primary',
-                                'active:bg-neutral-200',
-                              ]
+                                'hover:bg-[#F2C6CC]',
+                                'hover:text-[#561923]',
+                              ],
                         )}
                       >
-
-                        <span>
-                          {link.label}
-                        </span>
+                        <span>{link.label}</span>
 
                         <ChevronRight
                           className={cn(
@@ -417,21 +486,86 @@ export function SiteHeader() {
                             'transition-transform duration-200',
 
                             active
-                              ? 'text-white/70'
+                              ? 'text-white'
                               : [
                                   'text-neutral-300',
                                   'group-hover:translate-x-1',
-                                  'group-hover:text-primary',
-                                ]
+                                  'group-hover:text-[#561923]',
+                                ],
                           )}
                         />
-
                       </Link>
                     )
                   })}
-
                 </div>
 
+                {/* ===========================================
+                    MOBILE PARTNERS
+                ============================================ */}
+
+                <div className="mt-8 grid grid-cols-2 gap-3">
+                  {/* IATA */}
+
+                  <div
+                    className="
+                      flex
+                      h-[64px]
+                      items-center
+                      justify-center
+                      rounded-full
+                      border
+                      border-neutral-200
+                      bg-white
+                      px-3
+                      shadow-sm
+                    "
+                  >
+                    <Image
+                      src="/logos/iata.png"
+                      alt="IATA"
+                      width={100}
+                      height={60}
+                      className="
+                        h-auto
+                        max-h-[40px]
+                        w-auto
+                        max-w-[72px]
+                        object-contain
+                      "
+                    />
+                  </div>
+
+                  {/* NANTA */}
+
+                  <div
+                    className="
+                      flex
+                      h-[64px]
+                      items-center
+                      justify-center
+                      rounded-full
+                      border
+                      border-neutral-200
+                      bg-white
+                      px-3
+                      shadow-sm
+                    "
+                  >
+                    <Image
+                      src="/logos/nanta.png"
+                      alt="NANTA"
+                      width={100}
+                      height={60}
+                      className="
+                        h-auto
+                        max-h-[40px]
+                        w-auto
+                        max-w-[72px]
+                        object-contain
+                      "
+                    />
+                  </div>
+                </div>
 
                 {/* ===========================================
                     MOBILE REQUEST QUOTE
@@ -443,70 +577,73 @@ export function SiteHeader() {
                   className={cn(
                     buttonVariants(),
 
-                    'mt-7',
-                    'flex h-13 w-full',
-                    'items-center justify-center',
-                    'rounded-xl',
-                    'bg-primary',
+                    'mt-6',
+                    'flex',
+                    'h-14',
+                    'w-full',
+                    'items-center',
+                    'justify-center',
+                    'gap-3',
+                    'rounded-full',
+                    'bg-[#561923]',
                     'font-semibold',
                     'text-white',
                     'shadow-lg',
-                    'transition-all duration-300',
-
-                    'hover:bg-[#561923]',
-                    'hover:shadow-xl'
+                    'transition-all',
+                    'duration-300',
+                    'hover:bg-[#7A2330]',
                   )}
                 >
-                  Request a Quote
-                </Link>
+                  <span>Request a Quote</span>
 
+                  <ArrowRight
+                    className="h-5 w-5"
+                    strokeWidth={2}
+                  />
+                </Link>
 
                 {/* ===========================================
                     MOBILE BRANDING
                 ============================================ */}
 
                 <div className="mt-auto pt-10">
-
-                  <div className="
-                    border-t
-                    border-neutral-200
-                    pt-6
-                  ">
-
-                    <p className="
-                      text-center
-                      text-[10px]
-                      font-bold
-                      uppercase
-                      tracking-[0.2em]
-                      text-neutral-400
-                    ">
+                  <div
+                    className="
+                      border-t
+                      border-neutral-200
+                      pt-6
+                    "
+                  >
+                    <p
+                      className="
+                        text-center
+                        text-[10px]
+                        font-bold
+                        uppercase
+                        tracking-[0.2em]
+                        text-neutral-400
+                      "
+                    >
                       UNASCO Aviation Limited
                     </p>
 
-                    <p className="
-                      mt-2
-                      text-center
-                      text-xs
-                      text-neutral-400
-                    ">
+                    <p
+                      className="
+                        mt-2
+                        text-center
+                        text-xs
+                        text-neutral-400
+                      "
+                    >
                       Aviation • Cargo • Logistics • Hajj & Umrah
                     </p>
-
                   </div>
-
                 </div>
-
               </nav>
-
             </SheetContent>
-
           </Sheet>
-
         </div>
-
       </div>
-
     </header>
   )
 }

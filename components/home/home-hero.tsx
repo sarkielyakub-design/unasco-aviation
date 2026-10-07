@@ -1,11 +1,7 @@
 "use client";
 
-/// <reference types="react" />
-
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-
 import {
   ArrowRight,
   PlaneTakeoff,
@@ -17,11 +13,15 @@ import {
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 
+const unascoLetters = ["U", "N", "A", "S", "C", "O"];
+
 export function HomeHero() {
   return (
     <section className="group relative flex min-h-screen items-center justify-center overflow-hidden bg-[#12080A]">
+      {/* =========================================================
+          BACKGROUND IMAGE
+      ========================================================== */}
 
-      {/* Background Image */}
       <Image
         src="/hero-cargo-aircraft.png"
         alt="UNASCO Aviation cargo aircraft operations"
@@ -32,6 +32,8 @@ export function HomeHero() {
           object-cover
           object-center
           scale-105
+          brightness-[1.08]
+          saturate-[1.12]
           transition-transform
           duration-[12000ms]
           ease-out
@@ -39,29 +41,42 @@ export function HomeHero() {
         "
       />
 
-      {/* Main Overlay */}
+      {/* =========================================================
+          LIGHT OVERLAY
+      ========================================================== */}
+
       <div
+        aria-hidden="true"
         className="
-          absolute inset-0
+          absolute
+          inset-0
           bg-gradient-to-r
-          from-[#12080A]/90
-          via-[#12080A]/70
-          to-[#12080A]/35
+          from-[#12080A]/45
+          via-[#12080A]/18
+          to-[#12080A]/5
         "
       />
 
-      {/* Bottom Overlay */}
+      {/* =========================================================
+          BOTTOM CONTRAST
+      ========================================================== */}
+
       <div
+        aria-hidden="true"
         className="
-          absolute inset-0
+          absolute
+          inset-0
           bg-gradient-to-t
-          from-[#12080A]/95
-          via-[#12080A]/45
-          to-[#12080A]/20
+          from-[#12080A]/65
+          via-[#12080A]/15
+          to-transparent
         "
       />
 
-      {/* Maroon Glow - Left */}
+      {/* =========================================================
+          TOP SOFT GLOW
+      ========================================================== */}
+
       <div
         aria-hidden="true"
         className="
@@ -72,13 +87,16 @@ export function HomeHero() {
           h-96
           w-96
           rounded-full
-          bg-[#7A2330]/30
+          bg-[#7A2330]/20
           blur-[120px]
           animate-pulse
         "
       />
 
-      {/* Maroon Glow - Right */}
+      {/* =========================================================
+          RIGHT SOFT GLOW
+      ========================================================== */}
+
       <div
         aria-hidden="true"
         className="
@@ -89,12 +107,15 @@ export function HomeHero() {
           h-80
           w-80
           rounded-full
-          bg-[#8F2B3A]/20
+          bg-[#8F2B3A]/15
           blur-[120px]
         "
       />
 
-      {/* Main Content */}
+      {/* =========================================================
+          MAIN CONTENT
+      ========================================================== */}
+
       <div
         className="
           relative
@@ -111,11 +132,9 @@ export function HomeHero() {
           lg:px-8
         "
       >
-
         <div className="flex w-full max-w-6xl flex-col items-center">
-
           {/* =====================================================
-              IATA / NANTA LOGOS
+              IATA / NANTA
           ====================================================== */}
 
           <div
@@ -126,11 +145,11 @@ export function HomeHero() {
               items-center
               justify-center
               gap-4
-              animate-[fadeInUp_0.8s_ease-out_both]
+              animate-[heroFadeUp_0.9s_ease-out_0.15s_both]
             "
           >
-
             {/* IATA */}
+
             <div
               className="
                 flex
@@ -162,6 +181,7 @@ export function HomeHero() {
             </div>
 
             {/* NANTA */}
+
             <div
               className="
                 flex
@@ -191,11 +211,10 @@ export function HomeHero() {
                 className="h-12 w-auto object-contain"
               />
             </div>
-
           </div>
 
           {/* =====================================================
-              BADGE
+              SERVICE BADGE
           ====================================================== */}
 
           <div
@@ -214,12 +233,10 @@ export function HomeHero() {
               text-white
               shadow-2xl
               backdrop-blur-xl
-              animate-[fadeInUp_0.8s_ease-out_both]
+              animate-[heroFadeUp_0.9s_ease-out_0.35s_both]
             "
           >
-
             <span className="relative flex h-2.5 w-2.5">
-
               <span
                 className="
                   absolute
@@ -243,55 +260,34 @@ export function HomeHero() {
                   bg-[#C9828D]
                 "
               />
-
             </span>
 
-            <PlaneTakeoff
-              className="h-4 w-4 text-[#C9828D]"
-            />
+            <PlaneTakeoff className="h-4 w-4 text-[#C9828D]" />
 
             <span>
               Aviation
-
-              <span className="mx-1.5 text-white/30">
-                •
-              </span>
-
+              <span className="mx-1.5 text-white/40">•</span>
               Cargo
-
-              <span className="mx-1.5 text-white/30">
-                •
-              </span>
-
+              <span className="mx-1.5 text-white/40">•</span>
               Logistics
-
-              <span className="mx-1.5 text-white/30">
-                •
-              </span>
-
+              <span className="mx-1.5 text-white/40">•</span>
               Hajj &amp; Umrah
             </span>
-
           </div>
-
 
           {/* =====================================================
               HERO HEADING
           ====================================================== */}
 
-          <div
-            className="
-              mt-8
-              flex
-              flex-col
-              items-center
-              animate-[fadeInUp_0.9s_0.15s_ease-out_both]
-            "
-          >
-
+          <div className="mt-8 flex flex-col items-center">
             {/* UNASCO */}
+
             <h1
+              aria-label="UNASCO"
               className="
+                flex
+                items-center
+                justify-center
                 font-extrabold
                 leading-none
                 tracking-[-0.05em]
@@ -303,11 +299,25 @@ export function HomeHero() {
                 xl:text-[8.5rem]
               "
             >
-              UNASCO
+              {unascoLetters.map((letter, index) => (
+                <span
+                  key={`${letter}-${index}`}
+                  className="
+                    inline-block
+                    opacity-0
+                    animate-[unascoLetterIn_0.75s_cubic-bezier(0.22,1,0.36,1)_forwards]
+                  "
+                  style={{
+                    animationDelay: `${0.65 + index * 0.16}s`,
+                  }}
+                >
+                  {letter}
+                </span>
+              ))}
             </h1>
 
+            {/* CONNECTING PEOPLE & CARGO */}
 
-            {/* Connecting People & Cargo */}
             <h2
               className="
                 mt-4
@@ -318,9 +328,9 @@ export function HomeHero() {
                 sm:text-4xl
                 md:text-5xl
                 lg:text-6xl
+                animate-[heroFadeUp_0.9s_cubic-bezier(0.22,1,0.36,1)_1.75s_both]
               "
             >
-
               <span className="text-white">
                 Connecting{" "}
               </span>
@@ -328,11 +338,10 @@ export function HomeHero() {
               <span className="text-[#C9828D]">
                 People &amp; Cargo
               </span>
-
             </h2>
 
+            {/* ACCENT LINE */}
 
-            {/* Accent Line */}
             <div
               className="
                 mt-7
@@ -341,11 +350,10 @@ export function HomeHero() {
                 rounded-full
                 bg-[#C9828D]
                 shadow-[0_0_25px_rgba(201,130,141,0.45)]
+                animate-[heroFade_1s_ease-out_2s_both]
               "
             />
-
           </div>
-
 
           {/* =====================================================
               DESCRIPTION
@@ -355,20 +363,20 @@ export function HomeHero() {
             className="
               mt-8
               max-w-3xl
-              animate-[fadeInUp_0.9s_0.3s_ease-out_both]
               text-base
               leading-8
-              text-white/75
+              text-white/85
               sm:text-lg
               md:text-xl
+              animate-[heroFadeUp_0.9s_cubic-bezier(0.22,1,0.36,1)_2.1s_both]
             "
           >
             UNASCO Aviation Limited provides professional aviation
-            support, air cargo transportation,general sales agent, logistics solutions,
-            flight operations, airline management and Hajj &amp; Umrah
-            travel services with safety, reliability and excellence.
+            support, air cargo transportation, general sales agent,
+            logistics solutions, flight operations, airline management
+            and Hajj &amp; Umrah travel services with safety,
+            reliability and excellence.
           </p>
-
 
           {/* =====================================================
               BUTTONS
@@ -383,11 +391,11 @@ export function HomeHero() {
               justify-center
               gap-4
               sm:flex-row
-              animate-[fadeInUp_0.9s_0.45s_ease-out_both]
+              animate-[heroFadeUp_0.9s_cubic-bezier(0.22,1,0.36,1)_2.3s_both]
             "
           >
+            {/* REQUEST A QUOTE */}
 
-            {/* Request Quote */}
             <Link
               href="/contact"
               className={cn(
@@ -408,7 +416,7 @@ export function HomeHero() {
                   hover:-translate-y-1
                   hover:bg-[#8F2B3A]
                   hover:shadow-[0_20px_50px_rgba(122,35,48,0.40)]
-                `
+                `,
               )}
             >
               Request a Quote
@@ -425,17 +433,19 @@ export function HomeHero() {
               />
             </Link>
 
+            {/* EXPLORE SERVICES */}
 
-            {/* Services */}
             <Link
               href="/cargo-services"
               className={cn(
-                buttonVariants({ variant: "outline" }),
+                buttonVariants({
+                  variant: "outline",
+                }),
                 `
                   h-14
                   min-w-[220px]
                   rounded-xl
-                  border-white/40
+                  border-white/50
                   bg-white/10
                   px-7
                   text-base
@@ -448,14 +458,12 @@ export function HomeHero() {
                   hover:border-white
                   hover:bg-white
                   hover:text-[#12080A]
-                `
+                `,
               )}
             >
               Explore Our Services
             </Link>
-
           </div>
-
 
           {/* =====================================================
               TRUST FEATURES
@@ -469,11 +477,11 @@ export function HomeHero() {
               max-w-4xl
               gap-4
               sm:grid-cols-3
-              animate-[fadeInUp_0.9s_0.6s_ease-out_both]
+              animate-[heroFadeUp_0.9s_cubic-bezier(0.22,1,0.36,1)_2.5s_both]
             "
           >
+            {/* SAFE & RELIABLE */}
 
-            {/* Safe & Reliable */}
             <div
               className="
                 group/feature
@@ -496,7 +504,6 @@ export function HomeHero() {
                 hover:bg-white/10
               "
             >
-
               <div
                 className="
                   flex
@@ -521,14 +528,13 @@ export function HomeHero() {
                 Safe &amp; Reliable
               </p>
 
-              <p className="mt-1 text-xs text-white/50">
+              <p className="mt-1 text-xs text-white/70">
                 Professional Operations
               </p>
-
             </div>
 
+            {/* GLOBAL NETWORK */}
 
-            {/* Global Network */}
             <div
               className="
                 group/feature
@@ -551,7 +557,6 @@ export function HomeHero() {
                 hover:bg-white/10
               "
             >
-
               <div
                 className="
                   flex
@@ -576,14 +581,13 @@ export function HomeHero() {
                 Global Network
               </p>
 
-              <p className="mt-1 text-xs text-white/50">
+              <p className="mt-1 text-xs text-white/70">
                 Africa • Asia • Global
               </p>
-
             </div>
 
+            {/* HAJJ & UMRAH */}
 
-            {/* Hajj & Umrah */}
             <div
               className="
                 group/feature
@@ -606,7 +610,6 @@ export function HomeHero() {
                 hover:bg-white/10
               "
             >
-
               <div
                 className="
                   flex
@@ -631,22 +634,17 @@ export function HomeHero() {
                 Hajj &amp; Umrah
               </p>
 
-              <p className="mt-1 text-xs text-white/50">
+              <p className="mt-1 text-xs text-white/70">
                 Makkah • Madinah
               </p>
-
             </div>
-
           </div>
-
         </div>
-
       </div>
 
-
-      {/* =====================================================
+      {/* =========================================================
           BOTTOM EXPLORE INDICATOR
-      ====================================================== */}
+      ========================================================== */}
 
       <div
         className="
@@ -658,12 +656,11 @@ export function HomeHero() {
           flex-col
           items-center
           gap-3
-          text-white/40
+          text-white/50
           md:flex
-          animate-[fadeIn_1s_1.2s_ease-out_both]
+          animate-[heroFade_1s_ease-out_2.8s_both]
         "
       >
-
         <span
           className="
             text-[10px]
@@ -676,20 +673,79 @@ export function HomeHero() {
         </span>
 
         <div className="h-10 w-px overflow-hidden bg-white/20">
-
           <div
             className="
               h-1/2
               w-full
-              animate-[scrollLine_1.8s_ease-in-out_infinite]
               bg-[#C9828D]
+              animate-[scrollLine_1.8s_ease-in-out_infinite]
             "
           />
-
         </div>
-
       </div>
 
+      {/* =========================================================
+          ANIMATION KEYFRAMES
+          Using a normal style tag with valid JSX syntax.
+      ========================================================== */}
+
+      <style>{`
+        @keyframes unascoLetterIn {
+          0% {
+            opacity: 0;
+            transform: translateY(45px) scale(0.82);
+            filter: blur(8px);
+          }
+
+          60% {
+            opacity: 1;
+            transform: translateY(-4px) scale(1.03);
+            filter: blur(0);
+          }
+
+          100% {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            filter: blur(0);
+          }
+        }
+
+        @keyframes heroFadeUp {
+          0% {
+            opacity: 0;
+            transform: translateY(28px);
+          }
+
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes heroFade {
+          0% {
+            opacity: 0;
+          }
+
+          100% {
+            opacity: 1;
+          }
+        }
+
+        @keyframes scrollLine {
+          0% {
+            transform: translateY(-100%);
+          }
+
+          50% {
+            transform: translateY(100%);
+          }
+
+          100% {
+            transform: translateY(250%);
+          }
+        }
+      `}</style>
     </section>
   );
 }

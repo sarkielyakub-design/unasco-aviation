@@ -1093,3 +1093,78 @@
 
     backgroundMove 12s ease infinite;
 }
+@keyframes unascoLetterIn {
+  0% {
+    opacity: 0;
+    transform: translateY(45px) scale(0.82);
+    filter: blur(8px);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1.03);
+    filter: blur(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes heroFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scrollLine {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  50% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(250%);
+  }
+}
+
+.unasco-letter {
+  display: inline-block;
+  opacity: 0;
+  animation: unascoLetterIn 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-fade-up {
+  opacity: 0;
+  animation: heroFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-fade {
+  opacity: 0;
+  animation: heroFade 1s ease-out forwards;
+}
+
+.scroll-line {
+  animation: scrollLine 1.8s ease-in-out infinite;
+}

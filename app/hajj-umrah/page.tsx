@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+
 import {
   ArrowRight,
   CheckCircle2,
@@ -15,6 +16,10 @@ import {
   Star,
 } from "lucide-react";
 
+/* =========================================================
+   BRAND COLORS
+========================================================= */
+
 const MAROON = "#561923";
 const MAROON_LIGHT = "#7A2330";
 const MAROON_SOFT = "#C9828D";
@@ -23,13 +28,16 @@ const MAROON_DARK = "#3D1118";
 const GOLD = "#D4A72C";
 const GOLD_LIGHT = "#F3D98B";
 
-/*
- * High-quality Unsplash Kaaba image.
- * Source:
- * https://unsplash.com/photos/kaaba-in-makkah-al-mukarramah-EWtprB5HAL0
- */
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
 const KAABA_IMAGE =
   "https://images.unsplash.com/photo-1713239060784-e6ed820a0715?auto=format&fit=crop&w=3000&q=90";
+
+/* =========================================================
+   PAGE
+========================================================= */
 
 export default function HajjUmrahPage() {
   return (
@@ -40,8 +48,11 @@ export default function HajjUmrahPage() {
 
       <section
         className="relative min-h-[720px] overflow-hidden text-white"
-        style={{ backgroundColor: MAROON_DARK }}
+        style={{
+          backgroundColor: MAROON_DARK,
+        }}
       >
+        {/* Background image */}
         <Image
           src={KAABA_IMAGE}
           alt="Kaaba in Makkah, Saudi Arabia"
@@ -51,46 +62,64 @@ export default function HajjUmrahPage() {
           className="object-cover object-center"
         />
 
-        {/* Premium maroon overlay */}
+        {/* =================================================
+            LIGHT MAROON OVERLAY
+            Image intentionally kept visible
+        ================================================== */}
+
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(90deg, rgba(61,17,24,0.96) 0%, rgba(86,25,35,0.78) 48%, rgba(86,25,35,0.30) 100%)",
+              "linear-gradient(90deg, rgba(61,17,24,0.62) 0%, rgba(86,25,35,0.38) 45%, rgba(86,25,35,0.10) 100%)",
           }}
         />
 
-        {/* Bottom depth */}
+        {/* Bottom depth - deliberately lighter */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to top, rgba(61,17,24,0.96) 0%, rgba(61,17,24,0.42) 45%, transparent 100%)",
+              "linear-gradient(to top, rgba(61,17,24,0.58) 0%, rgba(61,17,24,0.18) 38%, transparent 76%)",
           }}
         />
 
-        {/* Gold glow */}
+        {/* Soft gold glow */}
         <div
           className="pointer-events-none absolute -left-32 -top-32 h-96 w-96 rounded-full blur-[110px]"
-          style={{ backgroundColor: "rgba(212,167,44,0.18)" }}
+          style={{
+            backgroundColor: "rgba(212,167,44,0.12)",
+          }}
         />
 
-        {/* Maroon glow */}
+        {/* Soft maroon glow */}
         <div
           className="pointer-events-none absolute -bottom-40 right-0 h-[500px] w-[500px] rounded-full blur-[130px]"
-          style={{ backgroundColor: "rgba(122,35,48,0.45)" }}
+          style={{
+            backgroundColor: "rgba(122,35,48,0.18)",
+          }}
         />
 
+        {/* Hero content */}
         <div className="relative z-10 mx-auto flex min-h-[720px] max-w-7xl items-center px-6 py-32 lg:px-8">
           <div className="max-w-4xl">
             {/* Badge */}
             <div
               className="
-                inline-flex items-center gap-3
-                rounded-full border border-white/25
-                bg-black/20 px-5 py-2.5
-                text-sm font-semibold text-white
-                shadow-xl backdrop-blur-xl
+                inline-flex
+                items-center
+                gap-3
+                rounded-full
+                border
+                border-white/30
+                bg-black/10
+                px-5
+                py-2.5
+                text-sm
+                font-semibold
+                text-white
+                shadow-xl
+                backdrop-blur-sm
                 animate-[fadeInUp_.7s_ease-out]
               "
             >
@@ -104,7 +133,9 @@ export default function HajjUmrahPage() {
 
               <MapPin
                 className="h-4 w-4"
-                style={{ color: GOLD_LIGHT }}
+                style={{
+                  color: GOLD_LIGHT,
+                }}
               />
 
               <span>Makkah • Madinah • Saudi Arabia</span>
@@ -114,16 +145,22 @@ export default function HajjUmrahPage() {
             <h1
               className="
                 mt-7
-                text-5xl font-extrabold tracking-tight
+                text-5xl
+                font-extrabold
+                tracking-tight
+                text-white
                 sm:text-6xl
                 lg:text-8xl
                 animate-[fadeInUp_.9s_ease-out]
               "
             >
               Your Journey to
+
               <span
                 className="block"
-                style={{ color: GOLD_LIGHT }}
+                style={{
+                  color: GOLD_LIGHT,
+                }}
               >
                 the Holy Lands.
               </span>
@@ -132,39 +169,52 @@ export default function HajjUmrahPage() {
             {/* Gold divider */}
             <div
               className="mt-7 h-1 w-24 rounded-full"
-              style={{ backgroundColor: GOLD }}
+              style={{
+                backgroundColor: GOLD,
+              }}
             />
 
+            {/* Description */}
             <p
               className="
-                mt-7 max-w-2xl
-                text-lg leading-8
-                text-white/80
+                mt-7
+                max-w-2xl
+                text-lg
+                leading-8
+                text-white
                 lg:text-xl
                 animate-[fadeInUp_1.1s_ease-out]
               "
             >
-              Professional Hajj and Umrah travel support from UNASCO
-              Aviation Limited, helping pilgrims plan their journey to
-              Makkah and Madinah with confidence.
+              Professional Hajj and Umrah travel support from UNASCO Aviation
+              Limited, helping pilgrims plan their journey to Makkah and
+              Madinah with confidence.
             </p>
 
             {/* Buttons */}
             <div
               className="
-                mt-10 flex flex-wrap gap-4
+                mt-10
+                flex
+                flex-wrap
+                gap-4
                 animate-[fadeInUp_1.2s_ease-out]
               "
             >
               <Link
                 href="#packages"
                 className="
-                  group inline-flex h-13 items-center gap-3
+                  group
+                  inline-flex
+                  h-13
+                  items-center
+                  gap-3
                   rounded-full
                   px-7
                   font-bold
                   shadow-xl
-                  transition-all duration-300
+                  transition-all
+                  duration-300
                   hover:-translate-y-1
                   hover:shadow-2xl
                 "
@@ -177,7 +227,8 @@ export default function HajjUmrahPage() {
 
                 <ArrowRight
                   className="
-                    h-4 w-4
+                    h-4
+                    w-4
                     transition-transform
                     group-hover:translate-x-1
                   "
@@ -187,17 +238,22 @@ export default function HajjUmrahPage() {
               <Link
                 href="/contact"
                 className="
-                  inline-flex h-13 items-center
+                  inline-flex
+                  h-13
+                  items-center
                   rounded-full
-                  border border-white/40
-                  bg-white/10
+                  border
+                  border-white/50
+                  bg-[#561923]/40
                   px-7
                   font-semibold
                   text-white
                   backdrop-blur-md
-                  transition-all duration-300
+                  transition-all
+                  duration-300
                   hover:border-white
                   hover:bg-white
+                  hover:text-[#561923]
                 "
               >
                 Contact UNASCO
@@ -205,29 +261,48 @@ export default function HajjUmrahPage() {
             </div>
 
             {/* Trust points */}
-            <div className="mt-12 flex flex-wrap gap-x-8 gap-y-4 text-sm text-white/85">
+            <div
+              className="
+                mt-12
+                flex
+                flex-wrap
+                gap-x-8
+                gap-y-4
+                text-sm
+                text-white
+              "
+            >
               <div className="flex items-center gap-2">
                 <CheckCircle2
                   className="h-5 w-5"
-                  style={{ color: GOLD_LIGHT }}
+                  style={{
+                    color: GOLD_LIGHT,
+                  }}
                 />
-                Professional Travel Support
+
+                <span>Professional Travel Support</span>
               </div>
 
               <div className="flex items-center gap-2">
                 <CheckCircle2
                   className="h-5 w-5"
-                  style={{ color: GOLD_LIGHT }}
+                  style={{
+                    color: GOLD_LIGHT,
+                  }}
                 />
-                Makkah & Madinah
+
+                <span>Makkah & Madinah</span>
               </div>
 
               <div className="flex items-center gap-2">
                 <CheckCircle2
                   className="h-5 w-5"
-                  style={{ color: GOLD_LIGHT }}
+                  style={{
+                    color: GOLD_LIGHT,
+                  }}
                 />
-                2027 Hajj Programme
+
+                <span>2027 Hajj Programme</span>
               </div>
             </div>
           </div>
@@ -243,31 +318,65 @@ export default function HajjUmrahPage() {
           <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
             <div>
               <p
-                className="text-sm font-bold uppercase tracking-[0.25em]"
-                style={{ color: MAROON }}
+                className="
+                  text-sm
+                  font-bold
+                  uppercase
+                  tracking-[0.25em]
+                "
+                style={{
+                  color: MAROON,
+                }}
               >
                 Pilgrimage Travel
               </p>
 
-              <h2 className="mt-5 text-4xl font-extrabold tracking-tight sm:text-5xl">
+              <h2
+                className="
+                  mt-5
+                  text-4xl
+                  font-extrabold
+                  tracking-tight
+                  text-black
+                  sm:text-5xl
+                "
+              >
                 A journey of faith deserves careful planning.
               </h2>
 
               <div
                 className="mt-6 h-1 w-20 rounded-full"
-                style={{ backgroundColor: GOLD }}
+                style={{
+                  backgroundColor: GOLD,
+                }}
               />
 
-              <p className="mt-7 max-w-xl text-lg leading-8 text-neutral-600">
-                UNASCO provides organized Hajj and Umrah travel support
-                for individuals, families and pilgrimage groups
-                travelling to Saudi Arabia.
+              <p
+                className="
+                  mt-7
+                  max-w-xl
+                  text-lg
+                  leading-8
+                  text-neutral-600
+                "
+              >
+                UNASCO provides organized Hajj and Umrah travel support for
+                individuals, families and pilgrimage groups travelling to Saudi
+                Arabia.
               </p>
 
-              <p className="mt-5 max-w-xl text-lg leading-8 text-neutral-600">
+              <p
+                className="
+                  mt-5
+                  max-w-xl
+                  text-lg
+                  leading-8
+                  text-neutral-600
+                "
+              >
                 Our pilgrimage services are designed around dependable
-                coordination, professional travel support and a
-                comfortable journey from departure to the Holy Lands.
+                coordination, professional travel support and a comfortable
+                journey from departure to the Holy Lands.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
@@ -311,8 +420,11 @@ export default function HajjUmrahPage() {
                 width={1200}
                 height={800}
                 className="
-                  h-[480px] w-full object-cover
-                  transition-transform duration-700
+                  h-[480px]
+                  w-full
+                  object-cover
+                  transition-transform
+                  duration-700
                   group-hover:scale-105
                 "
               />
@@ -326,11 +438,11 @@ export default function HajjUmrahPage() {
               />
 
               <div className="absolute bottom-6 left-6 text-white">
-                <p className="text-sm font-medium uppercase tracking-[0.2em] text-white/75">
+                <p className="text-sm font-medium uppercase tracking-[0.2em] text-white">
                   Saudi Arabia
                 </p>
 
-                <h3 className="mt-1 text-2xl font-bold">
+                <h3 className="mt-1 text-2xl font-bold text-white">
                   Madinah
                 </h3>
               </div>
@@ -351,10 +463,14 @@ export default function HajjUmrahPage() {
           <div className="mx-auto max-w-3xl text-center">
             <div
               className="
-                inline-flex items-center gap-2
+                inline-flex
+                items-center
+                gap-2
                 rounded-full
-                px-4 py-2
-                text-sm font-bold
+                px-4
+                py-2
+                text-sm
+                font-bold
               "
               style={{
                 backgroundColor: "rgba(86,25,35,0.09)",
@@ -363,36 +479,50 @@ export default function HajjUmrahPage() {
             >
               <Star
                 className="h-4 w-4"
-                style={{ color: GOLD }}
+                style={{
+                  color: GOLD,
+                }}
               />
 
               UNASCO PILGRIMAGE PACKAGES
             </div>
 
-            <h2 className="mt-5 text-4xl font-extrabold tracking-tight sm:text-5xl">
+            <h2
+              className="
+                mt-5
+                text-4xl
+                font-extrabold
+                tracking-tight
+                text-black
+                sm:text-5xl
+              "
+            >
               Hajj & Umrah Packages
             </h2>
 
             <p className="mt-5 text-lg leading-8 text-neutral-600">
-              Choose your pilgrimage programme and speak with our team
-              for the complete itinerary, availability and package
-              details.
+              Choose your pilgrimage programme and speak with our team for the
+              complete itinerary, availability and package details.
             </p>
           </div>
 
           <div className="mt-16 grid gap-8 lg:grid-cols-2">
             {/* =================================================
                 UMRAH
-            ================================================= */}
+            ================================================== */}
 
             <div
               className="
-                group relative overflow-hidden
+                group
+                relative
+                overflow-hidden
                 rounded-[2rem]
-                border border-neutral-200
+                border
+                border-neutral-200
                 bg-white
                 shadow-lg
-                transition-all duration-500
+                transition-all
+                duration-500
                 hover:-translate-y-2
                 hover:shadow-2xl
               "
@@ -404,7 +534,8 @@ export default function HajjUmrahPage() {
                   fill
                   className="
                     object-cover
-                    transition-transform duration-700
+                    transition-transform
+                    duration-700
                     group-hover:scale-105
                   "
                 />
@@ -419,20 +550,30 @@ export default function HajjUmrahPage() {
 
                 <div
                   className="
-                    absolute left-6 top-6 rounded-full
-                    bg-white px-4 py-2 text-sm font-bold shadow-lg
+                    absolute
+                    left-6
+                    top-6
+                    rounded-full
+                    bg-white
+                    px-4
+                    py-2
+                    text-sm
+                    font-bold
+                    shadow-lg
                   "
-                  style={{ color: MAROON }}
+                  style={{
+                    color: MAROON,
+                  }}
                 >
                   UMRAH
                 </div>
 
                 <div className="absolute bottom-6 left-6 text-white">
-                  <p className="text-sm text-white/75">
+                  <p className="text-sm text-white">
                     Pilgrimage Programme
                   </p>
 
-                  <h3 className="mt-1 text-3xl font-bold">
+                  <h3 className="mt-1 text-3xl font-bold text-white">
                     Umrah Package
                   </h3>
                 </div>
@@ -441,13 +582,23 @@ export default function HajjUmrahPage() {
               <div className="p-8">
                 <div className="flex items-end justify-between gap-4">
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-neutral-400">
+                    <p
+                      className="
+                        text-xs
+                        font-bold
+                        uppercase
+                        tracking-[0.18em]
+                        text-neutral-400
+                      "
+                    >
                       Starting From
                     </p>
 
                     <p
                       className="mt-1 text-4xl font-extrabold"
-                      style={{ color: MAROON }}
+                      style={{
+                        color: MAROON,
+                      }}
                     >
                       ₦2.5M
                     </p>
@@ -465,7 +616,9 @@ export default function HajjUmrahPage() {
 
                     <p
                       className="font-bold"
-                      style={{ color: MAROON_DARK }}
+                      style={{
+                        color: MAROON_DARK,
+                      }}
                     >
                       Saudi Arabia
                     </p>
@@ -484,14 +637,23 @@ export default function HajjUmrahPage() {
                 <Link
                   href="/contact"
                   className="
-                    mt-8 flex h-13 w-full
-                    items-center justify-center gap-2
+                    mt-8
+                    flex
+                    h-13
+                    w-full
+                    items-center
+                    justify-center
+                    gap-2
                     rounded-xl
-                    font-semibold text-white
-                    transition-all duration-300
+                    font-semibold
+                    text-white
+                    transition-all
+                    duration-300
                     hover:shadow-lg
                   "
-                  style={{ backgroundColor: MAROON }}
+                  style={{
+                    backgroundColor: MAROON,
+                  }}
                 >
                   Enquire About Umrah
 
@@ -502,28 +664,40 @@ export default function HajjUmrahPage() {
 
             {/* =================================================
                 HAJJ 2027
-            ================================================= */}
+            ================================================== */}
 
             <div
               className="
-                group relative overflow-hidden
+                group
+                relative
+                overflow-hidden
                 rounded-[2rem]
                 border-2
                 bg-white
                 shadow-xl
-                transition-all duration-500
+                transition-all
+                duration-500
                 hover:-translate-y-2
                 hover:shadow-2xl
               "
-              style={{ borderColor: "rgba(212,167,44,0.50)" }}
+              style={{
+                borderColor: "rgba(212,167,44,0.50)",
+              }}
             >
               {/* Recommended */}
               <div
                 className="
-                  absolute right-6 top-6 z-20
+                  absolute
+                  right-6
+                  top-6
+                  z-20
                   rounded-full
-                  px-4 py-2
-                  text-xs font-bold uppercase tracking-wide
+                  px-4
+                  py-2
+                  text-xs
+                  font-bold
+                  uppercase
+                  tracking-wide
                   shadow-lg
                 "
                 style={{
@@ -541,7 +715,8 @@ export default function HajjUmrahPage() {
                   fill
                   className="
                     object-cover
-                    transition-transform duration-700
+                    transition-transform
+                    duration-700
                     group-hover:scale-105
                   "
                 />
@@ -550,16 +725,16 @@ export default function HajjUmrahPage() {
                   className="absolute inset-0"
                   style={{
                     background:
-                      "linear-gradient(to top, rgba(61,17,24,0.88), rgba(0,0,0,0.20) 60%, transparent)",
+                      "linear-gradient(to top, rgba(61,17,24,0.78), rgba(0,0,0,0.10) 60%, transparent)",
                   }}
                 />
 
                 <div className="absolute bottom-6 left-6 text-white">
-                  <p className="text-sm text-white/75">
+                  <p className="text-sm text-white">
                     2027 Pilgrimage Programme
                   </p>
 
-                  <h3 className="mt-1 text-3xl font-bold">
+                  <h3 className="mt-1 text-3xl font-bold text-white">
                     Hajj Package
                   </h3>
                 </div>
@@ -568,13 +743,23 @@ export default function HajjUmrahPage() {
               <div className="p-8">
                 <div className="flex items-end justify-between gap-4">
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-neutral-400">
+                    <p
+                      className="
+                        text-xs
+                        font-bold
+                        uppercase
+                        tracking-[0.18em]
+                        text-neutral-400
+                      "
+                    >
                       Deposit From
                     </p>
 
                     <p
                       className="mt-1 text-4xl font-extrabold"
-                      style={{ color: MAROON }}
+                      style={{
+                        color: MAROON,
+                      }}
                     >
                       ₦5M
                     </p>
@@ -589,12 +774,16 @@ export default function HajjUmrahPage() {
                     <div className="flex items-center gap-2">
                       <CalendarDays
                         className="h-4 w-4"
-                        style={{ color: "#80620F" }}
+                        style={{
+                          color: "#80620F",
+                        }}
                       />
 
                       <p
                         className="font-bold"
-                        style={{ color: "#80620F" }}
+                        style={{
+                          color: "#80620F",
+                        }}
                       >
                         2027
                       </p>
@@ -618,14 +807,23 @@ export default function HajjUmrahPage() {
                 <Link
                   href="/contact"
                   className="
-                    mt-8 flex h-13 w-full
-                    items-center justify-center gap-2
+                    mt-8
+                    flex
+                    h-13
+                    w-full
+                    items-center
+                    justify-center
+                    gap-2
                     rounded-xl
-                    font-semibold text-white
-                    transition-all duration-300
+                    font-semibold
+                    text-white
+                    transition-all
+                    duration-300
                     hover:shadow-lg
                   "
-                  style={{ backgroundColor: MAROON_DARK }}
+                  style={{
+                    backgroundColor: MAROON_DARK,
+                  }}
                 >
                   Reserve Hajj 2027
 
@@ -635,11 +833,21 @@ export default function HajjUmrahPage() {
             </div>
           </div>
 
-          <p className="mx-auto mt-8 max-w-3xl text-center text-sm leading-6 text-neutral-500">
+          <p
+            className="
+              mx-auto
+              mt-8
+              max-w-3xl
+              text-center
+              text-sm
+              leading-6
+              text-neutral-500
+            "
+          >
             Package pricing shown above is based on the current programme
-            information provided by UNASCO. Final package details,
-            availability, itinerary and applicable terms should be
-            confirmed directly with UNASCO before payment.
+            information provided by UNASCO. Final package details, availability,
+            itinerary and applicable terms should be confirmed directly with
+            UNASCO before payment.
           </p>
         </div>
       </section>
@@ -652,19 +860,34 @@ export default function HajjUmrahPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <p
-              className="text-sm font-bold uppercase tracking-[0.25em]"
-              style={{ color: MAROON }}
+              className="
+                text-sm
+                font-bold
+                uppercase
+                tracking-[0.25em]
+              "
+              style={{
+                color: MAROON,
+              }}
             >
               The Holy Cities
             </p>
 
-            <h2 className="mt-4 text-4xl font-extrabold sm:text-5xl">
+            <h2
+              className="
+                mt-4
+                text-4xl
+                font-extrabold
+                text-black
+                sm:text-5xl
+              "
+            >
               Makkah & Madinah
             </h2>
 
             <p className="mt-5 text-lg leading-8 text-neutral-600">
-              Professional travel support for your pilgrimage journey
-              across the Holy Lands.
+              Professional travel support for your pilgrimage journey across
+              the Holy Lands.
             </p>
           </div>
 
@@ -689,26 +912,55 @@ export default function HajjUmrahPage() {
       ===================================================== */}
 
       <section className="relative overflow-hidden bg-white py-24 lg:py-32">
-        {/* Maroon decorative background */}
+        {/* Decorative maroon glow */}
         <div
-          className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full blur-[120px]"
-          style={{ backgroundColor: "rgba(86,25,35,0.08)" }}
+          className="
+            pointer-events-none
+            absolute
+            -left-40
+            top-20
+            h-96
+            w-96
+            rounded-full
+            blur-[120px]
+          "
+          style={{
+            backgroundColor: "rgba(86,25,35,0.08)",
+          }}
         />
 
+        {/* Decorative gold glow */}
         <div
-          className="pointer-events-none absolute -right-40 bottom-0 h-96 w-96 rounded-full blur-[120px]"
-          style={{ backgroundColor: "rgba(212,167,44,0.10)" }}
+          className="
+            pointer-events-none
+            absolute
+            -right-40
+            bottom-0
+            h-96
+            w-96
+            rounded-full
+            blur-[120px]
+          "
+          style={{
+            backgroundColor: "rgba(212,167,44,0.10)",
+          }}
         />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <div
               className="
-                inline-flex items-center gap-2
+                inline-flex
+                items-center
+                gap-2
                 rounded-full
-                border px-4 py-2
-                text-sm font-bold
-                uppercase tracking-[0.18em]
+                border
+                px-4
+                py-2
+                text-sm
+                font-bold
+                uppercase
+                tracking-[0.18em]
               "
               style={{
                 borderColor: "rgba(86,25,35,0.18)",
@@ -718,24 +970,37 @@ export default function HajjUmrahPage() {
             >
               <Star
                 className="h-4 w-4"
-                style={{ color: GOLD }}
+                style={{
+                  color: GOLD,
+                }}
               />
 
               Pilgrimage Support
             </div>
 
-            <h2 className="mt-6 text-4xl font-extrabold text-black sm:text-5xl lg:text-6xl">
+            <h2
+              className="
+                mt-6
+                text-4xl
+                font-extrabold
+                text-black
+                sm:text-5xl
+                lg:text-6xl
+              "
+            >
               Professional support for your journey
             </h2>
 
             <div
               className="mx-auto mt-6 h-1 w-20 rounded-full"
-              style={{ backgroundColor: GOLD }}
+              style={{
+                backgroundColor: GOLD,
+              }}
             />
 
             <p className="mt-6 text-lg leading-8 text-neutral-600">
-              UNASCO combines aviation, logistics and travel experience
-              to provide structured pilgrimage support.
+              UNASCO combines aviation, logistics and travel experience to
+              provide structured pilgrimage support.
             </p>
           </div>
 
@@ -785,25 +1050,55 @@ export default function HajjUmrahPage() {
 
       <section className="relative overflow-hidden bg-[#FAF8F8] py-24 lg:py-32">
         <div
-          className="pointer-events-none absolute -right-40 -top-40 h-96 w-96 rounded-full blur-3xl"
-          style={{ backgroundColor: "rgba(212,167,44,0.10)" }}
+          className="
+            pointer-events-none
+            absolute
+            -right-40
+            -top-40
+            h-96
+            w-96
+            rounded-full
+            blur-3xl
+          "
+          style={{
+            backgroundColor: "rgba(212,167,44,0.10)",
+          }}
         />
 
         <div className="relative mx-auto max-w-5xl px-6 text-center lg:px-8">
           <p
-            className="text-sm font-bold uppercase tracking-[0.25em]"
-            style={{ color: MAROON }}
+            className="
+              text-sm
+              font-bold
+              uppercase
+              tracking-[0.25em]
+            "
+            style={{
+              color: MAROON,
+            }}
           >
             Begin Your Journey
           </p>
 
-          <h2 className="mt-5 text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+          <h2
+            className="
+              mt-5
+              text-4xl
+              font-extrabold
+              tracking-tight
+              text-black
+              sm:text-5xl
+              lg:text-6xl
+            "
+          >
             Ready for Hajj or Umrah?
           </h2>
 
           <div
             className="mx-auto mt-6 h-1 w-20 rounded-full"
-            style={{ backgroundColor: GOLD }}
+            style={{
+              backgroundColor: GOLD,
+            }}
           />
 
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-neutral-600">
@@ -814,13 +1109,18 @@ export default function HajjUmrahPage() {
           <Link
             href="/contact"
             className="
-              mt-9 inline-flex h-13 items-center gap-3
+              mt-9
+              inline-flex
+              h-13
+              items-center
+              gap-3
               rounded-full
               px-8
               font-bold
               text-white
               shadow-xl
-              transition-all duration-300
+              transition-all
+              duration-300
               hover:-translate-y-1
               hover:shadow-2xl
             "
@@ -843,12 +1143,18 @@ export default function HajjUmrahPage() {
    PACKAGE POINT
 ========================================================= */
 
-function PackagePoint({ text }: { text: string }) {
+function PackagePoint({
+  text,
+}: {
+  text: string;
+}) {
   return (
     <div className="flex items-center gap-3">
       <CheckCircle2
         className="h-5 w-5 shrink-0"
-        style={{ color: MAROON }}
+        style={{
+          color: MAROON,
+        }}
       />
 
       <span className="text-sm font-medium text-neutral-700">
@@ -872,39 +1178,57 @@ function DestinationCard({
   subtitle: string;
 }) {
   return (
-    <div className="group relative h-[430px] overflow-hidden rounded-[2rem] shadow-xl">
+    <div
+      className="
+        group
+        relative
+        h-[430px]
+        overflow-hidden
+        rounded-[2rem]
+        shadow-xl
+      "
+    >
       <Image
         src={image}
         alt={`${title}, Saudi Arabia`}
         fill
         className="
           object-cover
-          transition-transform duration-700
+          transition-transform
+          duration-700
           group-hover:scale-105
         "
       />
 
+      {/* Image overlay */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(to top, rgba(61,17,24,0.90), rgba(0,0,0,0.20) 55%, transparent)",
+            "linear-gradient(to top, rgba(61,17,24,0.82), rgba(0,0,0,0.10) 55%, transparent)",
         }}
       />
 
       <div className="absolute bottom-8 left-8 text-white">
         <p
-          className="text-sm font-medium uppercase tracking-[0.2em]"
-          style={{ color: GOLD_LIGHT }}
+          className="
+            text-sm
+            font-medium
+            uppercase
+            tracking-[0.2em]
+          "
+          style={{
+            color: GOLD_LIGHT,
+          }}
         >
           Saudi Arabia
         </p>
 
-        <h3 className="mt-2 text-4xl font-extrabold">
+        <h3 className="mt-2 text-4xl font-extrabold text-white">
           {title}
         </h3>
 
-        <p className="mt-1 text-white/75">
+        <p className="mt-1 text-white">
           {subtitle}
         </p>
       </div>
@@ -914,6 +1238,8 @@ function DestinationCard({
 
 /* =========================================================
    SERVICE CARD
+   IMPORTANT:
+   MAROON CARD = WHITE TEXT
 ========================================================= */
 
 function ServiceCard({
@@ -928,56 +1254,116 @@ function ServiceCard({
   return (
     <div
       className="
-        group rounded-3xl
+        group
+        relative
+        overflow-hidden
+        rounded-3xl
         border
-        bg-white
         p-7
-        shadow-sm
-        transition-all duration-500
-        hover:-translate-y-2
-        hover:shadow-xl
+        shadow-lg
+        transition-all
+        duration-500
+        hover:-translate-y-3
+        hover:shadow-2xl
       "
       style={{
-        borderColor: "rgba(86,25,35,0.12)",
+        backgroundColor: MAROON,
+        borderColor: "rgba(255,255,255,0.14)",
       }}
     >
+      {/* Animated glow */}
       <div
         className="
-          flex h-14 w-14 items-center justify-center
+          pointer-events-none
+          absolute
+          -right-12
+          -top-12
+          h-32
+          w-32
+          rounded-full
+          opacity-0
+          blur-3xl
+          transition-opacity
+          duration-500
+          group-hover:opacity-100
+        "
+        style={{
+          backgroundColor: "rgba(243,217,139,0.18)",
+        }}
+      />
+
+      {/* Icon */}
+      <div
+        className="
+          relative
+          flex
+          h-14
+          w-14
+          items-center
+          justify-center
           rounded-2xl
           text-white
           shadow-lg
-          transition-all duration-500
+          transition-all
+          duration-500
           group-hover:scale-110
+          group-hover:rotate-3
         "
         style={{
-          backgroundColor: MAROON,
-          boxShadow: "0 10px 25px rgba(86,25,35,0.18)",
+          backgroundColor: MAROON_LIGHT,
+          boxShadow: "0 10px 25px rgba(0,0,0,0.18)",
         }}
       >
-        <div className="h-6 w-6">
+        <div
+          className="h-6 w-6 text-white"
+          style={{
+            color: "#F2C6CC",
+          }}
+        >
           {icon}
         </div>
       </div>
 
+      {/* WHITE TITLE */}
       <h3
-        className="mt-7 text-xl font-bold"
-        style={{ color: MAROON_DARK }}
+        className="
+          relative
+          mt-7
+          text-xl
+          font-bold
+          text-white
+        "
       >
         {title}
       </h3>
 
-      <p className="mt-3 leading-7 text-neutral-600">
+      {/* WHITE DESCRIPTION */}
+      <p
+        className="
+          relative
+          mt-3
+          leading-7
+          text-white
+        "
+      >
         {description}
       </p>
 
+      {/* Animated gold line */}
       <div
         className="
-          mt-6 h-0.5 w-10 rounded-full
-          transition-all duration-500
-          group-hover:w-16
+          relative
+          mt-6
+          h-0.5
+          w-10
+          rounded-full
+          transition-all
+          duration-500
+          group-hover:w-20
         "
-        style={{ backgroundColor: GOLD }}
+        style={{
+          backgroundColor: GOLD_LIGHT,
+        }}
       />
     </div>
   );

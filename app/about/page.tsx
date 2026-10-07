@@ -124,7 +124,10 @@ const strengths = [
 export default function AboutPage() {
   return (
     <>
-      {/* HERO */}
+      {/* =========================================================
+          HERO
+      ========================================================== */}
+
       <section className="relative overflow-hidden bg-[#3D1118] py-28 lg:py-36">
         <div className="absolute -left-40 top-0 h-[500px] w-[500px] rounded-full bg-[#7A2330]/40 blur-[120px]" />
 
@@ -136,9 +139,11 @@ export default function AboutPage() {
               About UNASCO
             </span>
 
-            <h1 className="mt-7 text-5xl font-extrabold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
-              Built for Aviation.
+            <h1 className="mt-7 text-5xl font-extrabold leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl">
+              <span className="text-white">Built for Aviation.</span>
+
               <br />
+
               <span className="text-white">
                 Driven by Excellence.
               </span>
@@ -156,7 +161,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* COMPANY PROFILE */}
+      {/* =========================================================
+          COMPANY PROFILE
+      ========================================================== */}
+
       <section className="relative overflow-hidden bg-white py-24 lg:py-32">
         <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-[#C9828D]/10 blur-3xl" />
 
@@ -164,6 +172,7 @@ export default function AboutPage() {
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2">
           {/* IMAGE */}
+
           <div className="relative">
             <div className="group overflow-hidden rounded-[2rem] border border-[#561923]/10 shadow-2xl">
               <Image
@@ -177,6 +186,7 @@ export default function AboutPage() {
             </div>
 
             {/* REGISTRATION CARD */}
+
             <div className="absolute -bottom-8 left-6 rounded-3xl border border-[#7A2330]/50 bg-[#561923] p-6 text-white shadow-2xl backdrop-blur sm:left-10">
               <div className="flex items-center gap-4">
                 <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#7A2330] text-[#F2C6CC]">
@@ -201,6 +211,7 @@ export default function AboutPage() {
           </div>
 
           {/* CONTENT */}
+
           <div className="text-gray-900">
             <span className="text-sm font-semibold uppercase tracking-[0.25em] text-[#561923]">
               Company Profile
@@ -227,6 +238,7 @@ export default function AboutPage() {
             </p>
 
             {/* HEAD OFFICE */}
+
             <div className="mt-10">
               <div className="flex gap-4 rounded-2xl border border-[#7A2330]/50 bg-[#561923] p-5 text-white transition-all duration-300 hover:bg-[#7A2330] hover:shadow-lg">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#7A2330]">
@@ -246,6 +258,7 @@ export default function AboutPage() {
             </div>
 
             {/* COMPANY POSITIONING */}
+
             <div className="mt-8 flex flex-wrap gap-3">
               {[
                 "Aviation Support",
@@ -265,7 +278,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CEO MESSAGE */}
+      {/* =========================================================
+          CEO MESSAGE
+      ========================================================== */}
+
       <section className="relative overflow-hidden bg-[#561923] py-24 lg:py-32">
         <div className="absolute -left-40 top-0 h-[500px] w-[500px] rounded-full bg-[#7A2330]/50 blur-3xl" />
 
@@ -274,6 +290,7 @@ export default function AboutPage() {
         <div className="relative mx-auto max-w-7xl px-6">
           <div className="grid items-center gap-16 lg:grid-cols-[420px_1fr]">
             {/* CEO PHOTO */}
+
             <div className="relative">
               <div className="overflow-hidden rounded-[2rem] border border-[#7A2330] bg-[#3D1118] shadow-2xl">
                 <Image
@@ -297,6 +314,7 @@ export default function AboutPage() {
             </div>
 
             {/* MESSAGE */}
+
             <div className="text-white">
               <span className="text-sm font-semibold uppercase tracking-[0.25em] text-white">
                 Message From Our CEO
@@ -356,7 +374,7 @@ export default function AboutPage() {
               <div className="mt-8 flex items-center gap-3 text-sm text-white">
                 <Award className="h-5 w-5 text-[#F2C6CC]" />
 
-                <span>
+                <span className="text-white">
                   Aviation leadership built on extensive industry experience
                 </span>
               </div>
@@ -365,7 +383,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* LEADERSHIP EXPERIENCE */}
+      {/* =========================================================
+          LEADERSHIP EXPERIENCE
+      ========================================================== */}
+
       <section className="bg-white py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl text-center">
@@ -390,7 +411,7 @@ export default function AboutPage() {
                 <PlaneTakeoff className="h-7 w-7" />
               </div>
 
-              <h3 className="mt-6 text-2xl font-bold">
+              <h3 className="mt-6 text-2xl font-bold text-white">
                 Airline Operations
               </h3>
 
@@ -406,7 +427,7 @@ export default function AboutPage() {
                 <Users className="h-7 w-7" />
               </div>
 
-              <h3 className="mt-6 text-2xl font-bold">
+              <h3 className="mt-6 text-2xl font-bold text-white">
                 Cargo Services
               </h3>
 
@@ -421,7 +442,7 @@ export default function AboutPage() {
                 <BriefcaseBusiness className="h-7 w-7" />
               </div>
 
-              <h3 className="mt-6 text-2xl font-bold">
+              <h3 className="mt-6 text-2xl font-bold text-white">
                 Aviation Management
               </h3>
 
@@ -435,7 +456,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CORE SERVICES */}
+      {/* =========================================================
+          CORE SERVICES
+      ========================================================== */}
+
       <section className="bg-white py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl text-center">
@@ -489,7 +513,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* MISSION / VISION / QUALITY */}
+      {/* =========================================================
+          MISSION / VISION / QUALITY
+      ========================================================== */}
+
       <section className="relative overflow-hidden bg-white py-24 lg:py-32">
         <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-[#C9828D]/10 blur-3xl" />
 
@@ -515,12 +542,13 @@ export default function AboutPage() {
 
           <div className="mt-16 grid gap-8 lg:grid-cols-3">
             {/* MISSION */}
+
             <div className="group rounded-3xl border border-[#7A2330]/50 bg-[#561923] p-8 text-white shadow-lg transition hover:-translate-y-2 hover:bg-[#7A2330] hover:shadow-2xl">
               <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#7A2330] text-[#F2C6CC]">
                 <Target className="h-8 w-8" />
               </div>
 
-              <h3 className="mt-6 text-2xl font-bold">
+              <h3 className="mt-6 text-2xl font-bold text-white">
                 Our Mission
               </h3>
 
@@ -535,12 +563,13 @@ export default function AboutPage() {
             </div>
 
             {/* VISION */}
+
             <div className="group rounded-3xl border border-[#7A2330]/50 bg-[#561923] p-8 text-white shadow-lg transition hover:-translate-y-2 hover:bg-[#7A2330] hover:shadow-2xl">
               <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#7A2330] text-[#F2C6CC]">
                 <Eye className="h-8 w-8" />
               </div>
 
-              <h3 className="mt-6 text-2xl font-bold">
+              <h3 className="mt-6 text-2xl font-bold text-white">
                 Our Vision
               </h3>
 
@@ -553,12 +582,13 @@ export default function AboutPage() {
             </div>
 
             {/* QUALITY */}
+
             <div className="group rounded-3xl border border-[#7A2330]/50 bg-[#561923] p-8 text-white shadow-lg transition hover:-translate-y-2 hover:bg-[#7A2330] hover:shadow-2xl">
               <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#7A2330] text-[#F2C6CC]">
                 <Star className="h-8 w-8" />
               </div>
 
-              <h3 className="mt-6 text-2xl font-bold">
+              <h3 className="mt-6 text-2xl font-bold text-white">
                 Our Quality
               </h3>
 
@@ -573,7 +603,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* OBJECTIVES */}
+      {/* =========================================================
+          OBJECTIVES
+      ========================================================== */}
+
       <section className="bg-white py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2">
           <div>
@@ -624,7 +657,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* COMPANY STRUCTURE */}
+      {/* =========================================================
+          COMPANY STRUCTURE
+      ========================================================== */}
+
       <section className="bg-white py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl text-center">
@@ -647,7 +683,7 @@ export default function AboutPage() {
             <div className="rounded-3xl bg-[#561923] px-12 py-7 text-center text-white shadow-2xl">
               <Users className="mx-auto mb-3 h-8 w-8 text-[#F2C6CC]" />
 
-              <h3 className="text-2xl font-bold">
+              <h3 className="text-2xl font-bold text-white">
                 MANAGEMENT
               </h3>
 
@@ -663,7 +699,7 @@ export default function AboutPage() {
                 key={department}
                 className="rounded-2xl border border-[#7A2330]/50 bg-[#561923] p-7 text-center text-white transition-all hover:-translate-y-1 hover:bg-[#7A2330] hover:shadow-xl"
               >
-                <h3 className="font-bold">
+                <h3 className="font-bold text-white">
                   {department}
                 </h3>
               </div>
@@ -672,7 +708,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CURRENT MANAGEMENT TEAM */}
+      {/* =========================================================
+          CURRENT MANAGEMENT TEAM
+      ========================================================== */}
+
       <section className="bg-white py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl text-center">
@@ -733,11 +772,15 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* STRATEGIC COLLABORATIONS */}
+      {/* =========================================================
+          STRATEGIC COLLABORATIONS
+      ========================================================== */}
+
       <section className="bg-white py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid items-center gap-16 lg:grid-cols-2">
             {/* IMAGE */}
+
             <div className="relative overflow-hidden rounded-[2rem] border border-[#561923]/10 bg-[#561923] shadow-2xl">
               <Image
                 src="/company/collaborations.jpg"
@@ -749,6 +792,7 @@ export default function AboutPage() {
             </div>
 
             {/* CONTENT */}
+
             <div>
               <span className="text-sm font-semibold uppercase tracking-[0.25em] text-[#561923]">
                 Strategic Collaborations
@@ -789,7 +833,7 @@ export default function AboutPage() {
                   >
                     <CheckCircle2 className="h-5 w-5 shrink-0 text-[#F2C6CC]" />
 
-                    <span className="text-sm font-medium">
+                    <span className="text-sm font-medium text-white">
                       {item}
                     </span>
                   </div>
@@ -800,7 +844,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* OPERATIONAL CAPABILITY */}
+      {/* =========================================================
+          OPERATIONAL CAPABILITY
+      ========================================================== */}
+
       <section className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl text-center">
@@ -824,10 +871,12 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-16 grid gap-6 md:grid-cols-3">
+            {/* PROFESSIONAL STANDARDS */}
+
             <div className="group rounded-3xl border border-[#7A2330]/50 bg-[#561923] p-8 text-white shadow-lg transition hover:-translate-y-2 hover:bg-[#7A2330] hover:shadow-xl">
               <ShieldCheck className="h-10 w-10 text-[#F2C6CC] transition group-hover:scale-110" />
 
-              <h3 className="mt-6 text-xl font-bold">
+              <h3 className="mt-6 text-xl font-bold text-white">
                 Professional Standards
               </h3>
 
@@ -837,10 +886,12 @@ export default function AboutPage() {
               </p>
             </div>
 
+            {/* STRATEGIC INDUSTRY NETWORK */}
+
             <div className="group rounded-3xl border border-[#7A2330]/50 bg-[#561923] p-8 text-white shadow-lg transition hover:-translate-y-2 hover:bg-[#7A2330] hover:shadow-xl">
               <Network className="h-10 w-10 text-[#F2C6CC] transition group-hover:scale-110" />
 
-              <h3 className="mt-6 text-xl font-bold">
+              <h3 className="mt-6 text-xl font-bold text-white">
                 Strategic Industry Network
               </h3>
 
@@ -851,10 +902,12 @@ export default function AboutPage() {
               </p>
             </div>
 
+            {/* OPERATIONAL COORDINATION */}
+
             <div className="group rounded-3xl border border-[#7A2330]/50 bg-[#561923] p-8 text-white shadow-lg transition hover:-translate-y-2 hover:bg-[#7A2330] hover:shadow-xl">
               <PlaneTakeoff className="h-10 w-10 text-[#F2C6CC] transition group-hover:scale-110" />
 
-              <h3 className="mt-6 text-xl font-bold">
+              <h3 className="mt-6 text-xl font-bold text-white">
                 Operational Coordination
               </h3>
 
@@ -868,7 +921,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* WHY CHOOSE UNASCO */}
+      {/* =========================================================
+          WHY CHOOSE UNASCO
+      ========================================================== */}
+
       <section className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-center">
@@ -899,7 +955,7 @@ export default function AboutPage() {
               >
                 <CheckCircle2 className="mx-auto h-10 w-10 text-[#F2C6CC] transition group-hover:scale-110" />
 
-                <h3 className="mt-5 font-semibold">
+                <h3 className="mt-5 font-semibold text-white">
                   {item}
                 </h3>
               </div>
@@ -908,7 +964,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CALL TO ACTION */}
+      {/* =========================================================
+          CALL TO ACTION
+      ========================================================== */}
+
       <section className="relative overflow-hidden bg-[#561923] py-24 lg:py-32">
         <div className="absolute inset-0 bg-[url('/about-operations.png')] bg-cover bg-center opacity-10" />
 
