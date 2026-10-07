@@ -26,18 +26,32 @@ export const metadata: Metadata = {
       'UNASCO Aviation Limited | Air Cargo, Logistics & Aviation Services',
     template: '%s | UNASCO Aviation Limited',
   },
+
   description:
-    'UNASCO Aviation Limited delivers world-class air cargo, freight forwarding, logistics, aviation support and Cargo services across global routes with reliability and precision.',
+    'UNASCO Aviation Limited delivers world-class air cargo, freight forwarding, logistics, aviation support and cargo services across global routes with reliability and precision.',
+
   keywords: [
     'UNASCO Aviation',
     'air cargo',
     'freight forwarding',
     'logistics',
     'aviation services',
-   
     'cargo tracking',
   ],
+
   generator: 'v0.app',
+
+  // Browser tab / Google shortcut / favicon
+  icons: {
+    icon: [
+      {
+        url: '/unasco-icon.png',
+        type: 'image/png',
+      },
+    ],
+    shortcut: '/unasco-icon.png',
+    apple: '/unasco-icon.png',
+  },
 }
 
 export const viewport: Viewport = {
