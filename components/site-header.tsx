@@ -98,14 +98,15 @@ export function SiteHeader() {
       <div
         className={cn(
           'mx-auto flex w-full max-w-[1800px] items-center',
-          'gap-2 px-3 sm:px-4 lg:px-5 xl:px-6',
+          'gap-2.5 px-4 sm:px-5 lg:px-6 xl:px-7',
           'transition-all duration-500',
 
           solid
-            ? 'h-[78px] lg:h-[82px]'
-            : 'h-[82px] lg:h-[88px]',
+            ? 'h-[76px] lg:h-[80px]'
+            : 'h-[82px] lg:h-[86px]',
         )}
       >
+
         {/* ===================================================
             UNASCO LOGO
         ==================================================== */}
@@ -113,10 +114,12 @@ export function SiteHeader() {
         <div className="relative z-[110] shrink-0">
           <Logo
             className="
-              scale-[0.90]
+              !h-[68px]
+              !w-[205px]
+              scale-100
               transition-transform
               duration-300
-              hover:scale-[0.93]
+              hover:scale-[1.015]
             "
           />
         </div>
@@ -128,8 +131,8 @@ export function SiteHeader() {
         <div
           className="
             hidden
-            h-[50px]
-            w-[76px]
+            h-[60px]
+            w-[82px]
             shrink-0
             items-center
             justify-center
@@ -137,26 +140,26 @@ export function SiteHeader() {
             border
             border-neutral-200
             bg-white
-            px-2
-            shadow-[0_4px_14px_rgba(0,0,0,0.10)]
+            px-1.5
+            shadow-[0_4px_14px_rgba(0,0,0,0.09)]
             transition-all
             duration-300
             hover:-translate-y-0.5
-            hover:shadow-[0_7px_20px_rgba(0,0,0,0.14)]
+            hover:shadow-[0_7px_18px_rgba(0,0,0,0.13)]
             lg:flex
           "
         >
           <Image
             src="/logos/iata.png"
             alt="IATA"
-            width={90}
-            height={55}
+            width={100}
+            height={60}
             priority
             className="
               h-auto
-              max-h-[34px]
+              max-h-[38px]
               w-auto
-              max-w-[60px]
+              max-w-[65px]
               object-contain
             "
           />
@@ -164,10 +167,6 @@ export function SiteHeader() {
 
         {/* ===================================================
             DESKTOP NAVIGATION
-
-            IMPORTANT:
-            This navigation now has a controlled width.
-            It cannot expand underneath NANTA.
         ==================================================== */}
 
         <nav
@@ -185,7 +184,7 @@ export function SiteHeader() {
             className="
               flex
               w-full
-              max-w-[800px]
+              max-w-[820px]
               min-w-0
               items-center
               justify-center
@@ -195,8 +194,8 @@ export function SiteHeader() {
               border-neutral-200
               bg-white
               px-1
-              py-1.5
-              shadow-[0_4px_16px_rgba(0,0,0,0.08)]
+              py-1
+              shadow-[0_4px_15px_rgba(0,0,0,0.07)]
             "
           >
             {navLinks.map((link) => {
@@ -214,9 +213,9 @@ export function SiteHeader() {
                     'relative',
                     'shrink-0',
                     'rounded-full',
-                    'px-2 lg:px-2.5 xl:px-3',
+                    'px-2.5 lg:px-3 xl:px-3.5',
                     'py-2.5',
-                    'text-[12px] xl:text-[13px]',
+                    'text-[12px] lg:text-[13px] xl:text-[13px]',
                     'font-semibold',
                     'whitespace-nowrap',
                     'transition-all',
@@ -251,10 +250,11 @@ export function SiteHeader() {
             hidden
             shrink-0
             items-center
-            gap-2
+            gap-2.5
             lg:flex
           "
         >
+
           {/* =================================================
               NANTA BADGE
           ================================================== */}
@@ -262,8 +262,8 @@ export function SiteHeader() {
           <div
             className="
               flex
-              h-[50px]
-              w-[76px]
+              h-[60px]
+              w-[82px]
               shrink-0
               items-center
               justify-center
@@ -271,25 +271,25 @@ export function SiteHeader() {
               border
               border-neutral-200
               bg-white
-              px-2
-              shadow-[0_4px_14px_rgba(0,0,0,0.10)]
+              px-1.5
+              shadow-[0_4px_14px_rgba(0,0,0,0.09)]
               transition-all
               duration-300
               hover:-translate-y-0.5
-              hover:shadow-[0_7px_20px_rgba(0,0,0,0.14)]
+              hover:shadow-[0_7px_18px_rgba(0,0,0,0.13)]
             "
           >
             <Image
               src="/logos/nanta.png"
               alt="NANTA"
-              width={90}
-              height={55}
+              width={100}
+              height={60}
               priority
               className="
                 h-auto
-                max-h-[34px]
+                max-h-[38px]
                 w-auto
-                max-w-[60px]
+                max-w-[68px]
                 object-contain
               "
             />
@@ -305,16 +305,16 @@ export function SiteHeader() {
               buttonVariants(),
 
               'flex',
-              'h-[50px]',
-              'min-w-[155px]',
+              '!h-[60px]',
+              'min-w-[175px]',
               'shrink-0',
               'items-center',
               'justify-center',
-              'gap-2',
+              'gap-2.5',
               'rounded-full',
               'bg-[#561923]',
-              'px-4',
-              'text-[12px]',
+              'px-5',
+              'text-[13px]',
               'font-semibold',
               'text-white',
               'shadow-[0_6px_18px_rgba(86,25,35,0.22)]',
@@ -322,13 +322,13 @@ export function SiteHeader() {
               'duration-300',
               'hover:-translate-y-0.5',
               'hover:bg-[#7A2330]',
-              'hover:shadow-[0_9px_24px_rgba(86,25,35,0.28)]',
+              'hover:shadow-[0_9px_23px_rgba(86,25,35,0.28)]',
             )}
           >
             <span>Request a Quote</span>
 
             <ArrowRight
-              className="h-4 w-4"
+              className="h-4.5 w-4.5"
               strokeWidth={2}
             />
           </Link>
@@ -343,6 +343,7 @@ export function SiteHeader() {
             open={open}
             onOpenChange={setOpen}
           >
+
             {/* =================================================
                 MOBILE MENU BUTTON
             ================================================== */}
@@ -410,6 +411,7 @@ export function SiteHeader() {
                 shadow-2xl
               "
             >
+
               {/* =============================================
                   MOBILE HEADER
               ============================================== */}
@@ -504,6 +506,7 @@ export function SiteHeader() {
                 ============================================ */}
 
                 <div className="mt-8 grid grid-cols-2 gap-3">
+
                   {/* IATA */}
 
                   <div
@@ -572,36 +575,36 @@ export function SiteHeader() {
                 ============================================ */}
 
                 <Link
-                  href="/contact"
-                  onClick={() => setOpen(false)}
-                  className={cn(
-                    buttonVariants(),
+  href="/contact"
+  onClick={() => setOpen(false)}
+  className={cn(
+    buttonVariants(),
 
-                    'mt-6',
-                    'flex',
-                    'h-14',
-                    'w-full',
-                    'items-center',
-                    'justify-center',
-                    'gap-3',
-                    'rounded-full',
-                    'bg-[#561923]',
-                    'font-semibold',
-                    'text-white',
-                    'shadow-lg',
-                    'transition-all',
-                    'duration-300',
-                    'hover:bg-[#7A2330]',
-                  )}
-                >
-                  <span>Request a Quote</span>
+    'mt-6',
+    'flex',
+    'h-14',
+    'w-full',
+    'items-center',
+    'justify-center',
+    'gap-3',
+    'rounded-full',
+    'bg-[#561923]',
+    'text-[15px]',
+    'font-semibold',
+    'text-white',
+    'shadow-lg',
+    'transition-all',
+    'duration-300',
+    'hover:bg-[#7A2330]',
+  )}
+>
+  <span>Request a Quote</span>
 
-                  <ArrowRight
-                    className="h-5 w-5"
-                    strokeWidth={2}
-                  />
-                </Link>
-
+  <ArrowRight
+    className="h-5 w-5"
+    strokeWidth={2}
+  />
+</Link>
                 {/* ===========================================
                     MOBILE BRANDING
                 ============================================ */}

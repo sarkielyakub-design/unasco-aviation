@@ -316,30 +316,27 @@ export function HomeHero() {
               ))}
             </h1>
 
-            {/* CONNECTING PEOPLE & CARGO */}
+     <h2
+  className="
+    mt-4
+    text-3xl
+    font-normal
+    leading-tight
+    tracking-tight
+    sm:text-4xl
+    md:text-5xl
+    lg:text-6xl
+    animate-[heroFadeUp_0.9s_cubic-bezier(0.22,1,0.36,1)_1.75s_both]
+  "
+>
+  <span className="text-white">
+    Connecting{" "}
+  </span>
 
-            <h2
-              className="
-                mt-4
-                text-3xl
-                font-normal
-                leading-tight
-                tracking-tight
-                sm:text-4xl
-                md:text-5xl
-                lg:text-6xl
-                animate-[heroFadeUp_0.9s_cubic-bezier(0.22,1,0.36,1)_1.75s_both]
-              "
-            >
-              <span className="text-white">
-                Connecting{" "}
-              </span>
-
-              <span className="text-[#C9828D]">
-                People &amp; Cargo
-              </span>
-            </h2>
-
+  <span className="text-[#561923]">
+    People &amp; Cargo
+  </span>
+</h2>
             {/* ACCENT LINE */}
 
             <div

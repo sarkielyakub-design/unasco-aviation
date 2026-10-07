@@ -136,7 +136,7 @@ export function SiteFooter() {
                     href="tel:+966556011122"
                     className="mt-1 block text-white/70 transition-colors duration-300 hover:text-[#C9828D]"
                   >
-                    +966 556 011 122
+                    
                   </a>
 
                   <p className="text-sm text-white/45">
@@ -159,7 +159,7 @@ export function SiteFooter() {
                     href="tel:+234 8155558069"
                     className="mt-1 block text-white/70 transition-colors duration-300 hover:text-[#C9828D]"
                   >
-                    +234 8155558069
+                    
                   </a>
 
                   <p className="text-sm text-white/45">

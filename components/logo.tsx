@@ -16,20 +16,20 @@ export function Logo({
         `
         group
         flex
-        h-[70px]
-        w-[190px]
+        h-[74px]
+        w-[220px]
         shrink-0
         items-center
         justify-center
+        overflow-hidden
         rounded-full
         bg-[#561923]
-        px-5
-        shadow-sm
+        px-2
+        shadow-[0_5px_18px_rgba(86,25,35,0.18)]
         transition-all
         duration-300
         ease-out
-        hover:scale-[1.02]
-        hover:shadow-md
+        hover:shadow-[0_8px_24px_rgba(86,25,35,0.24)]
         `,
         className
       )}
@@ -43,12 +43,13 @@ export function Logo({
         className="
           block
           h-auto
-          w-[145px]
+          w-full
+          max-w-[208px]
           object-contain
           transition-transform
           duration-300
           ease-out
-          group-hover:scale-[1.03]
+          group-hover:scale-[1.02]
         "
       />
     </Link>
