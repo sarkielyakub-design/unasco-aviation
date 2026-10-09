@@ -133,10 +133,10 @@ export function SiteFooter() {
                   </h4>
 
                   <a
-                    href="tel:+966556011122"
+                    href="mailto:ceo@unascoltd.com"
                     className="mt-1 block text-white/70 transition-colors duration-300 hover:text-[#C9828D]"
                   >
-                    
+                    ceo@unascoltd.com
                   </a>
 
                   <p className="text-sm text-white/45">
@@ -156,10 +156,10 @@ export function SiteFooter() {
                   </h4>
 
                   <a
-                    href="tel:+234 8155558069"
+                    href="mailto:maildsm@unascoltd.com"
                     className="mt-1 block text-white/70 transition-colors duration-300 hover:text-[#C9828D]"
                   >
-                    
+                    dsm@unascoltd.com
                   </a>
 
                   <p className="text-sm text-white/45">
@@ -179,7 +179,7 @@ export function SiteFooter() {
                   </h4>
 
                   <a
-                    href="mailto:unascoaviationltd@gmail.com"
+                    href="mailto:customercare@unascoltd.com"
                     className="mt-1 block break-all text-white/70 transition-colors duration-300 hover:text-[#C9828D]"
                   >
                     customercare@unascoltd.com
@@ -202,7 +202,7 @@ export function SiteFooter() {
                   </h4>
 
                   <a
-                    href="mailto:unascol2025@gmail.com"
+                    href="mailto:support@unascoltd.com"
                     className="mt-1 block break-all text-white/70 transition-colors duration-300 hover:text-[#C9828D]"
                   >
                     support@unascoltd.com

@@ -277,7 +277,7 @@ export default function GeneralSalesAgentPage() {
               <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-[#3D1118] p-3 shadow-2xl">
                 <div className="relative overflow-hidden rounded-[2rem]">
                   <Image
-                    src="/hero-cargo-aircraft.png"
+                    src="/gsa.png"
                     alt="UNASCO Aviation airline representation"
                     width={900}
                     height={700}
@@ -537,7 +537,7 @@ export default function GeneralSalesAgentPage() {
               <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-[#3D1118] p-3 shadow-2xl">
                 <div className="relative overflow-hidden rounded-[2rem]">
                   <Image
-                    src="/hero-cargo-aircraft.png"
+                    src="/gsa2.png"
                     alt="UNASCO Aviation airline commercial operations"
                     width={1000}
                     height={700}
@@ -704,7 +704,7 @@ export default function GeneralSalesAgentPage() {
             <div className="relative overflow-hidden rounded-[2rem] bg-[#561923] p-3 shadow-2xl">
               <div className="relative overflow-hidden rounded-[1.6rem]">
                 <Image
-                  src="/about-operations.png"
+                  src="/gsa-meeting.png"
                   alt="UNASCO Aviation professional operations"
                   width={1000}
                   height={700}

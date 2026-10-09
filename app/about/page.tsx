@@ -184,30 +184,6 @@ export default function AboutPage() {
                 className="h-[520px] w-full object-cover transition duration-700 group-hover:scale-105"
               />
             </div>
-
-            {/* REGISTRATION CARD */}
-
-            <div className="absolute -bottom-8 left-6 rounded-3xl border border-[#7A2330]/50 bg-[#561923] p-6 text-white shadow-2xl backdrop-blur sm:left-10">
-              <div className="flex items-center gap-4">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#7A2330] text-[#F2C6CC]">
-                  <Building2 className="h-7 w-7" />
-                </div>
-
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white">
-                    Corporate Registration
-                  </p>
-
-                  <p className="mt-1 text-2xl font-bold text-white">
-                    RC 8207934
-                  </p>
-
-                  <p className="text-xs text-white">
-                    Incorporated 27 January 2025
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* CONTENT */}

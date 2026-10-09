@@ -32,8 +32,10 @@ const GOLD_LIGHT = "#F3D98B";
    HERO IMAGE
 ========================================================= */
 
-const KAABA_IMAGE =
-  "https://images.unsplash.com/photo-1713239060784-e6ed820a0715?auto=format&fit=crop&w=3000&q=90";
+/* =========================================================
+   HERO IMAGE — LOCAL PUBLIC ASSET
+========================================================= */
+const KAABA_IMAGE = "/hajj-umrah/kaaba.jpg";
 
 /* =========================================================
    PAGE
@@ -62,6 +64,7 @@ export default function HajjUmrahPage() {
           className="object-cover object-center"
         />
 
+        {/* Keep your existing hero overlays and content below */}
         {/* =================================================
             LIGHT MAROON OVERLAY
             Image intentionally kept visible
@@ -75,7 +78,7 @@ export default function HajjUmrahPage() {
           }}
         />
 
-        {/* Bottom depth - deliberately lighter */}
+        {/* Bottom depth - deliberately lighter */} 
         <div
           className="absolute inset-0"
           style={{

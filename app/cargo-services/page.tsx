@@ -218,7 +218,7 @@ export default function CargoServicesPage() {
             <div className="relative overflow-hidden rounded-[2rem] bg-[#561923] p-3 shadow-2xl">
               <div className="relative overflow-hidden rounded-[1.6rem]">
                 <Image
-                  src="/air-cargo-loading.png"
+                  src="/cargo.png"
                   alt="UNASCO Aviation cargo handling operations"
                   width={1000}
                   height={750}
