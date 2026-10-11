@@ -9,7 +9,7 @@ const news = [
     image: '/news-new-route.png',
     category: 'Network',
     date: 'July 18, 2026',
-    title: 'UNASCO launches new weekly freighter route to the Gulf',
+    title: 'UNASCO launches new weekly freighter route from china and west africa',
     excerpt:
       'A new scheduled service strengthens capacity between West Africa and the Middle East for time-critical cargo.',
   },
